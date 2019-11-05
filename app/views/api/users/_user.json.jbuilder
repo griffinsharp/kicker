@@ -1,0 +1,1 @@
+# jbuilder partial for users
