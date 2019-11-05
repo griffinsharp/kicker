@@ -1,5 +1,6 @@
 import * as APIUtil from '../util/session_api_util';
 
+// Action type constants
 // Our reducers will fail silently if we keep out action types as strings, so make them constants to avoid this.
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
