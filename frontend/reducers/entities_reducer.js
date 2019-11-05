@@ -5,7 +5,11 @@ import usersReducer from './users_reducer';
 // Combine our reducers that handle relational data
 
 const entitiesReducer = combineReducers({
-    usersReducer: usersReducer
+    users: usersReducer
 });
 
 export default entitiesReducer;
+
+// entities: {
+//     users: { }
+// },
