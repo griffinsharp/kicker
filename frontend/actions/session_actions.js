@@ -19,15 +19,16 @@ export const logoutCurrentUser = () => ({
 });
 
 // The 'errors' param is an array of errors.
-export const receiveErrors = (errors) => ({
+export const receiveErrors = (errors) => {
+    return {
     type: RECEIVE_SESSION_ERRORS,
     errors
-});
-
+};
+}
 // Thunk action creators
 export const login = (user) => (dispatch) => {
     return APIUtil.login(user)
-    .then((user) => dispatch(receiveCurrentUser(user)),
+    .then(user => dispatch(receiveCurrentUser(user)),
     err => dispatch(receiveErrors(err.responseJSON)));
 };
 
