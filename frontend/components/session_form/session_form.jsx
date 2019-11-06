@@ -41,29 +41,39 @@ class SessionForm extends React.Component {
     }
 
     render () {
-        let cn = ""
+        let onlySignUp
+        let onlyLogIn
         if (this.props.location.pathname === "/login") {
-            cn = "hidden"
-        } else {
-            cn = "login-type-input"
+            onlySignUp = "hidden"
+            onlyLogIn = "session-type-input"
+        } else if (this.props.location.pathname === "/signup") {
+            onlySignUp = "session-type-input"
+            onlyLogIn = "hidden"
         }
 
         const { formType, navLink, processForm } = this.props;
 
         return (
-            <div className="login-form-container">
-                <form className="login-box" onSubmit={this.handleSubmit}>
-                    <h2 className="login-header">{formType}</h2>
+            <div className="session-form-container">
+                <form className="session-box" onSubmit={this.handleSubmit}>
+                    {this.renderErrors()}
+                    <div className={onlySignUp}>Have an account? {navLink}</div>
+                    <p className="session-header">{formType}</p>
                     <br/>
-                    <input className="login-type-input" type="text" placeholder="Email" onChange={this.update('email')}/>
+                    <input className="session-type-input" type="text" placeholder="Email" onChange={this.update('email')}/>
                     <br />
-                    <input className="login-type-input" type="password" placeholder="Password" onChange={this.update('password')}/>
+                    <input className="session-type-input" type="password" placeholder="Password" onChange={this.update('password')}/>
                     <br />
-                    <input type="text" className={cn} type="password" placeholder="re enter Password"/>
-                    <input className="login-button" type="submit" value={formType}/>
+                    <a className="session-link">Forgot your password?</a>
+                    <br />
+                    <input type="text" className={onlySignUp} type="password" placeholder="re enter Password"/>
+                    <br className={onlySignUp}/>
+                    <input className="session-button" type="submit" value={formType}/>
+                    <br />
+                    <input type="checkbox" className="onlyLogIn"/> Remember Me
                     <br />
                 </form>
-                <div className="">New to Kickstarter? {navLink}</div>
+                <div className={onlyLogIn}>New to Kickstarter? {navLink}</div>
             </div>
         )
     }

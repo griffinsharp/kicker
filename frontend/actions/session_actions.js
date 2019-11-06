@@ -34,7 +34,6 @@ export const login = (user) => (dispatch) => {
 
 // Also does not accept a parameter.
 export const logout = () => (dispatch) => {
-    debugger
     return APIUtil.logout()
     .then((user) => dispatch(logoutCurrentUser()));
 };
