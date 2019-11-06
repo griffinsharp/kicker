@@ -1,7 +1,4 @@
 import React from 'react';
-import LogInFormContainer from './session_form/login_form_container';
-import SignUpFormContainer from './session_form/signup_form_container';
-import { Provider } from 'react-redux';
 import {
     Route,
     Redirect,
@@ -9,7 +6,11 @@ import {
     Link,
     HashRouter,
 } from 'react-router-dom';
+import LogInFormContainer from './session_form/login_form_container';
+import SignUpFormContainer from './session_form/signup_form_container';
+import { Provider } from 'react-redux';
 import Home from './home/home';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 // Purely functional component
 
