@@ -23,14 +23,15 @@ class ApplicationController < ActionController::Base
 
     # Set current_user to user. Reset the value of session_token within the session hash.
     def sign_in(user)
-        current_user = user
+        @current_user = user
         session[:session_token] = user.reset_session_token!
     end
 
     # Following my sign_in(user) logic, reset the current user's session token and set the session_token key within the session has to nil.
     def sign_out
-        current_user.reset_session_token!
+        @current_user.reset_session_token!
         session[:session_token] = nil
+        @current_user = nil
     end
 
 end

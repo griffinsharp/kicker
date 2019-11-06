@@ -1,9 +1,9 @@
 class User < ApplicationRecord
 
 # confirm our 'null: false' database constraint on the model level
-validates :username, :email, :session_token, :password_digest, presence: true
+validates :email, :session_token, :password_digest, presence: true
 # confirm our 'unique: true' database constraint on the model level
-validates :username, :email, uniqueness: true
+validates :email, uniqueness: true
 validates :password, length: {minimum: 6}, allow_nil: true
 
 attr_reader :password 
@@ -22,8 +22,8 @@ has_many :rewards,
 through: :backings,
 source: :rewards
 
-def self.find_by_credentials(username, password)
-    user = User.find_by(username: username)
+def self.find_by_credentials(email, password)
+    user = User.find_by(email: email)
     return nil unless user && user.is_password?(password)
     user
 end

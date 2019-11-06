@@ -3,7 +3,7 @@ class Api::SessionsController < ApplicationController
     # Create session (login logic)
     # If we are trying to sign in the user, they should already have credentials to find them by.
     def create
-        @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
+        @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
 
         if @user
             sign_in(@user)

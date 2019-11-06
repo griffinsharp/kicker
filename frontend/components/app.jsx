@@ -11,18 +11,18 @@ import SignUpFormContainer from './session_form/signup_form_container';
 import { Provider } from 'react-redux';
 import Home from './home/home';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import Navbar from './navbar/navbar';
+import NavbarContainer from './navbar/navbar_container';
 
 // Purely functional component
 
 const App = () => (
     <div>
-        <header>
-            <h1>Kicker!</h1>
-            <LogInFormContainer/>
-        </header>
+        <NavbarContainer/>
         <Switch>
-            <Route exact path="/login" component={LogInFormContainer} />
-            <Route exact path="/signup" component={SignUpFormContainer} />
+            <AuthRoute exact path="/login" component={LogInFormContainer} />
+            <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+            {/* <ProtectedRoute exact path="/projects/new" component={SignUpFormContainer} /> */}
             <Route path="/" component={Home}/>
         </Switch>
     </div>

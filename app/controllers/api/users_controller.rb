@@ -5,7 +5,7 @@ class Api::UsersController < ApplicationController
 
         if @user.save
             sign_in(@user)
-            render "static_pages/root.html.erb"
+            render "api/users/show"
         else 
             render json: @user.errors.full_messages, status: 422
         end
@@ -15,7 +15,7 @@ class Api::UsersController < ApplicationController
     # always make your params private
     private
     def user_params
-        params.require(:user).permit(:username, :password, :email)
+        params.require(:user).permit(:password, :email)
     end
 
 end

@@ -1,0 +1,56 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    font-size: 14px;
+}
+
+.left-bar {
+    display: flex;
+    padding-left: 24px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    flex-grow: 1;
+    justify-content: flex-start;
+}
+
+.right-bar {
+    display: flex;
+    padding-right: 24px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+/* all element with the parent class being .left-bar and child class being .navlink */
+/* no space in between the class selectors would mean one element would need both selectors
+set within its class attribute */
+
+.left-bar .nav-link {
+    margin-right: 12px;
+} 
+
+.logo-bar {
+    display: flex;
+    height: 42px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    flex-direction: column;
+}
+
+.logo-img {
+    display: flex;
+    width: 30%;
+    justify-content: center;
+    flex-direction: row;
+    margin: auto;
+}
+
+.nav-link {
+    display: flex;
+    height: 42px;
+    justify-content: center;
+    flex-direction: column;
+}
+

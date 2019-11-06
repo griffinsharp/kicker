@@ -5,7 +5,6 @@ class SessionForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: 'Username',
             password: 'Password',
             email: 'Email'
         };
@@ -19,7 +18,8 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        this.props.processForm(user)
+        .then(this.props.history.push("/"));
     }
 
     update(field) {
@@ -41,7 +41,6 @@ class SessionForm extends React.Component {
     }
 
     render () {
-        debugger
         let cn = ""
         if (this.props.location.pathname === "/login") {
             cn = "hidden"
