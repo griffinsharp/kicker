@@ -9,8 +9,23 @@ class Navbar extends React.Component {
     constructor(props) {
         super(props);
     }
+    
 
     render() {
+        let stateButton;
+        if (this.props.currentUser === null) {
+            stateButton = <Link to="/login" className="nav-link">Log in</Link>
+        } else {
+            stateButton = (
+              <Link
+                to="/"
+                className="nav-link"
+                onClick={() => this.props.logout()}
+              >
+                Log out
+              </Link>
+            );
+        }
 
         return(
             <div className="navbar">
@@ -26,9 +41,8 @@ class Navbar extends React.Component {
                     <div className='nav-link'>
                         <Link to="/search" className="link">Search  <FontAwesomeIcon className="" icon={faSearch} /></Link>
                     </div>
-                        <Link to="/login" className="nav-link">Log in</Link>
+                        {stateButton}
                 </div>
-                    <button onClick={() => this.props.logout()}></button>
             </div>
         )
     }

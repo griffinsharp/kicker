@@ -12,7 +12,7 @@
 .session-form-container {
     display: flex;
     background-color: #fff;
-    width: 400px;
+    width: 340px;
     margin: 60px auto;
     min-height: 747px;
     height: 100%;
@@ -22,15 +22,11 @@
 }
 
 /* top on sign up for when user has an account already */
-.have-acc {
-    display: flex;
-    flex-direction: column;
-}
 
 /* form itself */
 .session-top {
    display: flex;
-flex-direction: column;
+    flex-direction: column;
 }
 
 .session-form {
@@ -57,7 +53,19 @@ flex-direction: column;
 }
 
 .session-btn{
+    background-color: #009E74;
+    color: #FFF;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 11px;
+}
 
+.session-btn-demo{
+    background-color: #39579a;
+    color: #FFF;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 11px;
 }
 
 .hidden{
@@ -67,6 +75,7 @@ flex-direction: column;
 .or-line-container {
     display: flex;
     align-items: center;
+    margin: 10px;
 }
 
 .or-line {
@@ -88,4 +97,26 @@ a.session-type-input {
     padding-right: 0;
     color: #2953ff;
     font-size: 12px;
+}
+
+.session-link {
+    color: #2953ff;
+}
+
+.have-acc {
+    background-color: rgba(241,238,234,0.2);
+    margin: 0;
+}
+
+input[type=text], input[type=password] {
+  outline: none;
+  border: 1px solid #DDDDDD;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  border: 1px solid #009E74;
 }

@@ -6,7 +6,7 @@ const mapStateToProps = (state, ownProps) => {
     return {
     errors: state.errors.session,
     formType: 'Log out',
-    // currentUser: state.entities.users[state.session.id]
+    currentUser: state.session.id
 }};
 
 const mapDispatchToProps = (dispatch) => ({

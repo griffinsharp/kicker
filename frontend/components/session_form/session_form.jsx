@@ -7,11 +7,13 @@ class SessionForm extends React.Component {
     (this.state = {
       email: "",
       password: "",
-      repeatPassword: "hidden"
+      repeatPassword: "hidden",
+      repeatEmail: "hidden"
     }),
-      (this.handleSubmit = this.handleSubmit.bind(this));
+    (this.handleSubmit = this.handleSubmit.bind(this));
     this.handleErrors = this.handleErrors.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleEmail = this.handleEmail.bind(this);
   }
 
   // Notes on the following functions/logic:
@@ -49,6 +51,12 @@ class SessionForm extends React.Component {
     }
   }
 
+  handleEmail() {
+    if (this.props.location.pathname === "/signup") {
+      this.setState({ repeatEmail: "session-type-input" });
+    }
+  }
+
   // Our Errors are stored in an array. Need to map through them and present them individually if they exist.
   // I will call this function below within the render function when appropriate.
   renderErrors() {
@@ -76,9 +84,10 @@ class SessionForm extends React.Component {
     return (
       <div className="main-session">
         <div className="session-form-container">
-            {/* top on signin */}
+          {/* top on signin */}
           <div className={`${onlySignUp} have-acc`}>
-            Have an account? {navLink}
+            {" "}
+            Have an account? {navLink}{" "}
           </div>
           {/*  mid */}
           <div className="session-top">
@@ -91,14 +100,21 @@ class SessionForm extends React.Component {
                 placeholder="Name"
                 onChange={this.update("name")}
               />
-    
+
               <input
                 className="session-type-input"
                 type="text"
                 placeholder="Email"
                 onChange={this.update("email")}
+                onClick={this.handleEmail}
               />
-             
+
+              <input
+                className={this.state.repeatEmail}
+                type="text"
+                placeholder="Re-enter email"
+              />
+
               <input
                 className="session-type-input"
                 type="password"
@@ -106,15 +122,15 @@ class SessionForm extends React.Component {
                 onChange={this.update("password")}
                 onClick={this.handleClick}
               />
-             
+
               <input
                 className={this.state.repeatPassword}
                 type="password"
                 placeholder="Re-enter password"
               />
-        
+
               <a className={onlyLogIn}>Forgot your password?</a>
-            
+
               <input className="session-btn" type="submit" value={formType} />
               <div className={onlyLogIn}>
                 <input type="checkbox" />
@@ -129,7 +145,7 @@ class SessionForm extends React.Component {
             </form>
             {/* bottom */}
             <div className="session-bottom">
-              <div className={onlyLogIn}>New to Kickstarter? {navLink}</div>
+              <div className={onlyLogIn}>New to Kickstarter?{navLink}</div>
             </div>
           </div>
         </div>
