@@ -20,7 +20,7 @@ class_name: :Backing
 
 has_many :rewards,
 through: :backings,
-source: :rewards
+source: :reward
 
 def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

@@ -6,8 +6,8 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.integer :total_pledged, null: false
       t.integer :goal_amount, null: false
       t.integer :num_backers, null: false
-      t.integer :days_left,null: false
-      t.boolean :loved, 
+      t.integer :days_left, null: false
+      t.boolean :loved 
       t.string :location, null: false
       t.text :campaign, null: false
       t.text :about, null: false

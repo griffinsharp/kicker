@@ -10,10 +10,62 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_06_055312) do
+ActiveRecord::Schema.define(version: 2019_11_07_183425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "backings", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "reward_id", null: false
+    t.integer "project_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_backings_on_project_id"
+    t.index ["reward_id"], name: "index_backings_on_reward_id"
+    t.index ["user_id", "reward_id"], name: "index_backings_on_user_id_and_reward_id", unique: true
+    t.index ["user_id"], name: "index_backings_on_user_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "category_name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_name"], name: "index_categories_on_category_name"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "sub_title", null: false
+    t.integer "total_pledged", null: false
+    t.integer "goal_amount", null: false
+    t.integer "num_backers", null: false
+    t.integer "days_left", null: false
+    t.boolean "loved"
+    t.string "location", null: false
+    t.text "campaign", null: false
+    t.text "about", null: false
+    t.integer "category_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_projects_on_category_id"
+    t.index ["title"], name: "index_projects_on_title", unique: true
+    t.index ["user_id"], name: "index_projects_on_user_id"
+  end
+
+  create_table "rewards", force: :cascade do |t|
+    t.integer "amount", null: false
+    t.text "desc", null: false
+    t.text "subdesc"
+    t.string "delivery", null: false
+    t.string "shipping"
+    t.integer "num_backers", null: false
+    t.integer "project_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_rewards_on_project_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
