@@ -3,12 +3,19 @@ import { withRouter } from "react-router-dom";
 
 class SessionForm extends React.Component {
   constructor(props) {
-    super(props);
+      super(props);
+      this.state = {
+          email: "",
+          password: "",
+          repeatPassword: "hidden"
+      },
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleErrors = this.handleErrors.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-// prevent the default action for a submit, which is to navigate away from the page.
+// Notes on the following functions/logic:
+// Prevent the default action for a submit, which is to navigate away from the page.
 // make a new user object based on the local state.
 // Call processForm with the user object as a param.
 // ProcessForm passed down in props and used to handle dispatching both signin/sign up on one form.
@@ -34,6 +41,14 @@ class SessionForm extends React.Component {
     return e => this.setState({ [field]: e.currentTarget.value });
   }
 
+// want to trigger a local state change so that react knows to rerender.
+
+  handleClick () {
+          if (this.props.location.pathname === "/signup") {
+           this.setState({ repeatPassword: "session-type-input" });
+          }
+    }
+
   // Our Errors are stored in an array. Need to map through them and present them individually if they exist.
   // I will call this function below within the render function when appropriate.
   renderErrors() {
@@ -45,6 +60,7 @@ class SessionForm extends React.Component {
       </ul>
     );
   }
+
 
   render() {
     let onlySignUp;
@@ -58,11 +74,10 @@ class SessionForm extends React.Component {
     }
 
     const { formType, navLink, processForm } = this.props;
-
     return (
       <div className="session-form-container">
         <form className="session-box" onSubmit={this.handleSubmit}>
-            {this.renderErrors()}
+          {this.renderErrors()}
           <div className={onlySignUp}>Have an account? {navLink}</div>
           <p className="session-header">{formType}</p>
           <input
@@ -84,15 +99,15 @@ class SessionForm extends React.Component {
             type="password"
             placeholder="Password"
             onChange={this.update("password")}
+            onClick={this.handleClick}
           />
-          <br />
-          <a className={onlyLogIn}>Forgot your password?</a>
           <input
-            type="text"
-            className={onlySignUp}
+            className={this.state.repeatPassword}
             type="password"
             placeholder="Re-enter password"
           />
+          <br />
+          <a className={onlyLogIn}>Forgot your password?</a>
           <br className={onlySignUp} />
           <input className="session-button" type="submit" value={formType} />
           <div className={onlyLogIn}>
