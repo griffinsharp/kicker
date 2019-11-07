@@ -10,7 +10,7 @@ class SessionForm extends React.Component {
       repeatPassword: "hidden",
       repeatEmail: "hidden"
     }),
-    (this.handleSubmit = this.handleSubmit.bind(this));
+      (this.handleSubmit = this.handleSubmit.bind(this));
     this.handleErrors = this.handleErrors.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleEmail = this.handleEmail.bind(this);
