@@ -73,7 +73,7 @@ class SessionForm extends React.Component {
       onlyLogIn = "hidden";
     }
 
-    const { formType, navLink, processForm } = this.props;
+    const { formType, navLink } = this.props;
     return (
       <div className="session-form-container">
         <form className="session-box" onSubmit={this.handleSubmit}>
@@ -101,6 +101,7 @@ class SessionForm extends React.Component {
             onChange={this.update("password")}
             onClick={this.handleClick}
           />
+          <br />
           <input
             className={this.state.repeatPassword}
             type="password"
@@ -109,11 +110,18 @@ class SessionForm extends React.Component {
           <br />
           <a className={onlyLogIn}>Forgot your password?</a>
           <br className={onlySignUp} />
-          <input className="session-button" type="submit" value={formType} />
+          <input className="session-btn" type="submit" value={formType} />
           <div className={onlyLogIn}>
             <input type="checkbox" />
             Remember Me
           </div>
+          <div class="or-line-container">
+              <div class="or-line"></div>
+              <div class="or">or</div>
+              <div class="or-line"></div>
+          </div>
+          <input className="session-btn" type="submit" value="Demo User" />
+          <div></div>
         </form>
         <div className={onlyLogIn}>New to Kickstarter? {navLink}</div>
       </div>
