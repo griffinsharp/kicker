@@ -22,7 +22,6 @@ class Project < ApplicationRecord
     has_many :backers,
     through: :backings,
     source: :user
-    # double check^^
 
 
 end

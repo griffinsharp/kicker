@@ -50,6 +50,4 @@ def reset_session_token!
     self.session_token
 end
 
-
-
 end
