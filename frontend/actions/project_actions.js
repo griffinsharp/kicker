@@ -12,9 +12,10 @@ export const receiveProjects = projects => ({
     projects
 });
 
-export const receiveProject = project => ({
+export const receiveProject = ({project, user}) => ({
     type: RECEIVE_PROJECT,
-    project
+    project,
+    user
 });
 
 export const removeProject = projectId => ({
