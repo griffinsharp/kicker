@@ -6,7 +6,7 @@ const projectsReducer = (oldState = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_PROJECTS:
-            return action.benches;
+            return action.projects;
         case RECEIVE_PROJECT:
             newState[action.project.id] = action.project;
             return newState;
