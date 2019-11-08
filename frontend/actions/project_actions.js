@@ -31,7 +31,7 @@ x
 // thunk action creators
 
 export const fetchProjects = () => dispatch => {
-    return APIUtil.requestProjects()
+    return APIUtil.fetchProjects()
     .then((projects) => dispatch(receiveProjects(projects))); 
 };
 
