@@ -5,11 +5,11 @@
 // The success function will be chained onto this promise in the thunk aciton creator. 
 // Errors optional (debugging purposes).
 
-export const fetchProjects = data => (
+export const fetchProjects = projects => (
     $.ajax({
         url: `api/projects`,
         method: `GET`,
-        data
+        projects
     })
 );
 
