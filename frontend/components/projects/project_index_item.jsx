@@ -11,7 +11,7 @@ class ProjectIndexItem extends React.Component {
 
         const {project} = this.props;
         return (
-            div
+            <div>{project.title}</div>
         )
     }
 
