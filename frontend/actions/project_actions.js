@@ -27,7 +27,7 @@ export const receiveProjectErrors = (errors) => ({
     type: RECEIVE_PROJECT_ERRORS,
     errors
 });
-
+x
 // thunk action creators
 
 export const fetchProjects = () => dispatch => {

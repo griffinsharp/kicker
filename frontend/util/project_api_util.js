@@ -24,7 +24,7 @@ export const createProject = project => (
     $.ajax({
         url: `api/projects`,
         method:`POST`,
-        data: {project}
+        data: { project }
     })
 )
 
@@ -41,4 +41,4 @@ export const deleteProject = projectId => (
         url: `api/projects/${projectId}`,
         method: `DELETE`
     })
-)
+);

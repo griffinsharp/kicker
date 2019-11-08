@@ -1,6 +1,6 @@
 
 json.project do 
-    json.partial! "api/projects/project", project: @project
+    json.partial! "/api/projects/project", project: @project
 end
 
 # user who created the project 

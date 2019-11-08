@@ -3,12 +3,12 @@ class Api::ProjectsController < ApplicationController
     # Must be signed in to create, edit, or destroy a project.
     # Have access to before_action via rails and require_signed_in!
     # via the application controller method. 
-    before_action :require_signed_in!, only: [:create, :edit, :destroy]
+    # before_action :require_signed_in!, only: [:create, :edit, :destroy]
 
     def index
         @projects = Project.all 
         # Will eventually add some constraints here for search functionality (see BenchBnB)
-        render 'api/projects/index'
+        render :index
     end
 
     def show 
@@ -18,7 +18,7 @@ class Api::ProjectsController < ApplicationController
     def create
         @project = Project.new(project_params)
         @project.user_id = current_user.id
-
+    # @project = current_user.projects.new(project_params)
         if @project.save
             render "api/projects/show"
         else
@@ -41,6 +41,10 @@ class Api::ProjectsController < ApplicationController
         end
 
     end
+
+    # def destroy
+        
+    # end
 
     private
 
