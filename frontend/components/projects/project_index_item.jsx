@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 class ProjectIndexItem extends React.Component {
 
     componentDidMount() {
-        this.props.fetchProject();
+        this.props.fetchProject(this.props.project.id);
     }
 
     render() {
