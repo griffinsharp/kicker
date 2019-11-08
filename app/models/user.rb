@@ -1,7 +1,7 @@
 class User < ApplicationRecord
 
 # confirm our 'null: false' database constraint on the model level
-validates :email, :session_token, :password_digest, presence: true
+validates :email, :name, :session_token, :password_digest, presence: true
 # confirm our 'unique: true' database constraint on the model level
 validates :email, uniqueness: true
 validates :password, length: {minimum: 6}, allow_nil: true

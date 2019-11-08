@@ -7,6 +7,7 @@ class SessionForm extends React.Component {
     (this.state = {
       email: "",
       password: "",
+      name: "",
       repeatPassword: "hidden",
       repeatEmail: "hidden"
     }),
