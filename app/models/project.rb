@@ -23,5 +23,4 @@ class Project < ApplicationRecord
     through: :backings,
     source: :user
 
-
 end
