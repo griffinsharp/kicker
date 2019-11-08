@@ -51,6 +51,7 @@ class Api::ProjectsController < ApplicationController
         :goal_amount,
         :num_backers,
         :days_left,
+        :loved,
         :location,
         :campaign,
         :about,

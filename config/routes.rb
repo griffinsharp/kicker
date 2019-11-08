@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  # API endpoints, controllers live under API namespace
-  # Response format should be in json.
+  # API endpoints, controllers live under an API namespace (ex Api::ExamplenameController).
+  # Response format are in json.
   
   namespace :api, defaults: {format: :json} do
     resource :session, only: [:create, :destroy]
     resources :users, only: [:create, :show]
-    resources :projects, only: [:index, :show, :create, :edit, :destroy]
+    resources :projects, only: [:index, :show, :create, :edit, :update, :destroy]
     resources :categories, only: [:index]
     resources :rewards, only: [:create, :destroy]
   end

@@ -1,0 +1,49 @@
+import * as APIUtil from '../util/project_api_util';
+
+export const RECEIVE_PROJECTS = "RECEIVE_PROJECTS";
+export const RECEIVE_PROJECT = "RECEIVE_PROJECT";
+export const REMOVE_PROJECT = "REMOVE_PROJECT";
+
+// regular action creators
+
+export const receiveProjects = projects => ({
+    type: RECEIVE_PROJECTS,
+    projects
+});
+
+export const receiveProject = project => ({
+    type: RECEIVE_PROJECT,
+    project
+});
+
+export const removeProject = projectId => ({
+    type: REMOVE_PROJECT,
+    projectId
+});
+
+// thunk action creators
+
+export const fetchProjects = () => dispatch => {
+    return APIUtil.requestProjects()
+    .then((projects) => dispatch(receiveProjects(projects))); 
+};
+
+export const fetchProject = (projectId) => dispatch => {
+    return APIUtil.fetchProject(projectId)
+    .then((project) => dispatch(receiveProject(project)));
+};
+
+export const createProject = (project) => dispatch => {
+    return APIUtil.createProject(project)
+        .then((project) => dispatch(receiveProject(project)));
+};
+
+export const updateProject = (project) => dispatch => {
+    return APIUtil.updateProject(project)
+        .then((project) => dispatch(receiveProject(project)));
+};
+
+export const deleteProject = (projectId) => dispatch => {
+    return APIUtil.deleteProject(projectId)
+    .then((projectId) => dispatch(removeProject(projectId)));
+};
