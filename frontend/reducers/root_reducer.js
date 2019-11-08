@@ -14,15 +14,29 @@ const RootReducer = combineReducers({
 
 export default RootReducer;
 
-// application state example at time of RootReducer creation: 
+// Just for reference, application state example at time of RootReducer creation
+// should looke something like this: 
+// 
 // {
 //     entities: {
-//         users: { }
+//         users: {
+//           1: {
+//             id: 1,
+//             title: "user1"
+//           }, 
+//         },
+//         projects: {
+//           1: {
+//             id: 1,
+//             title: "project1"
+//           }, 
+//         },
 //     },
 //     session: {
 //         id: null,
-//   },
+//     },
 //     errors: {
-//         session: []
+//         session: [],
+//         projects: []
 //     }
 // }

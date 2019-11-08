@@ -4,7 +4,7 @@ import {RECEIVE_SESSION_ERRORS, RECEIVE_CURRENT_USER} from '../actions/session_a
 // Default state should be an array here because that's how we store our errors for Kicker.
 // Reducer will listen for two actions: receive session errors and receive current user.
 // If the action is receive session errors, it will set the errors key equal to the actions errors.
-// If the action is receive current user, it will clear the errors key in the new state (no errors currently).
+// If the action is receive current user, it will clear the errors key value to an empty array in the new state (no errors currently).
 
 const sessionErrorsReducer = (oldState = [], action) => {
     Object.freeze(oldState);

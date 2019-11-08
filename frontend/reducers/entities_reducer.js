@@ -13,5 +13,6 @@ const entitiesReducer = combineReducers({
 export default entitiesReducer;
 
 // entities: {
-//     users: { }
+//     users: { },
+//     projects: { }
 // },
