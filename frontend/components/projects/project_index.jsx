@@ -14,7 +14,7 @@ class ProjectIndex extends React.Component {
       <div>
         <div>
           {projects.map(project => (
-            <ProjectIndexItem className="project-index-item" project={project} key={project.id} fetchProject={fetchProject} />
+            <ProjectIndexItem project={project} key={project.id} fetchProject={fetchProject} />
           ))}
         </div>
       </div>

@@ -1,0 +1,9 @@
+.category-bar {
+    display: flex;
+    /* align-items: center; */
+    border-bottom: 1px solid #E8E8E8;
+    font-size: 15px;
+    color: #282828;
+    width: 100%;
+    list-style: none;
+}
