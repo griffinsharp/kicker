@@ -3,7 +3,7 @@ import ProjectIndexItem from "./project_index_item";
 import { Link } from "react-router-dom";
 
 class ProjectIndex extends React.Component {
-    
+
   componentDidMount() {
     this.props.fetchProjects();
   }
@@ -14,7 +14,7 @@ class ProjectIndex extends React.Component {
       <div>
         <div>
           {projects.map(project => (
-            <ProjectIndexItem project={project} fetchProject={fetchProject} />
+            <ProjectIndexItem className="project-index-item" project={project} key={project.id} fetchProject={fetchProject} />
           ))}
         </div>
       </div>

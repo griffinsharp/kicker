@@ -6,7 +6,6 @@ const mapStateToProps = (state, ownProps) => ({
     projects: Object.values(state.entities.projects),
     // errors: state.errors.projects - Prob won't user until the show/edit page or something.
 });
-debugger
 
 const mapDispatchToProps = (dispatch) => ({
     fetchProjects: () => dispatch(fetchProjects()),

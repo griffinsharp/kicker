@@ -6,7 +6,7 @@ class Home extends React.Component {
     render () {
         return(
             <div className="home-container">
-                <div><ProjectIndexContainer/></div>
+                <div><ProjectIndexContainer className="project-index-container"/></div>
             </div>
         )
     }

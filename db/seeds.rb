@@ -11,7 +11,7 @@ Project.destroy_all
 Category.destroy_all
 User.destroy_all
 
-bob = User.create!(email: 'bob@bob.com', password: 'bob123')
+bob = User.create!(email: 'bob@bob.com', password: 'bob123', name: "bob")
 
 
 art = Category.create!(category_name: 'Art')
