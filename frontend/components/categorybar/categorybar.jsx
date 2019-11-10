@@ -4,38 +4,27 @@ import { Link } from "react-router-dom";
 class CategoryBar extends React.Component {
   render() {
     return (
-      <div>
-        <li>
-          <ul>
-            <Link to="/category/arts">Arts</Link>
-          </ul>
-          <ul>
-            <Link to="/category/comics-illustration">Comics & Illustration</Link>
-          </ul>
-          <ul>
-            <Link to="/category/design-tech">Design & Tech</Link>
-          </ul>
+      <div className="category-list">
+          <Link className="cat-list-item" to="/category/arts">Arts</Link>
+        
+          <Link className="cat-list-item" to="/category/comics-illustration">Comics & Illustration</Link>
+        
+          <Link className="cat-list-item" to="/category/design-tech">Design & Tech</Link>
+        
+          <Link className="cat-list-item" to="/category/film">Film</Link>
+        
 
-          <ul>
-            <Link to="/category/film">Film</Link>
-          </ul>
+          <Link className="cat-list-item" to="/category/food-craft">Food & Craft</Link>
+        
 
-          <ul>
-            <Link to="/category/food-craft">Food & Craft</Link>
-          </ul>
+          <Link className="cat-list-item" to="/category/games">Games</Link>
+        
 
-          <ul>
-            <Link to="/category/games">Games</Link>
-          </ul>
+          <Link className="cat-list-item" to="/category/music">Music</Link>
+        
 
-          <ul>
-            <Link to="/category/music">Music</Link>
-          </ul>
-
-          <ul>
-            <Link to="/category/publishing">Publishing</Link>
-          </ul>
-        </li>
+          <Link className="cat-list-item" to="/category/publishing">Publishing</Link>
+        
       </div>
     );
   }

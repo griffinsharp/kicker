@@ -1,21 +1,14 @@
 .home-container {
     width: auto;
     height: 1000px;
-    display: flex;
-}
-
-.project-index-item {
-    display: flex;
+   
 }
 
 .author-name {
     display: flex;
 }
 
-.project-index{
-    display: flex;
-}
-
 .project-index-container {
     display: flex;
+    
 }

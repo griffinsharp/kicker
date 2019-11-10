@@ -1,9 +1,26 @@
+.category-bar-container {
+    border-bottom: 1px solid #E8E8E8;
+}
+
 .category-bar {
     display: flex;
-    /* align-items: center; */
-    border-bottom: 1px solid #E8E8E8;
-    font-size: 15px;
-    color: #282828;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 0;
+    /* add functionality for scroll bar later here with mid width */
+    min-width: 1000px;
+    margin: auto;
+}
+
+.category-list {
+    display: flex;
     width: 100%;
-    list-style: none;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.cat-list-item {
+    margin: 0 20px;
+    color: #656969;
+    font-size: 17px;
 }
