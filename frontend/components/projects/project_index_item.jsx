@@ -14,9 +14,10 @@ class ProjectIndexItem extends React.Component {
 
     return (
       <div>
+        <img classname="featured-pic" src={project.photoURL} alt="" />
         <div className="author-name">By {project.authorName}</div>
         <p className="author">
-          By <Link to={`/projects${key}`}> Kick It</Link>
+          By <Link to={`/projects/${key}`}> Kick It</Link>
         </p>
       </div>
     );

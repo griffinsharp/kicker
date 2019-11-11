@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'open-uri'
+# require 'open-uri'
 Project.destroy_all
 Category.destroy_all
 User.destroy_all
@@ -124,17 +124,25 @@ shoeCreatorProject = Project.create!(title: 'Alex Ports',
         user_id: shoeCreator.id)
 
 
-allBirdsPhoto = open('https://kicker-seed.s3-us-west-1.amazonaws.com/allBirds.png')
+allBirdsPhoto = File.open('app/assets/images/allBirds.png')
 allBirdsProject.photo.attach(io: allBirdsPhoto, filename: 'allBirds.png')
-nikePhoto = open('https://kicker-seed.s3-us-west-1.amazonaws.com/nike.jpeg')
+nikePhoto = File.open('app/assets/images/nike.jpeg')
 nikeProject.photo.attach(io: nikePhoto, filename: 'nike.jpeg')
-adidasPhoto = open('https://kicker-seed.s3-us-west-1.amazonaws.com/adidas.jpeg')
+adidasPhoto = File.open('app/assets/images/adidas.jpeg')
 adidasProject.photo.attach(io: adidasPhoto, filename: 'adidas.jpeg')
-blazerPhoto = open('https://kicker-seed.s3-us-west-1.amazonaws.com/blazer.jpg')
+blazerPhoto = File.open('app/assets/images/blazer.jpg')
 blazerProject.photo.attach(io: blazerPhoto, filename: 'blazer.jpg')
-golfPhoto = open('https://kicker-seed.s3-us-west-1.amazonaws.com/golf.jpg')
+golfPhoto = File.open('app/assets/images/golf.jpg')
 golfProject.photo.attach(io: golfPhoto, filename: 'golf.jpg')
-offWhitePhoto = open('https://kicker-seed.s3-us-west-1.amazonaws.com/offwhite.jpg')
+offWhitePhoto = File.open('app/assets/images/offwhite.jpg')
 offWhiteProject.photo.attach(io: offWhitePhoto, filename: 'offwhite.jpg')
-shoeCreatorPhoto = open('https://kicker-seed.s3-us-west-1.amazonaws.com/shoecreator.jpg')
+shoeCreatorPhoto = File.open('app/assets/images/shoecreator.jpg')
 shoeCreatorProject.photo.attach(io: shoeCreatorPhoto, filename: 'shoecreator.jpg')
+
+allBirdsProject.save!
+nikeProject.save!
+adidasProject.save!
+blazerProject.save!
+golfProject.save!
+offWhiteProject.save!
+shoeCreatorProject.save!

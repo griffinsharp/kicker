@@ -61,7 +61,7 @@ class Api::ProjectsController < ApplicationController
         :about,
         :category_id,
         :user_id,
-        photo: []
+        :photo
         )
     end
 
