@@ -1,6 +1,8 @@
 import React from "react";
 import ProjectIndexItem from "./project_index_item";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 class ProjectIndex extends React.Component {
   constructor(props) {
@@ -28,9 +30,17 @@ class ProjectIndex extends React.Component {
   render() {
     const { projects, fetchProject } = this.props;
     return (
-        <div className="project-bar">
+      <div className="project-bar">
+        <div className="small-header-proj-index">
+          FRESH FAVORITES{" "}
+          <Link className="discover-link" to="/projects/discover">
+            Discover more <FontAwesomeIcon className="arrow-svg" icon={faChevronRight} alt=""/>
+          </Link>
+        </div>
+        <div className="project-index-item-container">
           {projects.map(project => this.projectDisplay(project))}
         </div>
+      </div>
     );
   }
 }

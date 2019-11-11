@@ -30,13 +30,18 @@ class ReccomendedProjectIndexItem extends React.Component {
               />
               <div className="recc-contents">
                 <p className="recc-project-title">{project.title}</p>
-                <p className="funded-amount">{this.percentFunded(project.total_pledged, project.goal_amount)}% funded</p>
+                <p className="funded-amount">
+                  {this.percentFunded(
+                    project.total_pledged,
+                    project.goal_amount
+                  )}
+                  % funded
+                </p>
                 <p className="author-name">By {project.authorName}</p>
               </div>
               <div className="heart-container">
                 <FontAwesomeIcon className="heart" icon={faHeart} />
               </div>
-               
             </div>
           </Link>
         </div>

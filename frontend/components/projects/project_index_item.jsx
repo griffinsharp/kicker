@@ -19,8 +19,10 @@ class ProjectIndexItem extends React.Component {
     return (
       <div className="project-index-item">
         <img className="project-index-item-pic" src={project.photoURL} alt="" />
-        <p className="author">
-          <div className="proj-index-item-title">{project.title}</div>
+        <p className="project-index-item-info">
+          <Link to={`/projects/${project.id}`} className="proj-index-item-title">
+            {project.title}
+          </Link>
           <div className="proj-index-item-subtitle">{project.sub_title}</div>
           <div className="author-name">By {project.authorName}</div>
         </p>
