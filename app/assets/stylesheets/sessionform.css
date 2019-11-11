@@ -112,9 +112,6 @@ input[type=text], input[type=password] {
   outline: none;
   border: 1px solid #DDDDDD;
   -webkit-transition: all 0.30s ease-in-out;
-  -moz-transition: all 0.30s ease-in-out;
-  -ms-transition: all 0.30s ease-in-out;
-  -o-transition: all 0.30s ease-in-out;
 }
 
 input[type=text]:focus, input[type=password]:focus {

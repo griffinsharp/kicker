@@ -1,0 +1,46 @@
+.newsletter-banner-container {
+    height: 246px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-bottom: solid 1px #DCDEDD;
+
+}
+
+.newsletter-banner {
+    padding: 48px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.newsletter-banner .session-type-input {
+    width: 460px;
+    color: #9a9d9d;
+    padding-top: 11px;
+    padding-bottom: 7px;
+}
+
+.newsletter-banner .mid-header {
+    font-family: 'Sorts Mill Goudy', 'Georgia', 'Times New Roman', 'Times', 'serif';
+}
+
+.newsletter-banner > .mid-paragraph {
+    margin: 24px;
+}
+
+.newsletter-inputs {
+    display: flex;
+    justify-content: center;
+}
+
+.session-type-button {
+    border: 0;
+    padding: 11px 20px;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: inherit;
+    margin-left: 18px;
+}

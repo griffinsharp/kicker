@@ -32,7 +32,7 @@ music = Category.create!(category_name: 'Music')
 publishing = Category.create!(category_name: 'Publishing')
 
 
-allBirdsProject = Project.create!(title: 'AllBirds',
+allBirdsProject = Project.create!(title: 'The Dark Verse, Vol. 5: Beneath the Crown of Chaos',
         sub_title: 'shoes',
         total_pledged: 123,
         goal_amount: 1234,
@@ -71,8 +71,8 @@ adidasProject = Project.create!(title: 'Adidas',
         category_id: film.id,
         user_id: adidas.id)
 
-blazerProject = Project.create!(title: 'Blazer',
-        sub_title: 'shoes',
+blazerProject = Project.create!(title: `Findster Home: Your Pets’ Location and Health Monitored 24/7`,
+        sub_title: `Findster Home tracks your pets’ GPS location and activity 24/7, letting you monitor them whether you're home or away. No data fees!`,
         total_pledged: 123,
         goal_amount: 1234,
         num_backers: 1,
@@ -85,7 +85,7 @@ blazerProject = Project.create!(title: 'Blazer',
         user_id: blazer.id)
 
 golfProject = Project.create!(title: 'GOLF',
-        sub_title: 'shoes',
+        sub_title: `Findster Home tracks your pets’ GPS location and activity 24/7, letting you monitor them whether you're home or away. No data fees!`,
         total_pledged: 123,
         goal_amount: 1234,
         num_backers: 1,
@@ -98,7 +98,7 @@ golfProject = Project.create!(title: 'GOLF',
         user_id: golf.id)
 
 offWhiteProject = Project.create!(title: 'Off-White',
-        sub_title: 'shoes',
+        sub_title: `Findster Home tracks your pets’ GPS location and activity 24/7, letting you monitor them whether you're home or away. No data fees!`,
         total_pledged: 123,
         goal_amount: 1234,
         num_backers: 1,
@@ -111,7 +111,7 @@ offWhiteProject = Project.create!(title: 'Off-White',
         user_id: offWhite.id)
 
 shoeCreatorProject = Project.create!(title: 'Alex Ports',
-        sub_title: 'shoes',
+        sub_title: `Findster Home tracks your pets’ GPS location and activity 24/7, letting you monitor them whether you're home or away. No data fees!`,
         total_pledged: 123,
         goal_amount: 1234,
         num_backers: 1,

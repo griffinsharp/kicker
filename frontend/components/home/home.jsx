@@ -4,6 +4,7 @@ import CategoryBar from '../categorybar/categorybar';
 import ReccomendedProjectIndexContainer from '../projects/reccomended_project_index_container';
 import FeaturedProjectContainer from '../projects/featured_project_container';
 import FeaturedPic from "../../../app/assets/images/featured.jpg";
+import CtaPic from "../../../app/assets/images/retro.png";
 import { Link } from "react-router-dom";
 
 class Home extends React.Component {
@@ -37,9 +38,36 @@ class Home extends React.Component {
                   </div>
                 </div>
                 <div className="reccomended-project-container">
-                  <p className="small-header">RECOMMENDED</p>
+                  <p className="small-header-recc">RECOMMENDED</p>
                   <ReccomendedProjectIndexContainer />
                 </div>
+              </div>
+            </div>
+            <div className="newsletter-banner-container">
+              <div className="newsletter-banner">
+                <p className="mid-header">
+                  Discover the best and brightest projects on Kickstarter.
+                </p>
+                <p className="mid-paragraph">
+                  Sign up to receive our weekly Projects We Love newsletter.
+                </p>
+                <div className="newsletter-inputs">
+                  <input
+                    className="session-type-input"
+                    type="text"
+                    value="Enter email address"
+                  />
+                  <input
+                    className="session-type-button"
+                    type="button"
+                    value="Subscribe"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="call-to-action-container">
+              <div className="cta">
+                <img className="cta-pic" src={CtaPic} alt="" />
               </div>
             </div>
             <div className="project-index-container">

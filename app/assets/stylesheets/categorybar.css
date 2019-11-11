@@ -7,6 +7,7 @@
     flex-direction: column;
     justify-content: center;
     padding: 20px 0;
+    padding-bottom: 22px;
     /* add functionality for scroll bar later here with mid width */
     min-width: 1000px;
     margin: auto;
@@ -21,6 +22,6 @@
 
 .cat-list-item {
     margin: 0 20px;
-    color: #656969;
+    color: #7e8383;
     font-size: 17px;
 }

@@ -14,7 +14,7 @@ class ProjectIndex extends React.Component {
 
   // First project (id of 0) is featured. The next 3 are reccomended. After that, they are just in the banners.
   projectDisplay(project) {
-    if (project.id > 3) {
+    if (project.id > 3 && project.id < 8) {
       return (
         <ProjectIndexItem
           project={project}

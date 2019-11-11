@@ -8,16 +8,21 @@ class ProjectIndexItem extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+
+  }
+
   render() {
     
     const {project, key} = this.props;
 
     return (
-      <div>
-        <img classname="featured-pic" src={project.photoURL} alt="" />
-        <div className="author-name">By {project.authorName}</div>
+      <div className="project-index-item">
+        <img className="project-index-item-pic" src={project.photoURL} alt="" />
         <p className="author">
-          By <Link to={`/projects/${key}`}> Kick It</Link>
+          <div className="proj-index-item-title">{project.title}</div>
+          <div className="proj-index-item-subtitle">{project.sub_title}</div>
+          <div className="author-name">By {project.authorName}</div>
         </p>
       </div>
     );

@@ -11,7 +11,7 @@
     color: #282828;
     padding: 0 60px;
     max-width: 1366px;
-    padding-bottom: 60px;
+    padding-bottom: 95px;
     margin-top: 25px;
 }
 
@@ -72,12 +72,12 @@
 
 .author {
     font-size: 13px;
-    color: #656969;
+    color: #7e8383;
 }
 
 .author a {
     font-size: 13px;
-    color: #656969;
+    color: #7e8383;
 }
 
 .featured-project .author a:hover {

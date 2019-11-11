@@ -27,24 +27,28 @@ class Navbar extends React.Component {
             );
         }
 
-        return(
-            <div className="navbar">
-                <div className="left-bar">
-                    <p className="nav-link">Explore</p>
-                    <p className="nav-link">Start a project</p>
-                </div>
-                <div className="logo-bar">
-                    <Link to="/" className="nav-link">
-                    <img className="logo-img" src={Logo} alt="logo"/></Link>
-                </div>
-                <div className="right-bar">
-                    <div className='nav-link'>
-                        <Link to="/search" className="link">Search  <FontAwesomeIcon className="" icon={faSearch} /></Link>
-                    </div>
-                        {stateButton}
-                </div>
+        return (
+          <div className="navbar">
+            <div className="left-bar">
+              <p className="nav-link">Explore</p>
+              <p className="nav-link">Start a project</p>
             </div>
-        )
+            <div className="logo-bar">
+              <Link to="/" className="nav-link">
+                <img className="logo-img" src={Logo} alt="logo" />
+              </Link>
+            </div>
+            <div className="right-bar">
+              <div className="nav-link">
+                <Link to="/search" className="link">
+                  Search{" "}
+                  <FontAwesomeIcon className="search-icon" icon={faSearch} />
+                </Link>
+              </div>
+              {stateButton}
+            </div>
+          </div>
+        );
     }
 }
 

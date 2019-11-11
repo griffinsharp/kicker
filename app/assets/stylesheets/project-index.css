@@ -1,0 +1,22 @@
+.project-index-container {
+    height: 336px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: horizontal;
+}
+
+.project-bar {
+    display: flex;
+}
+
+.project-index-item {
+    
+}
+
+
+.project-index-item-pic {
+    height: 170px;
+    width: 295px;
+    object-fit: cover;
+}

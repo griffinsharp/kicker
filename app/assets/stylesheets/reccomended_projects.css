@@ -1,0 +1,77 @@
+.small-header-recc {
+    color: #656969;
+    font-size: 13.5px;
+    font-weight: bold;
+}
+
+.reccomended-project-bar {
+    
+
+}
+
+
+.recc-project-index-item {
+    border-bottom: solid 1px #DCDEDD;
+}
+
+.recc-pic-and-body {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 19px;
+    padding-top: 19px;
+}
+
+.recc-contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.recc-project-title {
+    font-size: 16px;
+}
+
+
+.recc-project-title:hover {
+    color: #037362;
+    text-decoration: underline;
+}
+
+.funded-amount {
+    color: #037362;
+    margin-top: 12px;
+    font-family: Helvetica Neue;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.heart-container {
+     width: auto;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 7px;
+}
+
+.heart {
+    font-size: 19px;
+    color: #DCDEDD;
+}
+
+.heart:hover {
+    color: #282828;
+}
+
+.author-name {
+    color: #7e8383;
+}
+
+.recc-project-index-item-pic{
+    height: 90px;
+    width: 160px;
+    object-fit: cover;
+    padding-right: 24px;
+    
+}

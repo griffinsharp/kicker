@@ -12,7 +12,7 @@ class FeaturedProject extends React.Component {
     // debugger
 
     return (
-      <div className="project-bar">By {author}</div>
+      <div className="">By {author}</div>
     );
   }
 }
