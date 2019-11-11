@@ -23,4 +23,11 @@ class Project < ApplicationRecord
     through: :backings,
     source: :user
 
+    has_one_attached :photo
+
 end
+
+
+
+
+

@@ -60,7 +60,8 @@ class Api::ProjectsController < ApplicationController
         :campaign,
         :about,
         :category_id,
-        :user_id
+        :user_id,
+        photo: []
         )
     end
 

@@ -6,15 +6,23 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+require 'open-uri'
 Project.destroy_all
 Category.destroy_all
 User.destroy_all
 
-bob = User.create!(email: 'bob@bob.com', password: 'bob123', name: "bob")
+demo = User.create!(email: 'demouser@demo.com', password: 'demo123', name: "Demo User")
+allBirds = User.create!(email: 'allBirds@bob.com', password: 'allbirds123', name: "All Birds")
+nike = User.create!(email: 'nike@bob.com', password: 'nike123', name: "Nike")
+adidas = User.create!(email: 'adidas@bob.com', password: 'adidas123', name: "Adidas")
+blazer = User.create!(email: 'blazer@bob.com', password: 'blazer123', name: "Blazer")
+golf = User.create!(email: 'golf@bob.com', password: 'golf123', name: "Golf")
+offWhite = User.create!(email: 'offWhite@bob.com', password: 'offwhite123', name: "Off-White")
+shoeCreator = User.create!(email: 'shoeCreator@bob.com', password: 'shoecreator123', name: "Alex Ports")
 
 
-art = Category.create!(category_name: 'Art')
+
+art = Category.create!(category_name: 'Art') 
 comics_ill = Category.create!(category_name: 'Comics & Illustration') 
 design_tech = Category.create!(category_name: 'Design & Tech')
 film = Category.create!(category_name: 'Film')
@@ -24,8 +32,7 @@ music = Category.create!(category_name: 'Music')
 publishing = Category.create!(category_name: 'Publishing')
 
 
-
-allBirds = Project.create!(title: 'AllBirds',
+allBirdsProject = Project.create!(title: 'AllBirds',
         sub_title: 'shoes',
         total_pledged: 123,
         goal_amount: 1234,
@@ -36,9 +43,9 @@ allBirds = Project.create!(title: 'AllBirds',
         campaign: 'test',
         about: 'test',
         category_id: art.id,
-        user_id: bob.id)
+        user_id: allBirds.id)
 
-nike = Project.create!(title: 'Nike',
+nikeProject = Project.create!(title: 'Nike',
         sub_title: 'shoes',
         total_pledged: 123,
         goal_amount: 1234,
@@ -49,9 +56,9 @@ nike = Project.create!(title: 'Nike',
         campaign: 'test',
         about: 'test',
         category_id: games.id,
-        user_id: bob.id)
+        user_id: nike.id)
 
-adidas = Project.create!(title: 'Adidas',
+adidasProject = Project.create!(title: 'Adidas',
         sub_title: 'shoes',
         total_pledged: 123,
         goal_amount: 1234,
@@ -62,9 +69,9 @@ adidas = Project.create!(title: 'Adidas',
         campaign: 'test',
         about: 'test',
         category_id: film.id,
-        user_id: bob.id)
+        user_id: adidas.id)
 
-jordan = Project.create!(title: 'Jordan',
+blazerProject = Project.create!(title: 'Blazer',
         sub_title: 'shoes',
         total_pledged: 123,
         goal_amount: 1234,
@@ -75,4 +82,59 @@ jordan = Project.create!(title: 'Jordan',
         campaign: 'test',
         about: 'test',
         category_id: music.id,
-        user_id: bob.id)
+        user_id: blazer.id)
+
+golfProject = Project.create!(title: 'GOLF',
+        sub_title: 'shoes',
+        total_pledged: 123,
+        goal_amount: 1234,
+        num_backers: 1,
+        days_left: 2,
+        loved: true,
+        location: 'Chicago',
+        campaign: 'test',
+        about: 'test',
+        category_id: music.id,
+        user_id: golf.id)
+
+offWhiteProject = Project.create!(title: 'Off-White',
+        sub_title: 'shoes',
+        total_pledged: 123,
+        goal_amount: 1234,
+        num_backers: 1,
+        days_left: 2,
+        loved: true,
+        location: 'Chicago',
+        campaign: 'test',
+        about: 'test',
+        category_id: music.id,
+        user_id: offWhite.id)
+
+shoeCreatorProject = Project.create!(title: 'Alex Ports',
+        sub_title: 'shoes',
+        total_pledged: 123,
+        goal_amount: 1234,
+        num_backers: 1,
+        days_left: 2,
+        loved: true,
+        location: 'Chicago',
+        campaign: 'test',
+        about: 'test',
+        category_id: music.id,
+        user_id: shoeCreator.id)
+
+
+allBirdsPhoto = open('https://kicker-seed.s3-us-west-1.amazonaws.com/allBirds.png')
+allBirdsProject.photo.attach(io: allBirdsPhoto, filename: 'allBirds.png')
+nikePhoto = open('https://kicker-seed.s3-us-west-1.amazonaws.com/nike.jpeg')
+nikeProject.photo.attach(io: nikePhoto, filename: 'nike.jpeg')
+adidasPhoto = open('https://kicker-seed.s3-us-west-1.amazonaws.com/adidas.jpeg')
+adidasProject.photo.attach(io: adidasPhoto, filename: 'adidas.jpeg')
+blazerPhoto = open('https://kicker-seed.s3-us-west-1.amazonaws.com/blazer.jpg')
+blazerProject.photo.attach(io: blazerPhoto, filename: 'blazer.jpg')
+golfPhoto = open('https://kicker-seed.s3-us-west-1.amazonaws.com/golf.jpg')
+golfProject.photo.attach(io: golfPhoto, filename: 'golf.jpg')
+offWhitePhoto = open('https://kicker-seed.s3-us-west-1.amazonaws.com/offwhite.jpg')
+offWhiteProject.photo.attach(io: offWhitePhoto, filename: 'offwhite.jpg')
+shoeCreatorPhoto = open('https://kicker-seed.s3-us-west-1.amazonaws.com/shoecreator.jpg')
+shoeCreatorProject.photo.attach(io: shoeCreatorPhoto, filename: 'shoecreator.jpg')

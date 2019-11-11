@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class ReccomendedProjectIndexItem extends React.Component {
   constructor(props) {
@@ -7,9 +8,17 @@ class ReccomendedProjectIndexItem extends React.Component {
   }
 
   render() {
-    const { project } = this.props;
+    const { projectId, project } = this.props;
 
-    return <div className="reccomended-author-name">By {project.authorName}</div>;
+    return (
+      <div>
+        <div className="author">
+          <Link to={`/projects/${projectId}`}>
+            <p className="author-name">By {project.authorName}</p>
+          </Link>
+        </div>
+      </div>
+    );
   }
 }
 
