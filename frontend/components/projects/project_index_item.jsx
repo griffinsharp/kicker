@@ -8,9 +8,7 @@ class ProjectIndexItem extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
 
-  }
 
   render() {
     
@@ -20,11 +18,17 @@ class ProjectIndexItem extends React.Component {
       <div className="project-index-item">
         <img className="project-index-item-pic" src={project.photoURL} alt="" />
         <p className="project-index-item-info">
-          <Link to={`/projects/${project.id}`} className="proj-index-item-title">
+          <Link
+            to={`/projects/${project.id}`}
+            className="proj-index-item-title"
+          >
             {project.title}
           </Link>
           <div className="proj-index-item-subtitle">{project.sub_title}</div>
-          <div className="author-name">By {project.authorName}</div>
+          <p className="author">
+            By <Link to={`/projects/${project.id}`}>{project.authorName}</Link>
+          </p>
+          {/* <div className="author-name">By {project.authorName}</div> */}
         </p>
       </div>
     );
