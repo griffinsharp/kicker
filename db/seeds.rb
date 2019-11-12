@@ -7,7 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-#  
+# destroy smallest to biggest
+# create biggest to smallest
 
 Reward.destroy_all
 Project.destroy_all
@@ -163,3 +164,6 @@ blazerProject.save!
 golfProject.save!
 offWhiteProject.save!
 shoeCreatorProject.save!
+
+reward1KickIt = Reward.create!(amount: 20, desc: "test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 45, project_id: 8) 
+reward2KickIt = Reward.create!(amount: 50, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 90, project_id: 8) 

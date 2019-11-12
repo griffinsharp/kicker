@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
+import RewardIndex from "../../rewards/reward_index";
 
 class ProjectShow extends React.Component {
 
@@ -17,6 +18,8 @@ class ProjectShow extends React.Component {
         // On the first render of a refresh (not navigated to via the HomeComponent),
         // we want to return null so that our componentDidMount has a chance to fetch the correct project.
         if (!this.props.project) return null;
+        if (!this.props.project.rewards) return null;
+       
         
         const { project } = this.props;
 
@@ -26,6 +29,11 @@ class ProjectShow extends React.Component {
         } else {
             loved = "hidden";
         }
+
+        let futureDate = new Date();
+        futureDate.setDate(futureDate.getDate() + project.days_left);
+        futureDate.setMinutes(0);
+        futureDate.setSeconds(0);
 
         return (
           <div className="project-show-container">
@@ -44,7 +52,7 @@ class ProjectShow extends React.Component {
                 <div>favicons!!!</div>
                 <p>
                   All or nothing. This project will only be funded if it reaches
-                  its goal by Fri, April 15 2020 8:59 PM PST.{" "}
+                  its goal by {futureDate.toString()}
                 </p>
                 <div className={loved}>Project We Love</div>
                 <div>{project.category}</div>
@@ -58,11 +66,15 @@ class ProjectShow extends React.Component {
             <div className="project-content-container">
               <div className="project-content">
                 <div className="campaign-content-container">About</div>
-                    <div className="info-and-rewards-container">
-                        <div className="user-info-container">{project.authorName}</div>
-                        <div className="reward-header"> Support</div>
-                        <div className="reward-component">Reward Component</div>
-                    </div>
+                <div className="info-and-rewards-container">
+                  <div className="user-info-container">
+                    {project.authorName}
+                  </div>
+                  <div className="reward-header"> Support</div>
+                  <RewardIndex
+                    rewards={Object.values(project.rewards)}
+                  />
+                </div>
               </div>
             </div>
           </div>
