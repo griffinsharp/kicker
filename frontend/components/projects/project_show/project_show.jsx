@@ -13,7 +13,9 @@ class ProjectShow extends React.Component {
     }
 
     render() {
-
+       
+        // On the first render of a refresh (not navigated to via the HomeComponent),
+        // we want to return null so that our componentDidMount has a chance to fetch the correct project.
         if (!this.props.project) return null;
         
         const { project } = this.props;
@@ -41,6 +43,7 @@ class ProjectShow extends React.Component {
                 {/* add your favicons here */}
                 <p>All or nothing. This project will only be funded if it reaches its goal by Fri, April 15 2020 8:59 PM PST. </p>
                 <div className={loved}>Project We Love</div>
+                <div></div>
                 
             </div>
           </div>

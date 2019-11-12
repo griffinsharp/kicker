@@ -12,11 +12,17 @@ export const receiveProjects = projects => ({
     projects
 });
 
-export const receiveProject = ({project, user}) => ({
+export const receiveProject = ({project}) => ({
     type: RECEIVE_PROJECT,
-    project,
-    user
+    project
 });
+
+// Can delete later:
+// export const receiveProject = ({ project, user }) => ({
+//     type: RECEIVE_PROJECT,
+//     project,
+//     user
+// });
 
 export const removeProject = projectId => ({
     type: REMOVE_PROJECT,
