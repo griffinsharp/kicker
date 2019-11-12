@@ -12,9 +12,10 @@ export const receiveProjects = projects => ({
     projects
 });
 
-export const receiveProject = ({project}) => ({
+export const receiveProject = (payload) => ({
     type: RECEIVE_PROJECT,
-    project
+    payload
+    // payload will have project and rewards (show.json.jbuilder)
 });
 
 // Can delete later:

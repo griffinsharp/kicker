@@ -20,7 +20,7 @@ golf = User.create!(email: 'golf@bob.com', password: 'golf123', name: "Golf")
 offWhite = User.create!(email: 'offWhite@bob.com', password: 'offwhite123', name: "Off-White")
 shoeCreator = User.create!(email: 'shoeCreator@bob.com', password: 'shoecreator123', name: "Alex Ports")
 kickIt = User.create!(email: 'kickit@bob.com', password: 'kickit123', name: "Kick It")
-
+ 
 art = Category.create!(category_name: 'Art') 
 comics_ill = Category.create!(category_name: 'Comics & Illustration') 
 design_tech = Category.create!(category_name: 'Design & Tech')
