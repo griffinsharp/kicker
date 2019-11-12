@@ -19,7 +19,7 @@ blazer = User.create!(email: 'blazer@bob.com', password: 'blazer123', name: "Bla
 golf = User.create!(email: 'golf@bob.com', password: 'golf123', name: "Golf")
 offWhite = User.create!(email: 'offWhite@bob.com', password: 'offwhite123', name: "Off-White")
 shoeCreator = User.create!(email: 'shoeCreator@bob.com', password: 'shoecreator123', name: "Alex Ports")
-
+kickIt = User.create!(email: 'kickit@bob.com', password: 'kickit123', name: "Kick It")
 
 art = Category.create!(category_name: 'Art') 
 comics_ill = Category.create!(category_name: 'Comics & Illustration') 
@@ -122,6 +122,19 @@ shoeCreatorProject = Project.create!(title: 'Alex Ports',
         category_id: music.id,
         user_id: shoeCreator.id)
 
+kickItProject = Project.create!(title: 'Can I Kick It?',
+        sub_title: "Yes, you can. Introducing, Kick It. The newest app for buying, selling, and trading your favorite sneakers all from your smartphone.",
+        total_pledged: 123,
+        goal_amount: 1234,
+        num_backers: 1,
+        days_left: 2,
+        loved: true,
+        location: 'Chicago',
+        campaign: 'test',
+        about: 'test',
+        category_id: music.id,
+        user_id: kickIt.id)
+
 
 allBirdsPhoto = File.open('app/assets/images/allBirds.png')
 allBirdsProject.photo.attach(io: allBirdsPhoto, filename: 'allBirds.png')
@@ -137,6 +150,8 @@ offWhitePhoto = File.open('app/assets/images/offwhite.jpg')
 offWhiteProject.photo.attach(io: offWhitePhoto, filename: 'offwhite.jpg')
 shoeCreatorPhoto = File.open('app/assets/images/shoecreator.jpg')
 shoeCreatorProject.photo.attach(io: shoeCreatorPhoto, filename: 'shoecreator.jpg')
+kickItPhoto = File.open('app/assets/images/featured.jpg')
+kickItProject.photo.attach(io: kickItPhoto, filename: 'featured.jpg')
 
 allBirdsProject.save!
 nikeProject.save!

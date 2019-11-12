@@ -24,7 +24,7 @@ class Home extends React.Component {
                   <div className="featured-project">
                     <p className="small-header">FEATURED PROJECT</p>
                     <img className="featured-pic" src={FeaturedPic} />
-                    <Link to="/projects/0" className="mid-header">
+                    <Link to="/projects/8" className="mid-header">
                       Can I Kick It?
                     </Link>
                     <p className="mid-paragraph">
@@ -33,7 +33,7 @@ class Home extends React.Component {
                       from your smartphone.
                     </p>
                     <p className="author">
-                      By <Link to="/projects/0"> Kick It</Link>
+                      By <Link to="/projects/8"> Kick It</Link>
                     </p>
                   </div>
                 </div>

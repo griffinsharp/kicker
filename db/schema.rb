@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_10_223104) do
+ActiveRecord::Schema.define(version: 2019_11_12_065301) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,7 +62,6 @@ ActiveRecord::Schema.define(version: 2019_11_10_223104) do
     t.integer "goal_amount", null: false
     t.integer "num_backers", null: false
     t.integer "days_left", null: false
-    t.boolean "loved"
     t.string "location", null: false
     t.text "campaign", null: false
     t.text "about", null: false
@@ -70,6 +69,7 @@ ActiveRecord::Schema.define(version: 2019_11_10_223104) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "loved", default: false, null: false
     t.index ["category_id"], name: "index_projects_on_category_id"
     t.index ["title"], name: "index_projects_on_title", unique: true
     t.index ["user_id"], name: "index_projects_on_user_id"
