@@ -21,7 +21,6 @@ offWhite = User.create!(email: 'offWhite@bob.com', password: 'offwhite123', name
 shoeCreator = User.create!(email: 'shoeCreator@bob.com', password: 'shoecreator123', name: "Alex Ports")
 
 
-
 art = Category.create!(category_name: 'Art') 
 comics_ill = Category.create!(category_name: 'Comics & Illustration') 
 design_tech = Category.create!(category_name: 'Design & Tech')

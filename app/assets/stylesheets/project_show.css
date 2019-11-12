@@ -1,0 +1,13 @@
+.project-summary-section {
+    display: flex;
+    justify-content: center;
+    border-bottom: solid 1px #DCDEDD;
+    background-color: #fbfbfa;
+}
+
+.project-summary-container {
+    min-width: 890px;
+    min-height: 645px;
+    margin: 0 auto;
+    padding: 0 60px;
+}

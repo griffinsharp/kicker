@@ -59,7 +59,7 @@ class Home extends React.Component {
                   />
                   <input
                     className="session-type-button"
-                    type="button"
+                    type="submit"
                     value="Subscribe"
                   />
                 </div>
