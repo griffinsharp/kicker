@@ -28,23 +28,42 @@ class ProjectShow extends React.Component {
         }
 
         return (
-          <div className="project-summary-section">
-            <div className="project-summary-container">
+          <div className="project-show-container">
+            <div className="project-summary-section">
+              <div className="project-summary-container">
                 <p>{project.title}</p>
                 <p>{project.sub_title}</p>
-                <img src={project.photoURL} alt=""/>
+                <img src={project.photoURL} alt="" />
                 <p>
-                {project.total_pledged} pledged of {project.goal_amount} goal
-                 </p>
+                  {project.total_pledged} pledged of {project.goal_amount} goal
+                </p>
                 <p>{project.num_backers} backers</p>
                 <p>{project.days_left} days to go</p>
-                <input type="submit" value="Back this project"/>
-                <input type="submit" value="Remind me"/>
-                {/* add your favicons here */}
-                <p>All or nothing. This project will only be funded if it reaches its goal by Fri, April 15 2020 8:59 PM PST. </p>
+                <input type="submit" value="Back this project" />
+                <input type="submit" value="Remind me" />
+                <div>favicons!!!</div>
+                <p>
+                  All or nothing. This project will only be funded if it reaches
+                  its goal by Fri, April 15 2020 8:59 PM PST.{" "}
+                </p>
                 <div className={loved}>Project We Love</div>
-                <div></div>
-                
+                <div>{project.category}</div>
+                <div>{project.location}</div>
+              </div>
+            </div>
+            <div className="project-nav-bar">
+              <div className="campaign-tab">Campaign</div>
+              {/* Can add other tabs here later! */}
+            </div>
+            <div className="project-content-container">
+              <div className="project-content">
+                <div className="campaign-content-container">About</div>
+                    <div className="info-and-rewards-container">
+                        <div className="user-info-container">{project.authorName}</div>
+                        <div className="reward-header"> Support</div>
+                        <div className="reward-component">Reward Component</div>
+                    </div>
+              </div>
             </div>
           </div>
         );
