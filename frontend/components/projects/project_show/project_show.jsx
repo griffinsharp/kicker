@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import RewardIndex from "../../rewards/reward_index";
+import Odometer from 'react-odometerjs';
+
 
 class ProjectShow extends React.Component {
 
@@ -36,15 +38,16 @@ class ProjectShow extends React.Component {
         futureDate.setSeconds(0);
 
         return (
+        <div>
           <div className="project-show-container">
             <div className="project-summary-section">
               <div className="project-summary-container">
                 <p>{project.title}</p>
                 <p>{project.sub_title}</p>
                 <img src={project.photoURL} alt="" />
-                <p>
-                  {project.total_pledged} pledged of {project.goal_amount} goal
-                </p>
+                <div>
+                    <Odometer value={project.total_pledged} format="(.ddd),dd" /> pledged of {project.goal_amount} goal
+                </div>
                 <p>{project.num_backers} backers</p>
                 <p>{project.days_left} days to go</p>
                 <input type="submit" value="Back this project" />
@@ -81,6 +84,7 @@ class ProjectShow extends React.Component {
               </div>
             </div>
           </div>
+        </div>
         );
        
     }
