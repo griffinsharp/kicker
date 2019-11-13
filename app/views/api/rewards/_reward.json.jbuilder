@@ -1,1 +1,1 @@
-json.extract! reward, :amount, :desc, :subdesc, :delivery, :shipping, :num_backers, :project_id
+json.extract! reward, :id, :amount, :desc, :subdesc, :delivery, :shipping, :num_backers, :project_id

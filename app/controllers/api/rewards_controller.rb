@@ -31,6 +31,6 @@ class Api::RewardsController < ApplicationController
     private
 
     def reward_params
-        params.require(:reward).permit( vv)
+        params.require(:reward).permit(:amount, :desc, :subdesc, :delivery, :shipping, :num_backers, :project_id)
     end
 end

@@ -4,7 +4,7 @@ export const RECEIVE_PROJECTS = "RECEIVE_PROJECTS";
 export const RECEIVE_PROJECT = "RECEIVE_PROJECT";
 export const REMOVE_PROJECT = "REMOVE_PROJECT";
 export const RECEIVE_PROJECT_ERRORS = "RECEIVE_PROJECT_ERRORS"
-
+export const RECEIVE_BACKING = "RECEIVE_BACKING";
 // regular action creators
 
 export const receiveProjects = projects => ({
@@ -18,21 +18,19 @@ export const receiveProject = (payload) => ({
     // payload will have project and rewards (show.json.jbuilder)
 });
 
-// Can delete later:
-// export const receiveProject = ({ project, user }) => ({
-//     type: RECEIVE_PROJECT,
-//     project,
-//     user
-// });
-
 export const removeProject = projectId => ({
-    type: REMOVE_PROJECT,
+    type: REMOVE_PROJECT, 
     projectId
 });
 
 export const receiveProjectErrors = (errors) => ({
     type: RECEIVE_PROJECT_ERRORS,
     errors
+});
+
+export const receiveBacking = (payload) => ({
+    type: RECEIVE_BACKING,
+    payload
 });
 
 // thunk action creators
@@ -61,3 +59,8 @@ export const deleteProject = (projectId) => dispatch => {
     return APIUtil.deleteProject(projectId)
     .then((projectId) => dispatch(removeProject(projectId)));
 };
+
+export const createBacking = (backing) => dispatch => {
+    return APIUtil.createBacking(backing)
+    .then((backing) => dispatch(receiveBacking(backing)));
+}

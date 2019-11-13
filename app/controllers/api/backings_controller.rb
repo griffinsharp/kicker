@@ -10,7 +10,7 @@ class Api::BackingsController < ApplicationController
         @backing.user_id = current_user.id
         
         if @backing.save!
-            render '/api/backings/show'
+            render 'api/backings/show'
         else
             render json: @backing.errors.full_messages, status: 422
         end

@@ -7,9 +7,11 @@ class RewardIndex extends React.Component {
         super(props);
     }
 
+    
+
     render() {
 
-        const {rewards} = this.props;
+        const {rewards, createBacking, user, project} = this.props;
         return (
           <div>
             <div className="no-reward-pledge">
@@ -18,7 +20,7 @@ class RewardIndex extends React.Component {
               <input type="submit" value="Continue" />
             </div>
             {rewards.map(reward => (
-              <RewardIndexItem reward={reward} />
+              <RewardIndexItem reward={reward} createBacking={createBacking} user={user} project={project}/>
             ))}
           </div>
         );

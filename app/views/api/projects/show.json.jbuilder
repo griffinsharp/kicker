@@ -12,3 +12,4 @@ json.rewards do
         end
     end
 end
+

@@ -42,3 +42,11 @@ export const deleteProject = projectId => (
         method: `DELETE`
     })
 );
+
+export const createBacking = backing => (
+    $.ajax({
+        url: `api/backings`,
+        method: `POST`,
+        data: { backing }
+    })
+)

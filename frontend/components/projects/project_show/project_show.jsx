@@ -21,7 +21,7 @@ class ProjectShow extends React.Component {
         if (!this.props.project.rewards) return null;
        
         
-        const { project } = this.props;
+        const { project, createBacking, user } = this.props;
 
         let loved;
         if (this.props.project.loved === true) {
@@ -73,6 +73,9 @@ class ProjectShow extends React.Component {
                   <div className="reward-header"> Support</div>
                   <RewardIndex
                     rewards={Object.values(project.rewards)}
+                    createBacking={createBacking}
+                    user={user}
+                    project={project}
                   />
                 </div>
               </div>
