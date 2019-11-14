@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import RewardIndex from "../../rewards/reward_index";
 import Odometer from 'react-odometerjs';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 class ProjectShow extends React.Component {
 
@@ -72,8 +75,14 @@ class ProjectShow extends React.Component {
                       <p className="main-text light-grey">{project.days_left}</p>
                       <p className="light-grey sub-text">days to go</p>
                       <input type="submit" value="Back this project" className="backing-btn"/>
-                      <input type="submit" value="Remind me" />
-                      <div>favicons!!!</div>
+                     <div className="remind-and-favs">
+                        <input type="submit" value="Remind me" className="project-remind-btn"/>
+                        <div className="social-icons-container">
+                          <div className="social-icons"><FontAwesomeIcon icon={faGithub} alt="github-icon"/></div>
+                          <div className="social-icons"><FontAwesomeIcon icon={faLinkedin} alt="linkedin-icon" /></div>
+                          <div className="social-icons"><FontAwesomeIcon icon={faEnvelope} alt="envelope-icon" /></div>
+                        </div>
+                      </div>
                       <p>
                         All or nothing. This project will only be funded if it reaches
                         its goal by {futureDate.toString()}
@@ -89,18 +98,18 @@ class ProjectShow extends React.Component {
             </div>
             <div className="project-nav-bar">
               <div className="campaign-tab">Campaign</div>
-              {/* Can add other tabs here later! */}
+              {project.campaign}
             </div>
             <div className="project-content-container">
               <div className="project-content">
                 <div className="campaign-content-container">About</div>
+                  {project.about}
                 <div className="info-and-rewards-container">
                   <div className="user-info-container">
                     {project.authorName}
                   </div>
                   <div className="reward-header"> Support</div>
                   <RewardIndex
-                    // rewards={Object.values(project.rewards)}
                     createBacking={createBacking}
                     fetchProject={fetchProject}
                     user={user}

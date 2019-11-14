@@ -100,9 +100,51 @@
 .backing-btn {
     background-color: #009E74;
     color: #FFF;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
-    padding: 18px;
+    padding: 13px;
     width: 100%;
     display: block;
+    font-family: 'Didact Gothic', 'Helvetica Neue', 'sans-serif', 'Helvetica', 'Arial', 'sans-serif';
+    margin-top: 29px;
+    -webkit-transition: all 0.30s ease-in-out;
+}
+
+.backing-btn:hover {
+    background-color: #007460;
+    
+}
+
+.project-remind-btn {
+    border: 1px #dcdedd solid;
+    padding: 11px 20px;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    -webkit-transition: all 0.30s ease-in-out;
+}
+
+.project-remind-btn:hover {
+    border: 1px #282828 solid;
+    
+}
+
+.remind-and-favs {
+    display: flex;
+    
+}
+
+.social-icons-container {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   margin: auto;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    margin: 0 15`px;
 }
