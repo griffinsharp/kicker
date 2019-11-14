@@ -19,7 +19,7 @@ Rails.application.configure do
   # config.require_master_key = true
 
   # Disable serving static files from the `/public` folder by default since
-  # Apache or NGINX already handles this.
+  # Apache or NGINX already handles this.y
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   # Compress JavaScripts and CSS.
