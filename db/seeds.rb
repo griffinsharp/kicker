@@ -9,6 +9,7 @@
 
 # destroy smallest to biggest
 # create biggest to smallest
+require 'open-uri'
 
 Backing.destroy_all
 Reward.destroy_all
@@ -141,7 +142,7 @@ kickItProject = Project.create!(title: 'Can I Kick It?',
         user_id: kickIt.id)
 
 
-allBirdsPhoto = File.open('app/assets/images/allBirds.png')
+allBirdsPhoto = open('https://kicker-seed.s3-us-west-1.amazonaws.com/allBirds.png')
 allBirdsProject.photo.attach(io: allBirdsPhoto, filename: 'allBirds.png')
 nikePhoto = File.open('app/assets/images/nike.jpeg')
 nikeProject.photo.attach(io: nikePhoto, filename: 'nike.jpeg')
