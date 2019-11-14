@@ -4,6 +4,7 @@ export const RECEIVE_PROJECTS = "RECEIVE_PROJECTS";
 export const RECEIVE_PROJECT = "RECEIVE_PROJECT";
 export const REMOVE_PROJECT = "REMOVE_PROJECT";
 export const RECEIVE_PROJECT_ERRORS = "RECEIVE_PROJECT_ERRORS"
+export const RECEIVE_BACKING_ERRORS = "RECEIVE_BACKING_ERRORS";
 export const RECEIVE_BACKING = "RECEIVE_BACKING";
 // regular action creators
 
@@ -31,6 +32,11 @@ export const receiveProjectErrors = (errors) => ({
 export const receiveBacking = (payload) => ({
     type: RECEIVE_BACKING,
     payload
+});
+
+export const receiveBackingErrors = (errors) => ({
+    type: RECEIVE_BACKING_ERRORS,
+    errors
 });
 
 // thunk action creators

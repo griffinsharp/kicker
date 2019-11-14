@@ -10,6 +10,7 @@
 # destroy smallest to biggest
 # create biggest to smallest
 
+Backing.destroy_all
 Reward.destroy_all
 Project.destroy_all
 Category.destroy_all
@@ -165,5 +166,6 @@ golfProject.save!
 offWhiteProject.save!
 shoeCreatorProject.save!
 
+reward0KickIt = Reward.create!(amount: 10, desc: "test test test test", subdesc: "test test test test test", delivery: "Tomorrow", shipping: "International", num_backers: 48, project_id: 8)  
 reward1KickIt = Reward.create!(amount: 20, desc: "test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 45, project_id: 8) 
-reward2KickIt = Reward.create!(amount: 50, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 90, project_id: 8) 
+reward2KickIt = Reward.create!(amount: 50, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 90, project_id: 8)

@@ -16,6 +16,3 @@ const usersReducer = (oldState = {}, action) => {
 
 export default usersReducer;
 
-// entities: {
-// users: { }
-//   },

@@ -31,7 +31,7 @@ class Navbar extends React.Component {
           <div className="navbar">
             <div className="left-bar">
               <p className="nav-link">Explore</p>
-              <p className="nav-link">Start a project</p>
+              <Link to="/projects/new" className="nav-link">Start a project</Link>
             </div>
             <div className="logo-bar">
               <Link to="/" className="nav-link">

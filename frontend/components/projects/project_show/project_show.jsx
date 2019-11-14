@@ -20,10 +20,8 @@ class ProjectShow extends React.Component {
         // On the first render of a refresh (not navigated to via the HomeComponent),
         // we want to return null so that our componentDidMount has a chance to fetch the correct project.
         if (!this.props.project) return null;
-        if (!this.props.project.rewards) return null;
-       
-        
-        const { project, createBacking, user } = this.props;
+         
+        const { fetchProject, project, createBacking, user, errors, rewards } = this.props;
 
         let loved;
         if (this.props.project.loved === true) {
@@ -36,7 +34,7 @@ class ProjectShow extends React.Component {
         futureDate.setDate(futureDate.getDate() + project.days_left);
         futureDate.setMinutes(0);
         futureDate.setSeconds(0);
-
+        
         return (
         <div>
           <div className="project-show-container">
@@ -46,9 +44,9 @@ class ProjectShow extends React.Component {
                 <p>{project.sub_title}</p>
                 <img src={project.photoURL} alt="" />
                 <div>
-                    <Odometer value={project.total_pledged} format="(.ddd),dd" /> pledged of {project.goal_amount} goal
+                    <Odometer value={project.newPledgeAmount} format="(,ddd)" /> pledged of {project.goal_amount} goal
                 </div>
-                <p>{project.num_backers} backers</p>
+                <p>{project.newTotalBackers} backers</p>
                 <p>{project.days_left} days to go</p>
                 <input type="submit" value="Back this project" />
                 <input type="submit" value="Remind me" />
@@ -75,10 +73,13 @@ class ProjectShow extends React.Component {
                   </div>
                   <div className="reward-header"> Support</div>
                   <RewardIndex
-                    rewards={Object.values(project.rewards)}
+                    // rewards={Object.values(project.rewards)}
                     createBacking={createBacking}
+                    fetchProject={fetchProject}
                     user={user}
                     project={project}
+                    errors={errors}
+                    rewards={rewards}
                   />
                 </div>
               </div>

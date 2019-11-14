@@ -21,7 +21,7 @@ class ProjectIndex extends React.Component {
         <ProjectIndexItem
           project={project}
           key={project.id}
-          fetchProject={fetchProject}
+          fetchProject={this.props.fetchProject}
         />
       );
     }

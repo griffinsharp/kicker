@@ -9,10 +9,11 @@ const projectsReducer = (oldState = {}, action) => {
         return action.projects;
       case RECEIVE_PROJECT:
         newState[action.payload.project.id] = action.payload.project;
-        newState[action.payload.project.id].rewards = action.payload.rewards;
+        // newState[action.payload.project.id].rewards = action.payload.rewards;
         return newState;
       case RECEIVE_BACKING:
-        newState[action.payload.backing.id] = action.payload.backing;
+        // newState[action.payload.backing.id] = action.payload.backing;
+        newState[action.payload.project.id] = action.payload.project;
         return newState;
       // case REMOVE_PROJECT:
       //     return null;

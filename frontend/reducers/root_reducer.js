@@ -15,7 +15,7 @@ const RootReducer = combineReducers({
 export default RootReducer;
 
 // Just for reference, application state example at time of RootReducer creation
-// should looke something like this: 
+// should looiking                                 something like this: 
 // 
 // {
 //     entities: {

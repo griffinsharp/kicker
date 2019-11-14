@@ -19,7 +19,7 @@ class ReccomendedProjectIndex extends React.Component {
           project={project}
           key={project.id}
           projectId = {project.id}
-          fetchProject={fetchProject}
+          fetchProject={this.props.fetchProject}
         />
       );
     }

@@ -1,6 +1,4 @@
 class Backing < ApplicationRecord
-    
-    validates :user_id, uniqueness: {scope: :reward_id}
 
     belongs_to :user,
     foreign_key: :user_id,

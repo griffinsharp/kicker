@@ -1,1 +1,1 @@
-json.extract! backing, :id, :user_id, :reward_id, :project_id
+json.extract! backing, :id, :user_id, :reward_id, :project_id, :backing_amount

@@ -17,7 +17,3 @@ export default errorsReducer;
 // This function accepts a single argument, which is an object whose properties 
 // will represent slices (session, for example) of our application state.
 // The values correspond to our reducers for various states' errors. 
-
-// errors: {
-//     session: []
-// }

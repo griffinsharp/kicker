@@ -9,10 +9,10 @@ class Api::BackingsController < ApplicationController
         @backing = Backing.new(backing_params)
         @backing.user_id = current_user.id
         
-        if @backing.save!
+        if @backing.save
             render 'api/backings/show'
         else
-            render json: @backing.errors.full_messages, status: 422
+            render json: ["You have already pledged for this reward. Please choose another tier to contribute to this project."], status: 401
         end
 
     end
@@ -20,7 +20,7 @@ class Api::BackingsController < ApplicationController
     private
 
     def backing_params
-        params.require(:backing).permit(:user_id, :reward_id, :project_id)
+        params.require(:backing).permit(:user_id, :reward_id, :project_id, :backing_amount)
     end
 
 

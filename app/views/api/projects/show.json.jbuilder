@@ -2,7 +2,7 @@ json.project do
     json.partial! "/api/projects/project", project: @project
     json.authorName @project.user.name 
     json.category @project.category.category_name
-    json.rewards @project.rewards.pluck(:id)
+    
 end
 
 json.rewards do 
@@ -12,4 +12,5 @@ json.rewards do
         end
     end
 end
+
 

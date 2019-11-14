@@ -10,7 +10,6 @@ import FeaturedProject from "./featured_project";
 
 const mapStateToProps = (state, ownProps) => ({
   projects: Object.values(state.entities.projects)
-  
 });
 
 const mapDispatchToProps = dispatch => ({

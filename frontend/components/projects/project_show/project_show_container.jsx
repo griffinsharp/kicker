@@ -6,7 +6,9 @@ import {receiveCurrentUser} from "../../../actions/session_actions";
 
 const mapStateToProps = (state, ownProps) => ({
     project: state.entities.projects[ownProps.match.params.projectId],
-    user: Object.values(state.entities.users)
+    user: Object.values(state.entities.users),
+    rewards: Object.values(state.entities.rewards),
+    errors: state.errors.projects
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
