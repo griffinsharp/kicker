@@ -63,12 +63,15 @@ class ProjectShow extends React.Component {
 
                         </div>
                     </div>
-                      <div className="odometer">
-                          <Odometer value={project.newPledgeAmount} format="(,ddd)" /> pledged of {project.goal_amount} goal
+                      <div className="pledged-container">
+                        <div className="odometer">$<Odometer value={project.newPledgeAmount} format="(,ddd)" className="odometer" /> </div> 
+                        <div className="light-grey sub-text">pledged of ${project.goal_amount} goal </div>
                       </div>
-                      <p>{project.newTotalBackers} backers</p>
-                      <p>{project.days_left} days to go</p>
-                      <input type="submit" value="Back this project" />
+                      <p className="main-text light-grey">{project.newTotalBackers}</p>
+                      <p className="light-grey sub-text">backers</p>
+                      <p className="main-text light-grey">{project.days_left}</p>
+                      <p className="light-grey sub-text">days to go</p>
+                      <input type="submit" value="Back this project" className="backing-btn"/>
                       <input type="submit" value="Remind me" />
                       <div>favicons!!!</div>
                       <p>

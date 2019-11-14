@@ -38,7 +38,7 @@
     font-size: 18px;
     line-height: 24px;
     max-width: 1034px;
-    padding-bottom: 50px;
+    padding-bottom: 45px;
    
 }
 
@@ -61,14 +61,48 @@
 
 .project-details-container{
     max-width: 390px;
+    padding-left: 36px;
 }
 
 .progress-bar-container {
     width: 100%;
-    height: 7px;
+    height: 6px;
 }
 
 .progress-bar {
     background-color: #009E74;
     height: 100%;
+}
+
+.odometer {
+    font-size: 30px;
+    color: #009E74;
+    margin-top: 8px;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.light-grey {
+    color: #656969;
+}
+
+.sub-text {
+    font-size: 15px;
+    margin-top: 3px;
+}
+
+.main-text {
+    margin-top: 29px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.backing-btn {
+    background-color: #009E74;
+    color: #FFF;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    display: block;
 }
