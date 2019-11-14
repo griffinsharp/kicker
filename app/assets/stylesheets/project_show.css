@@ -10,8 +10,56 @@
     min-height: 645px;
     margin: 0 auto;
     padding: 0 60px;
+    max-width: 1246px;
 }
 
 .loved {
     color: black;
 }
+
+.project-intro {
+    color: #282828;
+    font-family: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.project-title {
+    margin-top: 38px;
+    font-size: 26px; 
+    font-weight: bold;
+    margin-bottom: 11px;
+    max-width: 1034px;
+}
+.project-subtitle{
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 1034px;
+    padding-bottom: 50px;
+   
+}
+
+
+.project-pic-container{
+    height: 460px;
+    width: 818px;
+    display: flex;
+}
+
+.project-pic {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+.project-picture-and-details{
+    display: flex;
+}    
+
+.project-details-container{
+    max-width: 390px;
+}
+

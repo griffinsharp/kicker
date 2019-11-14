@@ -40,21 +40,32 @@ class ProjectShow extends React.Component {
           <div className="project-show-container">
             <div className="project-summary-section">
               <div className="project-summary-container">
-                <p>{project.title}</p>
-                <p>{project.sub_title}</p>
-                <img src={project.photoURL} alt="" />
-                <div>
-                    <Odometer value={project.newPledgeAmount} format="(,ddd)" /> pledged of {project.goal_amount} goal
+                <div className="project-intro">
+                  <p className="project-title">{project.title}</p>
+                  <p className="project-subtitle">{project.sub_title}</p>
                 </div>
-                <p>{project.newTotalBackers} backers</p>
-                <p>{project.days_left} days to go</p>
-                <input type="submit" value="Back this project" />
-                <input type="submit" value="Remind me" />
-                <div>favicons!!!</div>
-                <p>
-                  All or nothing. This project will only be funded if it reaches
-                  its goal by {futureDate.toString()}
-                </p>
+
+                <div className="project-picture-and-details">
+                  <div className="project-pic-container">
+                      <img className="project-pic" src={project.photoURL} alt="" />
+                  </div>
+                  <div className="project-details-container">
+                      <div className="odometer">
+                          <Odometer value={project.newPledgeAmount} format="(,ddd)" /> pledged of {project.goal_amount} goal
+                      </div>
+                      <p>{project.newTotalBackers} backers</p>
+                      <p>{project.days_left} days to go</p>
+                      <input type="submit" value="Back this project" />
+                      <input type="submit" value="Remind me" />
+                      <div>favicons!!!</div>
+                      <p>
+                        All or nothing. This project will only be funded if it reaches
+                        its goal by {futureDate.toString()}
+                      </p>
+                  </div>
+
+                </div>
+
                 <div className={loved}>Project We Love</div>
                 <div>{project.category}</div>
                 <div>{project.location}</div>
