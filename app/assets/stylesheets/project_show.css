@@ -63,3 +63,12 @@
     max-width: 390px;
 }
 
+.progress-bar-container {
+    width: 100%;
+    height: 7px;
+}
+
+.progress-bar {
+    background-color: #009E74;
+    height: 100%;
+}

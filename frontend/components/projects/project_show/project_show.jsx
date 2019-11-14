@@ -30,6 +30,14 @@ class ProjectShow extends React.Component {
             loved = "hidden";
         }
 
+        let percent = Math.floor(100*(this.props.project.newPledgeAmount / this.props.project.goal_amount));
+        
+        if (percent > 100) percent = 100;
+        
+        let progressBar = {
+          width: `${percent}%`
+        };
+
         let futureDate = new Date();
         futureDate.setDate(futureDate.getDate() + project.days_left);
         futureDate.setMinutes(0);
@@ -50,6 +58,11 @@ class ProjectShow extends React.Component {
                       <img className="project-pic" src={project.photoURL} alt="" />
                   </div>
                   <div className="project-details-container">
+                    <div className="progress-bar-container">
+                        <div className="progress-bar" style={progressBar}>
+
+                        </div>
+                    </div>
                       <div className="odometer">
                           <Odometer value={project.newPledgeAmount} format="(,ddd)" /> pledged of {project.goal_amount} goal
                       </div>
@@ -98,7 +111,7 @@ class ProjectShow extends React.Component {
           </div>
         </div>
         );
-       
+        
     }
 
 

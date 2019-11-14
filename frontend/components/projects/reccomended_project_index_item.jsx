@@ -32,7 +32,7 @@ class ReccomendedProjectIndexItem extends React.Component {
                 <p className="recc-project-title">{project.title}</p>
                 <p className="funded-amount">
                   {this.percentFunded(
-                    project.total_pledged,
+                    project.newPledgeAmount,
                     project.goal_amount
                   )}
                   % funded
