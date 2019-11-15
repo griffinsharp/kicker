@@ -7,7 +7,7 @@
 
 .project-summary-container {
     min-width: 890px;
-    min-height: 645px;
+    min-height: 694px;
     margin: 0 auto;
     padding: 0 60px;
     max-width: 1246px;
@@ -46,7 +46,6 @@
 .project-pic-container{
     height: 460px;
     width: 818px;
-    display: flex;
 }
 
 .project-pic {
@@ -54,6 +53,22 @@
     object-fit: cover;
     height: 100%;
 }
+
+.bottom-project-bar {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 18px;
+    padding-bottom: 30px;
+}
+
+.project-bar-item {
+    margin-right: 18px;
+}
+
+.loved {
+    margin-right: 18px;
+}
+
 
 .project-picture-and-details{
     display: flex;
@@ -115,15 +130,21 @@
     
 }
 
+.project-remind-btn-container{
+    width: 50%;
+}
+
 .project-remind-btn {
     border: 1px #dcdedd solid;
     padding: 11px 20px;
     background-color: #ffffff;
-    color: #000000;
+    color: #282828;
     font-size: 14px;
     font-family: inherit;
     cursor: pointer;
     -webkit-transition: all 0.30s ease-in-out;
+    width: 100%;
+    font-size: 16px;
 }
 
 .project-remind-btn:hover {
@@ -133,6 +154,7 @@
 
 .remind-and-favs {
     display: flex;
+    margin: 18px 0;
     
 }
 
@@ -146,5 +168,147 @@
 .social-icons {
     display: flex;
     align-items: center;
-    margin: 15px;
+    padding: 15px;
+    color: #282828;
+    -webkit-transition: all 0.30s ease-in-out;
+}
+
+.social-icons a {
+    -webkit-transition: all 0.30s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: #656969;
+}
+
+.odometer-formatting-mark{
+    color: #009E74;
+}
+
+.underline {
+    text-decoration: underline;
+    display: inline;
+}
+
+.all-or-nothing {
+    font-size: 13px;
+    color: #282828;
+    display: inline;
+}
+
+.all-or-nothing p {
+    display: inline;
+    line-height: 18px;
+}
+
+.project-nav-bar-container {
+    height: 72px;
+    border-bottom: solid 1px #DCDEDD;
+    display: flex;
+}
+
+.project-nav-bar {
+    width: 624px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.project-nav-bar-inner-container{ 
+    width: 1076px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+a.campaign-tab {
+    margin: 0 23px;
+    border-bottom: #282828 3px solid;
+    padding: 26px 5px;
+    color: #282828; 
+    font-weight: bold;
+}
+
+.lower-project-show-container {
+    display: flex;
+}
+
+.lower-project-show {
+    display: flex;
+    padding: 60px 0;
+    margin: 0 auto;
+}
+
+.project-campaign{
+    width: 645px;
+    font-size: 21px;
+    margin-bottom: 30px;   
+}
+
+.info-and-rewards-container {
+    width: 322px;
+}
+
+.reward-index-item{
+    border: solid 1px #DCDEDD;
+    margin: 22px 0;
+    padding: 18px;
+}
+
+.author-name-badge {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.user-info-container {
+    border: solid 1px #DCDEDD;
+    padding: 20px;
+    margin-bottom: 36px;
+}
+
+.no-reward-pledge {
+    border: solid 1px #DCDEDD;
+    padding: 20px;
+}
+
+.project-campaign-body{
+    font-size: 16px;
+}
+
+.reward-header {
+    margin-bottom: 42px;
+    font-size: 21px;
+}
+
+.pledge-submit-button {
+    background-color: #009E74;
+    color: #FFF;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 13px;
+    width: 100%;
+    display: block;
+    font-family: 'Didact Gothic', 'Helvetica Neue', 'sans-serif', 'Helvetica', 'Arial', 'sans-serif';
+    margin-top: 29px;
+    -webkit-transition: all 0.30s ease-in-out;
+}
+
+.pledge-submit-button:hover {
+    background-color: #007460;
+    
+}
+
+.pledge-text-input {
+    display: flex;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.pledge-reward-amount {
+    font-size: 18px;
+    margin-bottom: 18px;
+}
+
+.no-reward-header {
+    font-size: 18px;
+    margin-bottom: 18px;
 }

@@ -46,7 +46,7 @@ class Home extends React.Component {
             <div className="newsletter-banner-container">
               <div className="newsletter-banner">
                 <p className="mid-header">
-                  Discover the best and brightest projects on Kickstarter.
+                  Discover the best and brightest projects on Kicker.
                 </p>
                 <p className="mid-paragraph">
                   Sign up to receive our weekly Projects We Love newsletter.
@@ -68,7 +68,18 @@ class Home extends React.Component {
             <div className="call-to-action-container">
               <div className="cta">
                 <img className="cta-pic" src={CtaPic} alt="" />
+                <div className="cta-text">
+                  <div className="cta-text-top">
+                  <div className="cta-header">
+                    Make what matters to you, on your own terms.
+                  </div>
+                  <div className="cta-body">
+                    Launch a project to test a new idea and connect with a community that wants to see it succeed. See how it works
+                  </div>
+                </div>
+                </div>
               </div>
+              
             </div>
             <div className="project-index-container">
               <ProjectIndexContainer />

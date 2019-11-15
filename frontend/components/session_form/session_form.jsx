@@ -15,6 +15,7 @@ class SessionForm extends React.Component {
     this.handleErrors = this.handleErrors.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleEmail = this.handleEmail.bind(this);
+    this.demoUserLogin = this.demoUserLogin.bind(this);
   }
 
   // Notes on the following functions/logic:
@@ -56,6 +57,14 @@ class SessionForm extends React.Component {
     if (this.props.location.pathname === "/signup") {
       this.setState({ repeatEmail: "session-type-input" });
     }
+  }
+
+  demoUserLogin() {
+    const user = Object.assign({}, {
+      email: 'demouser@demo.com',
+      password: 'demo123',
+      name: "Demo User"});
+    this.props.login(user).then(this.props.history.push("/"));
   }
 
   // Our Errors are stored in an array. Need to map through them and present them individually if they exist.
@@ -142,7 +151,7 @@ class SessionForm extends React.Component {
                 <div className="or">or</div>
                 <div className="or-line"></div>
               </div>
-              <input className="session-btn" type="submit" value="Demo User" />
+              <input className="session-btn" type="submit" value="Demo User" onClick={this.demoUserLogin}/>
             </form>
             {/* bottom */}
             <div className="session-bottom">

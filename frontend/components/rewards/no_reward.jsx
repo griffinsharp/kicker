@@ -50,7 +50,7 @@ class NoReward extends React.Component {
 
             <form className="pledge-form" onSubmit={this.handleSubmit}>
               <div className="no-reward-pledge">
-                <div>Make a pledge without a reward</div>
+                <div className="no-reward-header">Make a pledge without a reward</div>
                 <input
                   className="pledge-text-input"
                   type="text"

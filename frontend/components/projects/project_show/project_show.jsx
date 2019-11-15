@@ -59,12 +59,15 @@ class ProjectShow extends React.Component {
                 <div className="project-picture-and-details">
                   <div className="project-pic-container">
                       <img className="project-pic" src={project.photoURL} alt="" />
+                      <div className="bottom-project-bar">
+                        <div className={loved}>Project We Love</div>
+                        <div className="project-bar-item">{project.category}</div>
+                        <div className="project-bar-item">{project.location}</div>
+                      </div>
                   </div>
                   <div className="project-details-container">
                     <div className="progress-bar-container">
-                        <div className="progress-bar" style={progressBar}>
-
-                        </div>
+                        <div className="progress-bar" style={progressBar}></div>
                     </div>
                       <div className="pledged-container">
                         <div className="odometer">$<Odometer value={project.newPledgeAmount} format="(,ddd)" className="odometer" /> </div> 
@@ -76,39 +79,50 @@ class ProjectShow extends React.Component {
                       <p className="light-grey sub-text">days to go</p>
                       <input type="submit" value="Back this project" className="backing-btn"/>
                      <div className="remind-and-favs">
-                        <input type="submit" value="Remind me" className="project-remind-btn"/>
+                        <div className="project-remind-btn-container">
+                          <input type="submit" value="Remind me" className="project-remind-btn"/>
+                        </div>
                         <div className="social-icons-container">
-                          <div className="social-icons"><FontAwesomeIcon icon={faGithub} alt="github-icon"/></div>
-                          <div className="social-icons"><FontAwesomeIcon icon={faLinkedin} alt="linkedin-icon" /></div>
-                          <div className="social-icons"><FontAwesomeIcon icon={faEnvelope} alt="envelope-icon" /></div>
+                          <div className="social-icons"><a href="https://github.com/griffinsharp" target="_blank"><FontAwesomeIcon className="gHub" icon={faGithub} alt="github-icon" /></a></div>
+                          <div className="social-icons"><a href="https://www.linkedin.com/in/griffinesharp/" target="_blank"><FontAwesomeIcon icon={faLinkedin} alt="linkedin-icon" /></a></div>
+                          <div className="social-icons"><a href="mailto:gsharpdev@gmail.com"><FontAwesomeIcon icon={faEnvelope} alt="envelope-icon" /></a></div>
                         </div>
                       </div>
-                      <p>
-                        All or nothing. This project will only be funded if it reaches
-                        its goal by {futureDate.toString()}
-                      </p>
+                      <div className="all-or-nothing">
+                      <p className="underline">All or nothing.</p> 
+                        <p> This project will only be funded if it reaches
+                        its goal by {futureDate.toString()}</p>
+                    </div>
                   </div>
 
                 </div>
-
-                <div className={loved}>Project We Love</div>
-                <div>{project.category}</div>
-                <div>{project.location}</div>
               </div>
             </div>
-            <div className="project-nav-bar">
-              <div className="campaign-tab">Campaign</div>
-              {project.campaign}
+
+            <div className="project-nav-bar-container">
+              <div className="project-nav-bar-inner-container">
+              <div className="project-nav-bar">
+                
+              <a className="campaign-tab" href="">Campaign</a>
+                
+              </div>
+              </div>
             </div>
-            <div className="project-content-container">
-              <div className="project-content">
-                <div className="campaign-content-container">About</div>
-                  {project.about}
+
+          <div className="lower-project-show-container">
+            <div className="lower-project-show">
+            <div>
+              <p className="project-campaign">About</p>
+              <div className="project-campaign-body">{project.campaign}</div>
+            </div>
+
+            
                 <div className="info-and-rewards-container">
                   <div className="user-info-container">
-                    {project.authorName}
+                    <div className="author-name-badge">{project.authorName}</div>
+                    <div>{project.about}</div>
                   </div>
-                  <div className="reward-header"> Support</div>
+                  <div className="reward-header">Support</div>
                   <RewardIndex
                     createBacking={createBacking}
                     fetchProject={fetchProject}
@@ -119,7 +133,7 @@ class ProjectShow extends React.Component {
                   />
                 </div>
               </div>
-            </div>
+            </div>  
           </div>
         </div>
         );
