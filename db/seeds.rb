@@ -40,91 +40,91 @@ publishing = Category.create!(category_name: 'Publishing')
 allBirdsProject = Project.create!(title: 'The Dark Verse, Vol. 5: Beneath the Crown of Chaos',
         sub_title: 'shoes',
         total_pledged: 123,
-        goal_amount: 1234,
+        goal_amount: 5000,
         num_backers: 1,
         days_left: 2,
         loved: true,
         location: 'Sf',
-        campaign: 'test',
-        about: 'test',
+        campaign: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        about: 'This is a company profile w some info.',
         category_id: art.id,
         user_id: allBirds.id)
 
 nikeProject = Project.create!(title: 'Nike',
         sub_title: 'shoes',
         total_pledged: 123,
-        goal_amount: 1234,
+        goal_amount: 12345,
         num_backers: 1,
         days_left: 2,
         loved: true,
         location: 'Eugene',
         campaign: 'test',
-        about: 'test',
+        about: 'This is a company profile w some info.',
         category_id: games.id,
         user_id: nike.id)
 
 adidasProject = Project.create!(title: 'Adidas',
         sub_title: 'shoes',
         total_pledged: 123,
-        goal_amount: 1234,
+        goal_amount: 2500,
         num_backers: 1,
         days_left: 2,
         loved: true,
         location: 'Japan',
-        campaign: 'test',
-        about: 'test',
+        campaign: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        about: 'This is a company profile w some info.',
         category_id: film.id,
         user_id: adidas.id)
 
 blazerProject = Project.create!(title: "Findster Home: Your Pets’ Location and Health Monitored 24/7",
         sub_title: "Findster Home tracks your pets’ GPS location and activity 24/7, letting you monitor them whether you're home or away. No data fees!",
         total_pledged: 123,
-        goal_amount: 1234,
+        goal_amount: 56740,
         num_backers: 1,
         days_left: 2,
         loved: true,
         location: 'Chicago',
         campaign: 'test',
-        about: 'test',
+        about: 'This is a company profile w some info.',
         category_id: music.id,
         user_id: blazer.id)
 
 golfProject = Project.create!(title: 'GOLF',
         sub_title: "Findster Home tracks your pets’ GPS location and activity 24/7, letting you monitor them whether you're home or away. No data fees!",
         total_pledged: 123,
-        goal_amount: 1234,
+        goal_amount: 7864,
         num_backers: 1,
         days_left: 2,
         loved: true,
         location: 'Chicago',
-        campaign: 'test',
-        about: 'test',
+        campaign: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        about: 'This is a company profile w some info.',
         category_id: music.id,
         user_id: golf.id)
 
 offWhiteProject = Project.create!(title: 'Off-White',
         sub_title: "Findster Home tracks your pets’ GPS location and activity 24/7, letting you monitor them whether you're home or away. No data fees!",
         total_pledged: 123,
-        goal_amount: 1234,
+        goal_amount: 5000,
         num_backers: 1,
         days_left: 2,
         loved: true,
         location: 'Chicago',
-        campaign: 'test',
-        about: 'test',
+        campaign: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        about: 'This is a company profile w some info.',
         category_id: music.id,
         user_id: offWhite.id)
 
 shoeCreatorProject = Project.create!(title: 'Alex Ports',
         sub_title: "Findster Home tracks your pets’ GPS location and activity 24/7, letting you monitor them whether you're home or away. No data fees!",
         total_pledged: 123,
-        goal_amount: 1234,
+        goal_amount: 8000,
         num_backers: 1,
         days_left: 2,
         loved: true,
         location: 'Chicago',
-        campaign: 'test',
-        about: 'test',
+        campaign: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        about: 'This is a company profile w some info.',
         category_id: music.id,
         user_id: shoeCreator.id)
 
@@ -136,8 +136,8 @@ kickItProject = Project.create!(title: 'Can I Kick It?',
         days_left: 2,
         loved: true,
         location: 'Chicago',
-        campaign: 'test',
-        about: 'test',
+        campaign: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        about: 'This is a company profile w some info.',
         category_id: music.id,
         user_id: kickIt.id)
 
@@ -167,10 +167,38 @@ golfProject.save!
 offWhiteProject.save!
 shoeCreatorProject.save!
 
-reward0KickIt = Reward.create!(amount: 10, desc: "test test test test", subdesc: "test test test test test", delivery: "Tomorrow", shipping: "International", num_backers: 48, project_id: kickItProject.id)  
-reward1KickIt = Reward.create!(amount: 20, desc: "test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 45, project_id: kickItProject.id) 
-reward2KickIt = Reward.create!(amount: 50, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 90, project_id: kickItProject.id)
+reward0KickIt = Reward.create!(amount: 10, desc: "test test test test", subdesc: "test test test test test", delivery: "Tomorrow", shipping: "International", num_backers: 10, project_id: kickItProject.id)  
+reward1KickIt = Reward.create!(amount: 20, desc: "test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 22, project_id: kickItProject.id) 
+reward2KickIt = Reward.create!(amount: 50, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 12, project_id: kickItProject.id)
 
-reward0AllBirds = Reward.create!(amount: 10, desc: "test test test test", subdesc: "test test test test test", delivery: "Tomorrow", shipping: "International", num_backers: 48, project_id: allBirdsProject.id)  
-reward1AllBirds = Reward.create!(amount: 20, desc: "test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 45, project_id: allBirdsProject.id) 
-reward2AllBirds = Reward.create!(amount: 50, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 90, project_id: allBirdsProject.id)
+reward0AllBirds = Reward.create!(amount: 10, desc: "test test test test", subdesc: "test test test test test", delivery: "Tomorrow", shipping: "International", num_backers: 30, project_id: allBirdsProject.id)  
+reward1AllBirds = Reward.create!(amount: 40, desc: "test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 10, project_id: allBirdsProject.id) 
+reward2AllBirds = Reward.create!(amount: 60, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 3, project_id: allBirdsProject.id)
+
+reward0Nike = Reward.create!(amount: 10, desc: "test test test test", subdesc: "test test test test test", delivery: "Tomorrow", shipping: "International", num_backers: 25, project_id: nikeProject.id)  
+reward1Nike = Reward.create!(amount: 25, desc: "test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 13, project_id: nikeProject.id) 
+reward2Nike = Reward.create!(amount: 80, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 4, project_id: nikeProject.id)
+
+reward0Adidas = Reward.create!(amount: 10, desc: "test test test test", subdesc: "test test test test test", delivery: "Tomorrow", shipping: "International", num_backers: 25, project_id: adidasProject.id)  
+reward1Adidas = Reward.create!(amount: 100, desc: "test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 5, project_id: adidasProject.id) 
+reward2Adidas = Reward.create!(amount: 150, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 2, project_id: adidasProject.id)
+
+reward0Blazer = Reward.create!(amount: 10, desc: "test test test test", subdesc: "test test test test test", delivery: "Tomorrow", shipping: "International", num_backers: 30, project_id: blazerProject.id)  
+reward1Blazer = Reward.create!(amount: 65, desc: "test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 5, project_id: blazerProject.id) 
+reward2Blazer = Reward.create!(amount: 150, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 2, project_id: blazerProject.id)
+
+reward0Golf = Reward.create!(amount: 10, desc: "test test test test", subdesc: "test test test test test", delivery: "Tomorrow", shipping: "International", num_backers: 25, project_id: golfProject.id)  
+reward1Golf = Reward.create!(amount: 90, desc: "test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 3, project_id: golfProject.id) 
+reward2Golf = Reward.create!(amount: 160, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 2, project_id: golfProject.id)
+
+reward0OffWhite = Reward.create!(amount: 10, desc: "test test test test", subdesc: "test test test test test", delivery: "Tomorrow", shipping: "International", num_backers: 25, project_id: offWhiteProject.id)  
+reward1OffWhite = Reward.create!(amount: 100, desc: "test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 50, project_id: offWhiteProject.id) 
+reward2OffWhite = Reward.create!(amount: 200, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 20, project_id: offWhiteProject.id)
+
+reward0ShoeCreator = Reward.create!(amount: 10, desc: "test test test test", subdesc: "test test test test test", delivery: "Tomorrow", shipping: "International", num_backers: 20, project_id: shoeCreator.id)  
+reward1ShoeCreator = Reward.create!(amount: 100, desc: "test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 5, project_id: shoeCreator.id) 
+reward2ShoeCreator = Reward.create!(amount: 150, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 2, project_id: shoeCreator.id)
+
+
+
+

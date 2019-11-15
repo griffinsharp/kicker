@@ -111,7 +111,7 @@ class ProjectShow extends React.Component {
 
           <div className="lower-project-show-container">
             <div className="lower-project-show">
-            <div>
+            <div className="project-campaign-container">
               <p className="project-campaign">About</p>
               <div className="project-campaign-body">{project.campaign}</div>
             </div>

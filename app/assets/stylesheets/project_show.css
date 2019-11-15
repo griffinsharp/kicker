@@ -238,6 +238,11 @@ a.campaign-tab {
     margin: 0 auto;
 }
 
+.project-campaign-container {
+    max-width: 645px;
+    padding-right: 54px;
+}
+
 .project-campaign{
     width: 645px;
     font-size: 21px;
@@ -272,6 +277,7 @@ a.campaign-tab {
 
 .project-campaign-body{
     font-size: 16px;
+    line-height: 30px;
 }
 
 .reward-header {
