@@ -167,37 +167,47 @@ golfProject.save!
 offWhiteProject.save!
 shoeCreatorProject.save!
 
-reward0KickIt = Reward.create!(amount: 10, desc: "test test test test", subdesc: "test test test test test", delivery: "Tomorrow", shipping: "International", num_backers: 10, project_id: kickItProject.id)  
-reward1KickIt = Reward.create!(amount: 20, desc: "test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 22, project_id: kickItProject.id) 
-reward2KickIt = Reward.create!(amount: 50, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 12, project_id: kickItProject.id)
+# Each first reward out of the 4 rewards per project is a dummy reward that I replace with "Make a pledge without a reward."
+
+reward0KickIt = Reward.create!(amount: 10, desc: "KickitReward1", subdesc: "test test test test test", delivery: "Tomorrow", shipping: "International", num_backers: 10, project_id: kickItProject.id)  
+reward1KickIt = Reward.create!(amount: 20, desc: "KickitReward2", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 22, project_id: kickItProject.id) 
+reward2KickIt = Reward.create!(amount: 50, desc: "KickitReward3", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 12, project_id: kickItProject.id)
+reward3KickIt = Reward.create!(amount: 50, desc: "KickitReward3", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 12, project_id: kickItProject.id)
 
 reward0AllBirds = Reward.create!(amount: 10, desc: "test test test test", subdesc: "test test test test test", delivery: "Tomorrow", shipping: "International", num_backers: 30, project_id: allBirdsProject.id)  
 reward1AllBirds = Reward.create!(amount: 40, desc: "test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 10, project_id: allBirdsProject.id) 
 reward2AllBirds = Reward.create!(amount: 60, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 3, project_id: allBirdsProject.id)
+reward3AllBirds = Reward.create!(amount: 60, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 3, project_id: allBirdsProject.id)
 
 reward0Nike = Reward.create!(amount: 10, desc: "test test test test", subdesc: "test test test test test", delivery: "Tomorrow", shipping: "International", num_backers: 25, project_id: nikeProject.id)  
 reward1Nike = Reward.create!(amount: 25, desc: "test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 13, project_id: nikeProject.id) 
 reward2Nike = Reward.create!(amount: 80, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 4, project_id: nikeProject.id)
+reward3Nike = Reward.create!(amount: 80, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 4, project_id: nikeProject.id)
 
-reward0Adidas = Reward.create!(amount: 10, desc: "test test test test", subdesc: "test test test test test", delivery: "Tomorrow", shipping: "International", num_backers: 25, project_id: adidasProject.id)  
-reward1Adidas = Reward.create!(amount: 100, desc: "test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 5, project_id: adidasProject.id) 
-reward2Adidas = Reward.create!(amount: 150, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 2, project_id: adidasProject.id)
+reward0Adidas = Reward.create!(amount: 10, desc: "adidas1", subdesc: "test test test test test", delivery: "Tomorrow", shipping: "International", num_backers: 25, project_id: adidasProject.id)  
+reward1Adidas = Reward.create!(amount: 100, desc: "adidas2", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 5, project_id: adidasProject.id) 
+reward2Adidas = Reward.create!(amount: 150, desc: "adidas3", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 2, project_id: adidasProject.id)
+reward3Adidas = Reward.create!(amount: 150, desc: "adidas3", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 2, project_id: adidasProject.id)
 
 reward0Blazer = Reward.create!(amount: 10, desc: "test test test test", subdesc: "test test test test test", delivery: "Tomorrow", shipping: "International", num_backers: 30, project_id: blazerProject.id)  
 reward1Blazer = Reward.create!(amount: 65, desc: "test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 5, project_id: blazerProject.id) 
 reward2Blazer = Reward.create!(amount: 150, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 2, project_id: blazerProject.id)
+reward3Blazer = Reward.create!(amount: 150, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 2, project_id: blazerProject.id)
 
 reward0Golf = Reward.create!(amount: 10, desc: "test test test test", subdesc: "test test test test test", delivery: "Tomorrow", shipping: "International", num_backers: 25, project_id: golfProject.id)  
 reward1Golf = Reward.create!(amount: 90, desc: "test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 3, project_id: golfProject.id) 
 reward2Golf = Reward.create!(amount: 160, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 2, project_id: golfProject.id)
+reward3Golf = Reward.create!(amount: 160, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 2, project_id: golfProject.id)
 
-reward0OffWhite = Reward.create!(amount: 10, desc: "test test test test", subdesc: "test test test test test", delivery: "Tomorrow", shipping: "International", num_backers: 25, project_id: offWhiteProject.id)  
-reward1OffWhite = Reward.create!(amount: 100, desc: "test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 50, project_id: offWhiteProject.id) 
-reward2OffWhite = Reward.create!(amount: 200, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 20, project_id: offWhiteProject.id)
+reward0OffWhite = Reward.create!(amount: 10, desc: "offwhite1", subdesc: "test test test test test", delivery: "Tomorrow", shipping: "International", num_backers: 25, project_id: offWhiteProject.id)  
+reward1OffWhite = Reward.create!(amount: 100, desc: "offwhite2", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 50, project_id: offWhiteProject.id) 
+reward2OffWhite = Reward.create!(amount: 200, desc: "offwhite3", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 20, project_id: offWhiteProject.id)
+reward3OffWhite = Reward.create!(amount: 200, desc: "offwhite3", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 20, project_id: offWhiteProject.id)
 
-reward0ShoeCreator = Reward.create!(amount: 10, desc: "test test test test", subdesc: "test test test test test", delivery: "Tomorrow", shipping: "International", num_backers: 20, project_id: shoeCreator.id)  
-reward1ShoeCreator = Reward.create!(amount: 100, desc: "test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 5, project_id: shoeCreator.id) 
-reward2ShoeCreator = Reward.create!(amount: 150, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 2, project_id: shoeCreator.id)
+reward0ShoeCreator = Reward.create!(amount: 10, desc: "shoecreator1", subdesc: "test test test test test", delivery: "Tomorrow", shipping: "International", num_backers: 20, project_id: shoeCreatorProject.id)  
+reward1ShoeCreator = Reward.create!(amount: 100, desc: "shoecreator2", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 5, project_id: shoeCreatorProject.id) 
+reward2ShoeCreator = Reward.create!(amount: 150, desc: "shoecreator3", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 2, project_id: shoeCreatorProject.id)
+reward3ShoeCreator = Reward.create!(amount: 150, desc: "shoecreator3", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 2, project_id: shoeCreatorProject.id)
 
 
 
