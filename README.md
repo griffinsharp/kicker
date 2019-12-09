@@ -1,108 +1,44 @@
-# README
+## Introduction
 
 [Kicker](https://kicker-app.herokuapp.com/#/), a [Kickstarter](https://www.kickstarter.com/) clone, is a crowdfunding application that allows users to collectively help get innovative sneaker related projects, products, and services to the market. If the project receives full funding by the end of its campaign, project backers receive a tiered reward contingent on the amount they pledged. Sneakerheads, rejoice!
 
-## Backend Routes
-## HTML
-* `GET /` `StaticPagesController#root`
-## API Endpoints
-### `session`
-* `POST /api/session` - logs in
-* `DELETE /api/session` - logs out
-### `users`
-* `GET /api/users/:user_id` - specific user's profile show page
-* `POST /api/users` - sign up
-### `projects`
-* `GET /api/projects` - project index
-* `GET /api/projects/:project_id` - specific project's show page
-* `POST /api/projects` - create project
-* `PATCH /api/projects/:project_id` - edits/update project 
-* `DELETE /api/projects/:project_id` - delete project
-### `categories`
-* `GET /api/categories/:category_id` - all projects from a specific category
-### `rewards`
-* `POST /api/rewards` - creates a reward for a project
-* `DELETE /api/rewards/reward_id` - deletes a reward from a project
+## Features
+Here are a few screenshots/gifs of Kicker. To experience the full functionality of the site, please create an account or login as a demo user!
 
-## Frontend Routes
-Our components are organized as follows:
-* `Root`
-  * `App`
-    * `NavBar`
-    * (main component goes here)
-    * `Footer`
+**Site Landing/Home Page**
 
-The following routes, defined in `App`, will render components between `NavBar` and `Footer`.
+![HomePage](https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/kickerhome.gif)
 
-### Home
-* `/`
-  * `HomeContainer`
-    * `Home`
-      * `ProjectIndexContainer`
-        * `ProjectIndex`
-          * `ProjectIndexItem`
-      * `CategoryBar` (Nav bar for categories)
+**A Typical Project Page with Reward Tiers**
 
-### Log In
-* `/login`
-  * `SessionFormContainer`
-    * `SessionForm` (Log In Page)
+Contributing to a project should update the total amount pledged on the fly. If the project is featured on the home page, it should update there too. 
+![ProjectPage](https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/KickerProjectPage.png)
 
-### Sign Up
-* `/signup`
-  * `SessionFormContainer`
-    * `SessionForm` (Sign Up Page)
+**Search Results Page**
 
-### Project Show
-* `/projects/:projectId`
-  * `ProjectShowContainer` 
-    * `ProjectShow`
-      * `Video`
-      * `BackingInfo`
-      * `Campaign`
-      * `Pledge Options`
+Users can tailor there search results by [insert reason here]. This is done by [insert how]. Problems faced here [insert problems'.
 
-### Project Create
-* `/projects/new`
-  * `NewProjectFormContainer` 
-    * `NewProjectForm` 
+**Categories Page**
 
-### Project Edit
-* `/projects/:projectId/edit`
-  * `EditProjectFormContainer` 
-    * `EditProjectForm` 
+Users can explore projects by each category. This was done [blank]. 
 
-### Pledge (New Pledge for a Specific Project)
-* `/projects/:projectId/pledge` 
-  * `PledgeFormContainer`
-    * `PledgeForm` 
+**User Auth**
 
-### Category (All Projects Belonging to A Category)
-* `/category/:category_name`
-  * `HomeContainer`
-    * `Home`
-      * `ProjectIndexContainer`
-        * `ProjectIndex`
-          * `ProjectIndexItem`
-      * `CategoryBar` (Nav bar for categories)
+Kicker's user authentication utilizes the BCrypt gem to safely hash and salt password, avoiding the storage of password in a plain-text format. There are backend model and migration level validations, such as password length and email uniqueness, to require users to sign up with valid credentials, and the failure to do so results in the rendering of an associated error.
 
-### Discover
-* `/discover`
-  * `DiscoverIndexContainer`
-    * `DiscoverIndex`
-      * `ProjectIndexContainer`
-        * `ProjectIndex` (Project Index Page for All)
-          * `ProjectIndexItem`
-      * `FilterForm` (Filter Discover results)
+Many user actions on Kicker require an account, but I didn't want to make this a barrier to accessing all the site's features. That being said, the user signup/login pages have a 'demo user' option if one just wants to look around. 
 
-### Search 
-* `/search`
-  * `SearchBarContainer`
-    * `SearchBar` (Search Bar drop down)
+## Code Snippets
 
-### User
-* `/profile/:userId`
-  * `UserShowContainer`
-    * `UserShow` (User Profile Show Page)
+- Code Snippets go here...
+- Maybe: sample state, a cool react component, react router/protected route util, etc.
 
+## Technologies Used
+
+- `Ruby on Rails` 
+- `React` 
+- `Redux` 
+- `PostgreSQL` 
+- `jBuilder` 
+- `Webpack` + `Babel` 
 
