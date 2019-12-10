@@ -10,4 +10,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     createProject: (project) => dispatch(createProject(project))
 });
 
-export default connect(mapStateToProps, mapDispatchToProp)(newProjectForm);
+export default connect(mapStateToProps, mapDispatchToProps)(newProjectForm);

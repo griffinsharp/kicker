@@ -23,6 +23,17 @@ class newProjectForm extends React.Component {
         // category_id default to one but should change as well, will need conditional logic to convert
     }
 
+
+    render () {
+
+        return (
+            <div>
+                
+            </div>
+        );
+
+    }
+
 }
 
 export default newProjectForm;

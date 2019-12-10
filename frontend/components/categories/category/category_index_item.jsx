@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Link } from "react-router-dom";
 
-class ProjectIndexItem extends React.Component {
+class CategoryIndexItem extends React.Component {
 
     constructor(props) {
         super(props);
@@ -36,4 +36,4 @@ class ProjectIndexItem extends React.Component {
 
 }
 
-export default ProjectIndexItem;
+export default CategoryIndexItem;

@@ -3,7 +3,8 @@ import categoryIndex from './category_index';
 import { fetchProjects, fetchProject, createProject, updateProject, deleteProject } from '../../../actions/project_actions';
 
 const mapStateToProps = (state, ownProps) => ({
-    projects: Object.values(state.entities.projects)
+    projects: Object.values(state.entities.projects),
+    category: ownProps.category
 });
 
 const mapDispatchToProps = (dispatch) => ({
