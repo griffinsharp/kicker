@@ -14,6 +14,8 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Navbar from './navbar/navbar';
 import NavbarContainer from './navbar/navbar_container';
 import ProjectShowContainer from './projects/project_show/project_show_container';
+import CategoryIndexContainer from './categories/category/category_index_container';
+import ProjectFormContainer from './projects/project_create/new_project_form_container';
 
 // Purely functional component
 
@@ -23,9 +25,9 @@ const App = () => (
         <Switch>
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+            <ProtectedRoute exact path="/projects/new" component={ProjectFormContainer} />
             <Route exact path="/projects/:projectId" component={ProjectShowContainer} />
-            {/* <ProtectedRoute exact path="/projects/new" component={SignUpFormContainer} /> */}
-            <Route exact path="/category/:categoryId" component={Home} />
+            <Route exact path="/category/:categoryId" component={CategoryIndexContainer} />
             <Route path="/" component={Home}/>
         </Switch>
     </div>
