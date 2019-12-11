@@ -5,17 +5,33 @@ import CategoryBar from '../../categorybar/categorybar';
 import FeaturedPic from "../../../../app/assets/images/featured.jpg";
 import CtaPic from "../../../../app/assets/images/retro.png";
 import { Link } from "react-router-dom";
+import CategoryFeatured from "../category_featured/category_featured";
 
 class CategoryHome extends React.Component {
 
     constructor(props) {
         super(props);
-
+        this.filter = this.filter.bind(this);
+        
     }
 
-    render() {
+    componentDidMount() {
+        this.props.fetchProjects();
+    }
 
-        let categoryId = this.props.match.params.categoryId;
+    filter(projects) {
+       
+        let categoryId = this.props.category;
+        let filteredProjects = projects.filter(project => project.category_id == categoryId);
+        return filteredProjects;
+        
+    }
+
+
+
+    render() {
+        const { projects, fetchProject, category } = this.props;
+        debugger;
         return (
             <div className="home-container">
                 <div className="category-bar-container">
@@ -26,21 +42,7 @@ class CategoryHome extends React.Component {
                 <div className="mid-section-container">
                     <div className="mid-section">
                         <div className="featured-project-container">
-                            <div className="featured-project">
-                                <p className="small-header">FEATURED PROJECT</p>
-                                <img className="featured-pic" src={FeaturedPic} />
-                                <Link to="/projects/8" className="mid-header">
-                                    Can I Kick It?
-                    </Link>
-                                <p className="mid-paragraph">
-                                    Yes, you can. Introducing, Kick It. The newest app for
-                                    buying, selling, and trading your favorite sneakers all
-                                    from your smartphone.
-                    </p>
-                                <p className="author">
-                                    By <Link to="/projects/8"> Kick It</Link>
-                                </p>
-                            </div>
+                            <CategoryFeatured project={this.filter(this.props.projects)}/>
                         </div>
                         <div className="reccomended-project-container">
                             <p className="small-header-recc">RECOMMENDED</p>
@@ -48,46 +50,9 @@ class CategoryHome extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="newsletter-banner-container">
-                    <div className="newsletter-banner">
-                        <p className="mid-header">
-                            Discover the best and brightest projects on Kicker.
-                </p>
-                        <p className="mid-paragraph">
-                            Sign up to receive our weekly Projects We Love newsletter.
-                </p>
-                        <div className="newsletter-inputs">
-                            <input
-                                className="session-type-input"
-                                type="text"
-                                value="Enter email address"
-                            />
-                            <input
-                                className="session-type-button"
-                                type="submit"
-                                value="Subscribe"
-                            />
-                        </div>
-                    </div>
-                </div>
-                <div className="call-to-action-container">
-                    <div className="cta">
-                        <img className="cta-pic" src={CtaPic} alt="" />
-                        <div className="cta-text">
-                            <div className="cta-text-top">
-                                <div className="cta-header">
-                                    Make what matters to you, on your own terms.
-                  </div>
-                                <div className="cta-body">
-                                    Launch a project to test a new idea and connect with a community that wants to see it succeed. See how it works
-                  </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+               
                 <div className="project-index-container">
-                    <CategoryIndexContainer category={categoryId}/>
+                    {/* <CategoryIndexContainer projects={this.filter(projects).slice(4,8)}/> */}
                 </div>
             </div>
         );

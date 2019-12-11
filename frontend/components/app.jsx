@@ -10,7 +10,7 @@ import LogInFormContainer from './session_form/login_form_container';
 import SignUpFormContainer from './session_form/signup_form_container';
 import { Provider } from 'react-redux';
 import Home from './home/home';
-import CategoryHome from './categories/category/category_home';
+import CategoryHomeContainer from './categories/category/category_home_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Navbar from './navbar/navbar';
 import NavbarContainer from './navbar/navbar_container';
@@ -27,7 +27,7 @@ const App = () => (
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
             <ProtectedRoute exact path="/projects/new" component={ProjectFormContainer} />
             <Route exact path="/projects/:projectId" component={ProjectShowContainer} />
-            <Route exact path="/category/:categoryId" component={CategoryHome} />
+            <Route exact path="/category/:categoryId" component={CategoryHomeContainer} />
             <Route path="/" component={Home}/>
         </Switch>
     </div>
