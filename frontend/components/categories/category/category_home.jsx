@@ -5,33 +5,17 @@ import CategoryBar from '../../categorybar/categorybar';
 import FeaturedPic from "../../../../app/assets/images/featured.jpg";
 import CtaPic from "../../../../app/assets/images/retro.png";
 import { Link } from "react-router-dom";
-import CategoryFeatured from "../category_featured/category_featured";
+import { withRouter } from 'react-router-dom';
+import CategoryFeaturedContainer from "../category_featured/category_featured_container";
 
 class CategoryHome extends React.Component {
 
     constructor(props) {
         super(props);
-        this.filter = this.filter.bind(this);
-        
     }
-
-    componentDidMount() {
-        this.props.fetchProjects();
-    }
-
-    filter(projects) {
-       
-        let categoryId = this.props.category;
-        let filteredProjects = projects.filter(project => project.category_id == categoryId);
-        return filteredProjects;
-        
-    }
-
-
 
     render() {
         const { projects, fetchProject, category } = this.props;
-        debugger;
         return (
             <div className="home-container">
                 <div className="category-bar-container">
@@ -42,7 +26,7 @@ class CategoryHome extends React.Component {
                 <div className="mid-section-container">
                     <div className="mid-section">
                         <div className="featured-project-container">
-                            <CategoryFeatured project={this.filter(this.props.projects)}/>
+                            <CategoryFeaturedContainer/>
                         </div>
                         <div className="reccomended-project-container">
                             <p className="small-header-recc">RECOMMENDED</p>
@@ -59,4 +43,4 @@ class CategoryHome extends React.Component {
     }
 }
 
-export default CategoryHome;
+export default withRouter(CategoryHome);

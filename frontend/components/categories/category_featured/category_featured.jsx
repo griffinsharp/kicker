@@ -1,31 +1,46 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { withRouter } from 'react-router-dom';
 
 class CategoryFeatured extends React.Component {
 
     constructor(props) {
         super(props);
+        this.filter = this.filter.bind(this);
+        this.state = {
+            filtProj: [this.props.projects]
+        };
     }
 
-    
+    componentDidMount () {
+        this.props.fetchProjects().then( () => {
+            this.filter(this.props.projects);
+        });
+    }
+
+    filter(projects) {
+        let categoryId = this.props.category;
+        let filteredProjects = projects.filter(project => project.category_id == categoryId);
+        this.setState({filtProj: filteredProjects});
+    }
 
 render() {
 
+    let proj = this.state.filtProj;
 
-    
     return (
         <div className="featured-project">
             <p className="small-header">FEATURED PROJECT</p>
             {/* render picture based on id! src={FeaturedPic} */}
-            <img className="featured-pic" />
-            <Link to={`/projects/${this.props.project[0].id}`} className="mid-header">
-                {this.props.project[0].title}
+            <img className="featured-pic" src={proj[0].photoURL}/>
+            <Link to={`/projects/${proj[0].id}`} className="mid-header">
+                {proj[0].title}
                     </Link>
             <p className="mid-paragraph">
-                {this.props.project[0].sub_title}
+                {proj[0].sub_title}
                     </p>
             <p className="author">
-                By <Link to={`/projects/${this.props.project[0].id}`} >{this.props.project[0].authorName}</Link>
+                By <Link to={`/projects/${proj[0].id}`} >{proj[0].authorName}</Link>
             </p>
         </div>
     )
@@ -35,5 +50,5 @@ render() {
 
 };
 
-export default CategoryFeatured;
+export default withRouter(CategoryFeatured);
 
