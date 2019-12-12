@@ -6,27 +6,12 @@ class CategoryFeatured extends React.Component {
 
     constructor(props) {
         super(props);
-        this.filter = this.filter.bind(this);
-        this.state = {
-            filtProj: [this.props.projects]
-        };
     }
 
-    componentDidMount () {
-        this.props.fetchProjects().then( () => {
-            this.filter(this.props.projects);
-        });
-    }
-
-    filter(projects) {
-        let categoryId = this.props.category;
-        let filteredProjects = projects.filter(project => project.category_id == categoryId);
-        this.setState({filtProj: filteredProjects});
-    }
 
 render() {
 
-    let proj = this.state.filtProj;
+    let proj = this.props.proj;
 
     return (
         <div className="featured-project">

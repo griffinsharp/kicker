@@ -12,10 +12,27 @@ class CategoryHome extends React.Component {
 
     constructor(props) {
         super(props);
+        this.filter = this.filter.bind(this);
+        this.state = {
+            filtProj: [this.props.projects]
+        };
+    }
+
+    componentDidMount() {
+        this.props.fetchProjects().then(() => {
+            this.filter(this.props.projects);
+        });
+    }
+
+    filter(projects) {
+        let categoryId = this.props.category;
+        let filteredProjects = projects.filter(project => project.category_id == categoryId);
+        this.setState({ filtProj: filteredProjects });
     }
 
     render() {
         const { projects, fetchProject, category } = this.props;
+        let proj = this.state.filtProj;
         return (
             <div className="home-container">
                 <div className="category-bar-container">
@@ -26,7 +43,7 @@ class CategoryHome extends React.Component {
                 <div className="mid-section-container">
                     <div className="mid-section">
                         <div className="featured-project-container">
-                            <CategoryFeaturedContainer/>
+                            <CategoryFeaturedContainer proj={proj}/>
                         </div>
                         <div className="reccomended-project-container">
                             <p className="small-header-recc">RECOMMENDED</p>
