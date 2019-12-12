@@ -1,6 +1,5 @@
 import React from "react";
 import ReccomendedProjectIndexItem from "./reccomended_project_index_item";
-import { Link } from "react-router-dom";
 
 class ReccomendedProjectIndex extends React.Component {
   constructor(props) {

@@ -1,12 +1,7 @@
 import React from 'react';
-import CategoryIndexContainer from './category_index_container';
 import CategoryBar from '../../categorybar/categorybar';
-// import ReccomendedCategoryIndexContainer from '../projects/reccomended_project_index_container';
-import FeaturedPic from "../../../../app/assets/images/featured.jpg";
-import CtaPic from "../../../../app/assets/images/retro.png";
-import { Link } from "react-router-dom";
-import { withRouter } from 'react-router-dom';
-import CategoryFeaturedContainer from "../category_featured/category_featured_container";
+import CatReccProjIndex from '../category_reccomended/cat_recc_proj_index';
+import CategoryFeatured from "../category_featured/category_featured";
 
 class CategoryHome extends React.Component {
 
@@ -43,11 +38,11 @@ class CategoryHome extends React.Component {
                 <div className="mid-section-container">
                     <div className="mid-section">
                         <div className="featured-project-container">
-                            <CategoryFeaturedContainer proj={proj}/>
+                            <CategoryFeatured proj={proj}/>
                         </div>
                         <div className="reccomended-project-container">
                             <p className="small-header-recc">RECOMMENDED</p>
-                            {/* <ReccomendedCategoryIndexContainer /> */}
+                            <CatReccProjIndex proj={proj}/>
                         </div>
                     </div>
                 </div>
@@ -60,4 +55,4 @@ class CategoryHome extends React.Component {
     }
 }
 
-export default withRouter(CategoryHome);
+export default CategoryHome;
