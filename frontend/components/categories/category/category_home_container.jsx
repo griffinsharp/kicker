@@ -4,7 +4,7 @@ import { fetchProjects, fetchProject, createProject, updateProject, deleteProjec
 import { Route, Redirect, withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => ({
-    projects: Object.values(state.entities.projects),
+    projects: Object.values(state.entities.projects).filter(project => project.category_id == ownProps.match.params.categoryId),
     category: ownProps.match.params.categoryId
 });
 

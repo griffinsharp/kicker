@@ -1,5 +1,6 @@
 import React from 'react';
-import CatReccProjIndexItem from './cat_recc_proj_index_item'
+import CatReccProjIndexItem from './cat_recc_proj_index_item';
+import { Route, Redirect, withRouter } from 'react-router-dom';
 
 class CatReccProjIndex extends React.Component {
 
@@ -30,4 +31,4 @@ class CatReccProjIndex extends React.Component {
 
 }
 
-export default CatReccProjIndex; 
+export default withRouter(CatReccProjIndex); 

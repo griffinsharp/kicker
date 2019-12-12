@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import { Route, Redirect, withRouter } from 'react-router-dom';
+
 
 
 class CatReccProjIndexItem extends React.Component {
@@ -18,6 +20,8 @@ class CatReccProjIndexItem extends React.Component {
         const { projectId, project } = this.props;
 
         return (
+
+            
             <div className="recc-project-index-item">
                 <div className="author">
                     <Link to={`/projects/${projectId}`}>
@@ -49,4 +53,4 @@ class CatReccProjIndexItem extends React.Component {
     }
 }
 
-export default CatReccProjIndexItem;
+export default withRouter(CatReccProjIndexItem);

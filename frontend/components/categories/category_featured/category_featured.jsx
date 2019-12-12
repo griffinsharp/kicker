@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Route, Redirect, withRouter } from 'react-router-dom';
 
 class CategoryFeatured extends React.Component {
 
@@ -34,5 +35,5 @@ render() {
 
 };
 
-export default CategoryFeatured;
+export default withRouter(CategoryFeatured);
 
