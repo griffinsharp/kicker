@@ -1,21 +1,22 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
 class newProjectForm extends React.Component {
 
     constructor(props) {
         super(props);
 
-        this.state = {
-            title: '',
-            sub_title: '',
+        (this.state = {
+            title: `My Great Project ${Math.floor(Math.random() * 1000 )}`,
+            sub_title: 'My Great Project Subtitle',
             total_pledged: 0,
             goal_amount: 1,
             num_backers: 0,
             days_left: 30,
             loved: false,
-            location: '',
-            campaign: '',
-            about: '',
+            location: 'Worldwide',
+            campaign: 'Campaign should go here... Please edit me!',
+            about: 'This is a company. They have yet to fill out their bio!',
             category_id: 1,
             user_id: this.props.user[0].id,
             categorySelect: "choose-cat",
@@ -24,13 +25,18 @@ class newProjectForm extends React.Component {
             fundingSelect: "hidden",
             rewardsSelect: "hidden",
             selectedOption: "30",
-            newProjId: 0,
-        }
+            newProjId: (this.props.projects.length + 1),
+        }),
+
+        this.handleSubmit = this.handleSubmit.bind(this);
 
         this.handleClickCat = this.handleClickCat.bind(this);
         this.handleClickInfo = this.handleClickInfo.bind(this);
         this.handleClickLoc = this.handleClickLoc.bind(this);
-        this.handleClickFunding = this.handleClickFunding.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.fetchProjects().then(() => this.setState({ newProjId: this.props.projects.length + 1}));
     }
     
     // handling a generic update to a field
@@ -62,28 +68,43 @@ class newProjectForm extends React.Component {
         this.setState({fundingSelect: "choose-funding"});
     }
 
-    handleClickFunding(e) {
+    handleSubmit(e) {
         e.preventDefault();
         const newProject = Object.assign({}, this.state);
-        this.props.createProject(newProject).then( () => this.props.fetchProjects()).then( () => this.setState({ newProjId: this.props.projects[projects.length - 1].id }));
-        this.setState({ fundingSelect: "hidden" });
-        this.setState({ rewardsSelect: "choose-rewards" });
+        const newReward0 = Object.assign({}, { amount: 10, desc: "This is the filler reward.", subdesc: "Nothing.", delivery: "2 Weeks", shipping: "Domestic", num_backers: 0, project_id: this.state.newProjId });
+        const newReward1 = Object.assign({}, { amount: 10, desc: "This is the basic reward.", subdesc: "Most projects will have something worth contributing for here, but nothing major.", delivery: "2 Weeks", shipping: "Domestic", num_backers: 0, project_id: this.state.newProjId});
+        const newReward2 = Object.assign({}, { amount: 50, desc: "This is a middle tier reward.", subdesc: "This is where things start getting interesting.", delivery: "2 Weeks", shipping: "Domestic", num_backers: 0, project_id: this.state.newProjId});
+        const newReward3 = Object.assign({}, { amount: 500, desc: "This is the whole enchilada.", subdesc: "This is what you really want people to buy.", delivery: "2 Weeks", shipping: "Domestic", num_backers: 0, project_id: this.state.newProjId});
+        // let rewardArr = [newReward0, newReward1, newReward2, newReward3];
+        this.props.createProject(newProject).then(() => (
+            this.props.createReward(newReward0).then( () => (
+                this.props.createReward(newReward1).then(() => (
+                    this.props.createReward(newReward2).then(() => (
+                        this.props.createReward(newReward3).then(() => (
+                            this.props.history.push(`/projects/${this.state.newProjId}`)
+                        ))
+                    ))
+                ))
+            ))
+        ));
     }
+
 
     render () {
         console.log(this.state);
+        console.log(this.state.newProjId)
         return (
             <div className="new-proj-container">
-
                 {/* Category Select */}
-
+                
                 <div className={this.state.categorySelect}>
                     <div><h1>First, let's get you set up.</h1></div>
                     <div><p>Pick a project category to connect with a specific community. You can always update this later.</p></div>
                    <div>
                        <form>
-                            <select onChange={this.update("category_id")} >
-                                <option value="" selected disabled hidden>Select your category</option>
+    
+                            <select defaultValue="0" onChange={this.update("category_id")} >
+                                <option value="0" disabled hidden>Select your category</option>
                                 <option value="1" >Arts</option>
                                 <option value="2" >Comics & Illustration</option>
                                 <option value="3">Design & Tech</option>
@@ -148,8 +169,8 @@ class newProjectForm extends React.Component {
                     <div><h1>Tell us where you’re based and provide a little more about your company to display alongside your campaign.</h1></div>
                     <div>
                         <form>
-                            <select onChange={this.update("location")} >
-                                <option value="" selected disabled hidden>Select your country</option>
+                            <select defaultValue="0" onChange={this.update("location")} >
+                                <option value="0" disabled hidden>Select your country</option>
                                 <option value="Australia">Australia</option>
                                 <option value="Austria">Austria</option>
                                 <option value="Belgium">Belgium</option>
@@ -184,7 +205,9 @@ class newProjectForm extends React.Component {
 
                 {/* Funding Info*/}
                 <div className={this.state.fundingSelect}>
-                    <form>
+                    
+                    <form onSubmit={this.handleSubmit}>
+
                         <div><h1>Funding goal</h1></div>
                         <div><p>Set an achievable goal that covers what you need to complete your project.</p></div>
                         <div><p>Funding is all-or-nothing. If you don’t meet your goal, you won’t receive any money.</p></div>
@@ -210,8 +233,7 @@ class newProjectForm extends React.Component {
                         <input
                             className="session-type-button"
                             type="submit"
-                            value="Next: Create Rewards"
-                            onClick={this.handleClickFunding}
+                            value="Next: Create Your Project"
                         />
                     </form>
                 </div>
@@ -223,4 +245,4 @@ class newProjectForm extends React.Component {
 
 }
 
-export default newProjectForm;
+export default withRouter(newProjectForm);

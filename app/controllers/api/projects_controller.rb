@@ -1,3 +1,4 @@
+require 'open-uri'
 class Api::ProjectsController < ApplicationController
 
     # Must be signed in to create, edit, or destroy a project.
@@ -17,12 +18,15 @@ class Api::ProjectsController < ApplicationController
 
     def create
         @project = Project.new(project_params)
+        puts (@project)
         @project.user_id = current_user.id
-    # @project = current_user.projects.new(project_params)
+            newphoto = open("https://kicker-seed.s3-us-west-1.amazonaws.com/allBirds.png")
+            @project.photo.attach(io: newphoto, filename: 'allBirds.png')
+
         if @project.save
             render "api/projects/show"
         else
-            render json: @project.errors.full_messages, status: 422
+            render json: ["The email address and password you entered do not match."], status: 401
         end
     end
 
