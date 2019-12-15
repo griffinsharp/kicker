@@ -24,6 +24,7 @@ class newProjectForm extends React.Component {
             fundingSelect: "hidden",
             rewardsSelect: "hidden",
             selectedOption: "30",
+            newProjId: 0,
         }
 
         this.handleClickCat = this.handleClickCat.bind(this);
@@ -35,6 +36,10 @@ class newProjectForm extends React.Component {
     // handling a generic update to a field
     update(field) {
         return e => this.setState({[field]: e.currentTarget.value});
+    }
+
+    updateNum(field) {
+        return e => { this.setState({ [field]: Number(e.currentTarget.value) })};
     }
 
     // handling an update to a radio selector (set state of days_left and selectedOption)
@@ -57,7 +62,10 @@ class newProjectForm extends React.Component {
         this.setState({fundingSelect: "choose-funding"});
     }
 
-    handleClickFunding() {
+    handleClickFunding(e) {
+        e.preventDefault();
+        const newProject = Object.assign({}, this.state);
+        this.props.createProject(newProject).then( () => this.props.fetchProjects()).then( () => this.setState({ newProjId: this.props.projects[projects.length - 1].id }));
         this.setState({ fundingSelect: "hidden" });
         this.setState({ rewardsSelect: "choose-rewards" });
     }
@@ -74,7 +82,7 @@ class newProjectForm extends React.Component {
                     <div><p>Pick a project category to connect with a specific community. You can always update this later.</p></div>
                    <div>
                        <form>
-                            <select onChange={this.update("category_id")} name="">
+                            <select onChange={this.update("category_id")} >
                                 <option value="" selected disabled hidden>Select your category</option>
                                 <option value="1" >Arts</option>
                                 <option value="2" >Comics & Illustration</option>
@@ -140,7 +148,7 @@ class newProjectForm extends React.Component {
                     <div><h1>Tell us where you’re based and provide a little more about your company to display alongside your campaign.</h1></div>
                     <div>
                         <form>
-                            <select onChange={this.update("location")} name="">
+                            <select onChange={this.update("location")} >
                                 <option value="" selected disabled hidden>Select your country</option>
                                 <option value="Australia">Australia</option>
                                 <option value="Austria">Austria</option>
@@ -180,7 +188,7 @@ class newProjectForm extends React.Component {
                         <div><h1>Funding goal</h1></div>
                         <div><p>Set an achievable goal that covers what you need to complete your project.</p></div>
                         <div><p>Funding is all-or-nothing. If you don’t meet your goal, you won’t receive any money.</p></div>
-                        <input className="session-type-input" onChange={this.update("goal_amount")} type="number" placeholder="1" min="1" max="100000000">
+                        <input className="session-type-input" onChange={this.updateNum("goal_amount")} type="number" placeholder="1" min="1" max="100000000">
                         </input>
 
                         <div><h1>Campaign duration</h1></div>
