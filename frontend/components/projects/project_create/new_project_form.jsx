@@ -78,6 +78,8 @@ class newProjectForm extends React.Component {
         this.setState({fundingSelect: "choose-funding"});
     }
 
+    // Nested Async calls to make sure that project and rewards are created in the correct order.
+    // The next one will only fire after the previous has completed/returns a promise. 
     handleSubmit(e) {
         e.preventDefault();
         this.setState({loading: true});
