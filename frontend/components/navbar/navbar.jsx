@@ -27,11 +27,19 @@ class Navbar extends React.Component {
             );
         }
 
+        let notLogged;
+
+        if (this.props.currentUser === null) {
+          notLogged = '/login'
+        } else {
+          notLogged = '/projects/new'
+        }
+
         return (
           <div className="navbar">
             <div className="left-bar">
               <p className="nav-link">Explore</p>
-              <Link to="/projects/new" className="nav-link">Start a project</Link>
+              <Link to={notLogged} className="nav-link">Start a project</Link>
             </div>
             <div className="logo-bar">
               <Link to="/" className="nav-link">
