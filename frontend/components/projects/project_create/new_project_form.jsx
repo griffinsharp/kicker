@@ -1,13 +1,22 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import { css } from '@emotion/core';
+import FadeLoader from 'react-spinners/FadeLoader';
 
+const override = css`
+    display: inline-block;
+    margin: 0 auto;
+    color: #DCDEDD;
+    size: 35px;
+    
+`;
 class newProjectForm extends React.Component {
 
     constructor(props) {
         super(props);
 
         (this.state = {
-            title: `My Great Project ${Math.floor(Math.random() * 1000 )}`,
+            title: `My Great Project ${Math.floor(Math.random() * 10000 )}`,
             sub_title: 'My Great Project Subtitle',
             total_pledged: 0,
             goal_amount: 1,
@@ -26,6 +35,7 @@ class newProjectForm extends React.Component {
             rewardsSelect: "hidden",
             selectedOption: "30",
             newProjId: (this.props.projects.length + 1),
+            loading: false
         }),
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -70,6 +80,7 @@ class newProjectForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        this.setState({loading: true});
         const newProject = Object.assign({}, this.state);
         const newReward0 = Object.assign({}, { amount: 10, desc: "This is the filler reward.", subdesc: "Nothing.", delivery: "2 Weeks", shipping: "Domestic", num_backers: 0, project_id: this.state.newProjId });
         const newReward1 = Object.assign({}, { amount: 10, desc: "This is the basic reward.", subdesc: "Most projects will have something worth contributing for here, but nothing major.", delivery: "2 Weeks", shipping: "Domestic", num_backers: 0, project_id: this.state.newProjId});
@@ -91,10 +102,15 @@ class newProjectForm extends React.Component {
 
 
     render () {
-        console.log(this.state);
-        console.log(this.state.newProjId)
+
         return (
             <div className="new-proj-container">
+                <div className='sweet-loading'>
+                    <FadeLoader
+                        css={override}
+                        loading={this.state.loading}
+                    />
+                </div> 
                 {/* Category Select */}
                 
                 <div className={this.state.categorySelect}>
