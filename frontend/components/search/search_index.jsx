@@ -44,6 +44,16 @@ class SearchIndex extends React.Component {
                 results3 = results2;
             } else if (this.state.filter === 'loved') {
                 results3 = results2.filter(project => (project.loved == true));
+            } else if (this.state.filter === 'newest') {
+                results3 = results2.sort( (a,b) => (b.days_left - a.days_left) );
+            } else if (this.state.filter === 'funded') {
+                results3 = results2.sort((a, b) => ((b.total_pledged / b.goal_amount) - (a.total_pledged / a.goal_amount)));
+            } else if (this.state.filter === 'random') {
+                results3 = results2.sort(() => Math.random() - 0.5);
+            } else if (this.state.filter === 'enddate') {
+                results3 = results2.sort((a, b) => (a.days_left - b.days_left));
+            } else if (this.state.filter === 'backed') {
+                results3 = results2.sort((a, b) => (b.num_backers - a.num_backers));
             }
 
             this.setState({ filtprojects: results3 });
@@ -52,17 +62,6 @@ class SearchIndex extends React.Component {
        
     }
 
-      // updateFilter(field) {
-    //     if (e.currentTarget.value === 'Loved') {
-    //         this.setState({ [field]: 'loved'});
-    //     } else if (e.currentTarget === 'Newest') {
-    //         this.setState({ [field]: 'newest' });
-    //     } else if (e.currentTarget === 'Funded') {
-    //         this.setState({ [field]: 'funded' });
-    //     } else if (e.currentTarget === 'Random') {
-    //         this.setState({ [field]: 'random' });
-    //     }
-    // }
 
     update(field) {
         return e => {
@@ -152,8 +151,10 @@ class SearchIndex extends React.Component {
                         <select defaultValue="" onChange={this.update("filter")} >
                             <option value="">Magic</option>
                             <option value="loved">Projects We Love</option>
-                            <option value="funded">Most Funded</option>
                             <option value="newest">Newest</option>
+                            <option value="enddate">End Date</option>
+                            <option value="funded">Most Funded</option>
+                            <option value="backed">Most Backed</option>
                             <option value="random">Random</option>
                         </select>
                     </form>
