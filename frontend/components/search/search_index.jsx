@@ -8,35 +8,97 @@ class SearchIndex extends React.Component {
             category_id: '',
             location: '',
             filter: '',
-            next: true
+            next: true,
+            filtprojects: ''
+        };
+        this.searchFilter = this.searchFilter.bind(this);
+        this.checkProj = this.checkProj.bind(this);
+    }
+    
+
+    componentDidMount() {
+        this.props.fetchProjects().then(() => {
+            this.setState({filtprojects: this.props.projects});
+        });
+        
+    }
+
+    searchFilter(projects) {
+        let results;
+        let results2;
+        let results3;
+        this.props.fetchProjects().then(() => {
+            if (this.state.category_id === '') {
+                results = projects;
+            } else {
+                results = projects.filter(project => (this.state.category_id == project.category_id));
+            }
+
+            if (this.state.location === '') {
+                results2 = results;
+            } else {
+                results2 = results.filter(project => (this.state.location == project.location));
+            }
+
+            if (this.state.filter === '') {
+                results3 = results2;
+            } else if (this.state.filter === 'loved') {
+                results3 = results2.filter(project => (project.loved == true));
+            }
+
+            this.setState({ filtprojects: results3 });
+        });
+    
+       
+    }
+
+      // updateFilter(field) {
+    //     if (e.currentTarget.value === 'Loved') {
+    //         this.setState({ [field]: 'loved'});
+    //     } else if (e.currentTarget === 'Newest') {
+    //         this.setState({ [field]: 'newest' });
+    //     } else if (e.currentTarget === 'Funded') {
+    //         this.setState({ [field]: 'funded' });
+    //     } else if (e.currentTarget === 'Random') {
+    //         this.setState({ [field]: 'random' });
+    //     }
+    // }
+
+    update(field) {
+        return e => {
+            this.setState({ [field]: e.currentTarget.value });
+            this.searchFilter(this.props.projects);
         };
     }
 
-    componentDidMount() {
-        this.props.fetchProjects();
-    }
 
-    update(field) {
-        return e => this.setState({ [field]: e.currentTarget.value });
-    }
 
-    updateFilter(field) {
-        
-        if (e.currentTarget.value === 'Loved') {
-            this.setState({ [field]: 'loved'})
-        } else if (e.currentTarget === 'Newest') {
-            this.setState({ [field]: 'newest' });
-        } else if (e.currentTarget === 'Funded') {
-            this.setState({ [field]: 'funded' });
-        } else if (e.currentTarget === 'Random') {
-            this.setState({ [field]: 'random' });
+    // this will handle the lifecycle of the projects.
+    // if its non existant, we haven't fetched yet, so return null.
+    // once fetched, if the array has a length, lets display each project.
+    // if there is no length, return a statement letting the user know. 
+    checkProj() {
+        if (this.state.filtprojects === '' || !this.state.filtprojects) {
+            return null;
+        } else {
+            if (this.state.filtprojects.length > 0) {
+                return (
+                    <div>
+                        {this.state.filtprojects.map(project => <SearchIndexItem project={project} />)}
+                    </div>
+                )
+            } else if (this.state.filtprojects.length === 0) {
+                return (
+                    <div>
+                        No projects matched your search.
+                    </div>
+                )
+            }
         }
     }
 
     render() {
-        console.log(this.state);
-        const {projects} = this.props;
-
+        
         return(
             <div>
                 <p>Show Me</p>
@@ -89,17 +151,14 @@ class SearchIndex extends React.Component {
                     <form>
                         <select defaultValue="" onChange={this.update("filter")} >
                             <option value="">Magic</option>
-                            <option value="Loved">Projects We Love</option>
-                            <option value="Funded">Most Funded</option>
-                            <option value="Newest">Newest</option>
-                            <option value="Random">Random</option>
+                            <option value="loved">Projects We Love</option>
+                            <option value="funded">Most Funded</option>
+                            <option value="newest">Newest</option>
+                            <option value="random">Random</option>
                         </select>
                     </form>
                 </div>
-                    <div>
-                    {projects.map(project => <SearchIndexItem project={project} key={project.id}/>)}
-                    </div>
-                
+                   {this.checkProj()}
             </div>
         )
     }
