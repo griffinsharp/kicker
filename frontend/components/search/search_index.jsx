@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchIndexItem from './search_index_item';
+import { withRouter } from "react-router-dom";
 
 class SearchIndex extends React.Component {
     constructor(props) {
@@ -8,8 +9,7 @@ class SearchIndex extends React.Component {
             category_id: '',
             location: '',
             filter: '',
-            next: true,
-            filtprojects: ''
+            filtprojects: '',
         };
         this.searchFilter = this.searchFilter.bind(this);
         this.checkProj = this.checkProj.bind(this);
@@ -17,10 +17,23 @@ class SearchIndex extends React.Component {
     
 
     componentDidMount() {
-        this.props.fetchProjects().then(() => {
-            this.setState({filtprojects: this.props.projects});
-        });
-        
+        if (typeof this.props.location.state !== 'undefined') {
+            this.props.fetchProjects().then(() => {
+                this.setState({
+                    category_id: this.props.location.state.category_id,
+                    location: this.props.location.state.location,
+                    filter: this.props.location.state.filter,
+                    filtprojects: this.props.projects,
+                });
+                this.searchFilter(this.props.projects);
+            });
+        } else {
+            this.props.fetchProjects().then(() => {
+                this.setState({
+                    filtprojects: this.props.projects,
+                });
+            });
+        }
     }
 
     searchFilter(projects) {
@@ -97,7 +110,7 @@ class SearchIndex extends React.Component {
     }
 
     render() {
-        
+       
         return(
             <div>
                 <p>Show Me</p>
@@ -148,7 +161,7 @@ class SearchIndex extends React.Component {
                 <p>sorted by</p>
                 <div>
                     <form>
-                        <select defaultValue="" onChange={this.update("filter")} >
+                        <select defaultValue='' value={this.state.filter} onChange={this.update("filter")} >
                             <option value="">Magic</option>
                             <option value="loved">Projects We Love</option>
                             <option value="newest">Newest</option>
@@ -165,4 +178,4 @@ class SearchIndex extends React.Component {
     }
 }
 
-export default SearchIndex;
+export default withRouter(SearchIndex);

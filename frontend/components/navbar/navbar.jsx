@@ -49,10 +49,30 @@ class Navbar extends React.Component {
               <div className={this.state.modalAppear}>
                 <div className="modal-header">Collections
                   <div className="modal-links">
-                    <Link to="/search" >Projects We Love </Link>
-                    <Link to="/search">Nearly Funded </Link>
-                    <Link to="/search">Just Launched </Link>
-                    <Link to="/search">Everything </Link>
+                    <Link to={{
+                      pathname: '/search',
+                    state: {
+                      category_id: '', location: '', filter: 'loved', filtprojects: ''
+                    }
+                      }}> Projects We Love </Link>
+                  <Link to={{
+                    pathname: '/search',
+                    state: {
+                      category_id: '', location: '', filter: 'funded', filtprojects: ''
+                    }
+                  }}> Nearly Funded </Link>
+                  <Link to={{
+                    pathname: '/search',
+                    state: {
+                      category_id: '', location: '', filter: 'newest', filtprojects: ''
+                    }
+                  }}>Just Launched </Link>
+                  <Link to={{
+                    pathname: '/search',
+                    state: {
+                      category_id: '', location: '', filter: '', filtprojects: ''
+                    }
+                  }}>Everything </Link>
                   </div>
                 </div>
               <div className="modal-header">Categories
