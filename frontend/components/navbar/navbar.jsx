@@ -16,7 +16,12 @@ class Navbar extends React.Component {
     }
 
     handleExplore() {
-      this.setState({modalAppear: "navbar-and-modal"});
+      if (this.state.modalAppear === "hidden") {
+        this.setState({ modalAppear: "navbar-and-modal" });
+      } else if (this.state.modalAppear === "navbar-and-modal"){
+        this.setState({ modalAppear: "hidden" });
+      }
+      
     }
     
 
@@ -49,25 +54,25 @@ class Navbar extends React.Component {
               <div className={this.state.modalAppear}>
                 <div className="modal-header">Collections
                   <div className="modal-links">
-                    <Link to={{
+                  <Link onClick={() => this.handleExplore()} to={{
                       pathname: '/search',
                     state: {
                       category_id: '', location: '', filter: 'loved', filtprojects: ''
                     }
                       }}> Projects We Love </Link>
-                  <Link to={{
+                  <Link onClick={() => this.handleExplore()} to={{
                     pathname: '/search',
                     state: {
                       category_id: '', location: '', filter: 'funded', filtprojects: ''
                     }
                   }}> Nearly Funded </Link>
-                  <Link to={{
+                  <Link onClick={() => this.handleExplore()} to={{
                     pathname: '/search',
                     state: {
                       category_id: '', location: '', filter: 'newest', filtprojects: ''
                     }
                   }}>Just Launched </Link>
-                  <Link to={{
+                  <Link onClick={() => this.handleExplore()} to={{
                     pathname: '/search',
                     state: {
                       category_id: '', location: '', filter: '', filtprojects: ''
@@ -77,14 +82,14 @@ class Navbar extends React.Component {
                 </div>
               <div className="modal-header">Categories
                   <div className="modal-links">
-                  <Link className="" to="/category/1">Arts</Link>
-                  <Link className="" to="/category/2">Comics & Illustration</Link>
-                  <Link className="" to="/category/3">Design & Tech</Link>
-                  <Link className="" to="/category/4">Film</Link>
-                  <Link className="" to="/category/5">Food & Craft</Link>
-                  <Link className="" to="/category/6">Games</Link>
-                  <Link className="" to="/category/7">Music</Link>
-                  <Link className="" to="/category/8">Publishing</Link>
+                  <Link onClick={() => this.handleExplore()} className="" to="/category/1">Arts</Link>
+                  <Link onClick={() => this.handleExplore()} className="" to="/category/2">Comics & Illustration</Link>
+                  <Link onClick={() => this.handleExplore()} className="" to="/category/3">Design & Tech</Link>
+                  <Link onClick={() => this.handleExplore()} className="" to="/category/4">Film</Link>
+                  <Link onClick={() => this.handleExplore()} className="" to="/category/5">Food & Craft</Link>
+                  <Link onClick={() => this.handleExplore()} className="" to="/category/6">Games</Link>
+                  <Link onClick={() => this.handleExplore()} className="" to="/category/7">Music</Link>
+                  <Link onClick={() => this.handleExplore()} className="" to="/category/8">Publishing</Link>
                 </div>
               </div>
               </div>
