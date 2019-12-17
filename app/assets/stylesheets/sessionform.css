@@ -59,16 +59,20 @@
     border-top: 1px solid #F1EEEA;
 }
 
-.check-box {
-    padding-left: 0;
-}
-
 
 
 .s-two {
     margin-top: 18px;
 }
 
+.check-container {
+    margin-top: 4px;
+    padding-left: 0px;
+}
+
+.check-box {
+    padding-left: 0;
+}
 .session-btn{
     background-color: #009E74;
     color: #FFF;
@@ -76,6 +80,17 @@
     cursor: pointer;
     padding: 11px;
 }
+
+.session-btn-top{
+    background-color: #009E74;
+    color: #FFF;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 11px;
+    margin-top: 18px;
+}
+
+
 
 .session-btn-demo{
     background-color: #39579a;
@@ -92,7 +107,8 @@
 .or-line-container {
     display: flex;
     align-items: center;
-    margin: 10px;
+    margin-top: 18px;
+    margin-bottom: 22px;
 }
 
 .or-line {
@@ -110,7 +126,7 @@
 }
 
 a.session-type-input {
-    padding: 10px 0 14px 0;
+    padding: 10px 0 0 0;
     color: #2953ff;
     font-size: 13px;
 }

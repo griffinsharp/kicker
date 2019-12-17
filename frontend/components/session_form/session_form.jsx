@@ -84,9 +84,9 @@ class SessionForm extends React.Component {
     let onlyLogIn;
     if (this.props.location.pathname === "/login") {
       onlySignUp = "hidden";
-      onlyLogIn = "session-type-input s-two";
+      onlyLogIn = "session-type-input";
     } else if (this.props.location.pathname === "/signup") {
-      onlySignUp = "session-type-input s-two";
+      onlySignUp = "session-type-input";
       onlyLogIn = "hidden";
     }
 
@@ -105,7 +105,7 @@ class SessionForm extends React.Component {
               {this.renderErrors()}
               <p className="session-header">{formType}</p>
               <input
-                className={onlySignUp}
+                className={`${onlySignUp} s-two`}
                 type="text"
                 placeholder="Name"
                 onChange={this.update("name")}
@@ -141,8 +141,8 @@ class SessionForm extends React.Component {
 
               <a className={onlyLogIn}>Forgot your password?</a>
 
-              <input className="session-btn" type="submit" value={formType} />
-              <div className={onlyLogIn}>
+              <input className="session-btn-top" type="submit" value={formType} />
+              <div className={`${onlyLogIn} s-two check-container`}>
                 <input type="checkbox" />
                 Remember Me
               </div>
@@ -155,7 +155,7 @@ class SessionForm extends React.Component {
             </form>
             {/* bottom */}
             <div className="session-bottom">
-              <div className={`${onlyLogIn} bottom-call`}>New to Kickstarter?{navLink}</div>
+              <div className={`${onlyLogIn} s-two bottom-call`}>New to Kickstarter?{navLink}</div>
             </div>
           </div>
         </div>
