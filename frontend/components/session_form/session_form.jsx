@@ -49,13 +49,13 @@ class SessionForm extends React.Component {
 
   handleClick() {
     if (this.props.location.pathname === "/signup") {
-      this.setState({ repeatPassword: "session-type-input" });
+      this.setState({ repeatPassword: "session-type-input s-two" });
     }
   }
 
   handleEmail() {
     if (this.props.location.pathname === "/signup") {
-      this.setState({ repeatEmail: "session-type-input" });
+      this.setState({ repeatEmail: "session-type-input s-two" });
     }
   }
 
@@ -84,9 +84,9 @@ class SessionForm extends React.Component {
     let onlyLogIn;
     if (this.props.location.pathname === "/login") {
       onlySignUp = "hidden";
-      onlyLogIn = "session-type-input";
+      onlyLogIn = "session-type-input s-two";
     } else if (this.props.location.pathname === "/signup") {
-      onlySignUp = "session-type-input";
+      onlySignUp = "session-type-input s-two";
       onlyLogIn = "hidden";
     }
 
@@ -112,7 +112,7 @@ class SessionForm extends React.Component {
               />
 
               <input
-                className="session-type-input"
+                className="session-type-input s-two"
                 type="text"
                 placeholder="Email"
                 onChange={this.update("email")}
@@ -126,7 +126,7 @@ class SessionForm extends React.Component {
               />
 
               <input
-                className="session-type-input"
+                className="session-type-input s-two"
                 type="password"
                 placeholder="Password"
                 onChange={this.update("password")}
@@ -155,7 +155,7 @@ class SessionForm extends React.Component {
             </form>
             {/* bottom */}
             <div className="session-bottom">
-              <div className={onlyLogIn}>New to Kickstarter?{navLink}</div>
+              <div className={`${onlyLogIn} bottom-call`}>New to Kickstarter?{navLink}</div>
             </div>
           </div>
         </div>
