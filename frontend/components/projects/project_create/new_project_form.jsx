@@ -39,7 +39,7 @@ class newProjectForm extends React.Component {
         }),
 
         this.handleSubmit = this.handleSubmit.bind(this);
-
+        this.renderNumCount = this.renderNumCount.bind(this);
         this.handleClickCat = this.handleClickCat.bind(this);
         this.handleClickInfo = this.handleClickInfo.bind(this);
         this.handleClickLoc = this.handleClickLoc.bind(this);
@@ -47,6 +47,24 @@ class newProjectForm extends React.Component {
 
     componentDidMount() {
         this.props.fetchProjects().then(() => this.setState({ newProjId: this.props.projects.length + 1}));
+    }
+
+    renderNumCount() {
+        let count = "";
+        if (this.state.categorySelect === "choose-cat") {
+            count = "1 of 4";
+        } else if (this.state.infoSelect === "choose-info") {
+            count = "2 of 4";
+        } else if (this.state.locationSelect === "choose-loc") {
+            count = "3 of 4";
+        } else if (this.state.fundingSelect === "choose-funding") {
+            count = "4 of 4";
+        } 
+        return (
+            <div class="page-count">
+                {count}
+            </div>
+        )
     }
     
     // handling a generic update to a field
@@ -106,22 +124,24 @@ class newProjectForm extends React.Component {
     render () {
 
         return (
-            <div className="new-proj-container">
+            <div className="new-proj-section">
                 <div className='sweet-loading'>
                     <FadeLoader
                         css={override}
                         loading={this.state.loading}
                     />
                 </div> 
+            {this.renderNumCount()}  
+            <div className="new-proj-container">
                 {/* Category Select */}
                 
                 <div className={this.state.categorySelect}>
-                    <div><h1>First, let's get you set up.</h1></div>
-                    <div><p>Pick a project category to connect with a specific community. You can always update this later.</p></div>
-                   <div>
-                       <form>
+                    <div className="cat-header"><h1>First, let's get you set up.</h1></div>
+                    <div className="cat-sub-header">Pick a project category to connect with a specific community. You can always update this later.</div>
+                   
+                       <form className="dropform">
     
-                            <select defaultValue="0" onChange={this.update("category_id")} >
+                            <select defaultValue="0" onChange={this.update("category_id")} className="session-type-input-proj">
                                 <option value="0" disabled hidden>Select your category</option>
                                 <option value="1" >Arts</option>
                                 <option value="2" >Comics & Illustration</option>
@@ -132,14 +152,18 @@ class newProjectForm extends React.Component {
                                 <option value="7">Music</option>
                                 <option value="8">Publishing</option>
                             </select>
+            
+                        </form>
+
+                        <div className="btn-proj">
                             <input
-                                className="session-type-button"
+                                className="session-type-button-proj"
                                 type="submit"
                                 value="Next: Project Idea"
                                 onClick={this.handleClickCat}
                             />
-                        </form>
-                    </div> 
+                        </div>
+                    
                 </div>
 
                 {/* Project Info */}
@@ -257,6 +281,7 @@ class newProjectForm extends React.Component {
                 </div>
 
             </div>
+        </div>
         );
 
     }
