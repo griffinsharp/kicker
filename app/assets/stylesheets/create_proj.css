@@ -34,6 +34,15 @@
     padding-top: 100px;
 }
 
+.choose-funding {
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 19px;
+    padding-top: 100px;
+}
+
 .cat-header {
     font-size: 29px;
     margin-bottom: 17px;
@@ -64,6 +73,7 @@
     font-size: 18px;
     margin-bottom: 85px;
     cursor: pointer;
+    border: 1px solid #e8e8e8;
 }
 
 .session-type-button-proj {
@@ -173,3 +183,90 @@ textarea:focus {
     font-size: 16px;
 }
 
+.info-form-final {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.session-type-input-funding {
+    margin: 0px 0px 38px;
+    height: 20px;
+    width: 100%;
+    padding-top: 12px;
+    padding-left: 12px;
+    resize: none;
+    padding: 16px 18px;
+    background-color: white;
+    border-radius: unset;
+    font-size: 18px;
+    border: 1px solid #e8e8e8;
+    color: #282828;
+    -webkit-transition: all 0.30s ease-in-out;
+}
+
+.session-type-input-funding:hover {
+    outline: none;
+    border: 1px solid #009E74;
+    -webkit-transition: all 0.30s ease-in-out;
+}
+
+.session-type-input-funding:focus {
+    outline: none;
+    border: 1px solid black;
+    -webkit-transition: all 0.30s ease-in-out;
+}
+
+.dollar-sign {
+    margin-bottom: 38px;
+    width: 100px;
+    border: 1px solid #e8e8e8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 3px;
+    color: #282828;
+    border-right: none;
+    -webkit-transition: all 0.30s ease-in-out;
+}
+
+
+.funding-box {
+    display: flex;
+    width: 100%;
+}
+
+.radio-box {
+    text-align: left;
+    margin: 0px 0px 38px;
+    height: 20px;
+    width: 568px;
+    padding: 16px 18px;
+    font-size: 18px;
+    border: 1px solid #e8e8e8;
+    color: #282828;
+    -webkit-transition: all 0.30s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.radio-box:hover {
+   outline: none;
+   border: 1px solid #009E74;
+   -webkit-transition: all 0.30s ease-in-out;
+   cursor: pointer;
+}
+
+.radio-box:focus {
+    outline: none;
+    border: 1px solid black;
+    -webkit-transition: all 0.30s ease-in-out;   
+}
+
+.radio-session-type-input {
+   padding: 10px;
+   font-size: 14px;
+   margin-right: 18px;
+}

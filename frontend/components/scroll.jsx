@@ -15,3 +15,6 @@ function ScrollToTop({ history, children }) {
 }
 
 export default withRouter(ScrollToTop);
+
+// this just listens to a change in browser history and make sure to start at
+// the top of the page, rather than present it starting somewhere down the page.

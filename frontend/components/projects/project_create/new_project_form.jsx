@@ -61,7 +61,7 @@ class newProjectForm extends React.Component {
             count = "4 of 4";
         } 
         return (
-            <div class="page-count">
+            <div className="page-count">
                 {count}
             </div>
         )
@@ -205,7 +205,7 @@ class newProjectForm extends React.Component {
                             <div className="cat-header"><h1>Just a few more things.</h1></div>
                             <div className="cat-sub-header">You're almost done.</div>
                             <div className="page-3-info">
-                                <div className="box-header">Company Bio</div>
+                                <div className="box-header">Company bio</div>
                                 <div className="info-sub-header">This will appear on your project page.</div>
                             </div>
                             <form className="info-form">
@@ -259,36 +259,47 @@ class newProjectForm extends React.Component {
 
                 {/* Funding Info*/}
                 <div className={this.state.fundingSelect}>
-                    
-                    <form onSubmit={this.handleSubmit}>
 
-                        <div><h1>Funding goal</h1></div>
-                        <div><p>Set an achievable goal that covers what you need to complete your project.</p></div>
-                        <div><p>Funding is all-or-nothing. If you don’t meet your goal, you won’t receive any money.</p></div>
-                        <input className="session-type-input" onChange={this.updateNum("goal_amount")} type="number" placeholder="1" min="1" max="100000000">
-                        </input>
+                        <div className="cat-header"><h1>Finally, set a funding goal & campaign duration.</h1></div>
+                        <div className="cat-sub-header">Set an achievable goal that covers what you need to complete your project within the chosen amount of time. Funding is all-or-nothing. If you don’t meet your goal, you won’t receive any money.</div>
+                        <form className="info-form-final" onSubmit={this.handleSubmit}>
+                        <div className="box-header">Goal amount</div>
 
-                        <div><h1>Campaign duration</h1></div>
+                        <div className="funding-box">
+                            <div className="dollar-sign">
+                                $
+                            </div>
+                                <input className="session-type-input-funding" onChange={this.updateNum("goal_amount")} type="number" placeholder="1" min="1" max="100000000">
+                                </input>
+                        </div>
+                        
+                        <div className="box-header">
+                            Campaign duration
+                        </div>
 
-                        <div>
-                            <input className="session-type-input" onChange={this.updateRadio("days_left")} name="group1" type="radio" value="30" checked={this.state.selectedOption === '30'}/>
+                        <label className="radio-box">
+                            <input className="radio-session-type-input" onChange={this.updateRadio("days_left")} name="group1" type="radio" value="30" checked={this.state.selectedOption === '30'}/>
                             30 Days
-                        </div>
-                        <div>
-                                <input className="session-type-input" onChange={this.updateRadio("days_left")} name="group1" type="radio" value="60" checked={this.state.selectedOption === '60'}/>
-                            60 Days
-                        </div>
-                        <div>
-                                <input className="session-type-input" onChange={this.updateRadio("days_left")} name="group1" type="radio" value="90" checked={this.state.selectedOption === '90'}/>
-                            90 Days
-                        </div>    
-                     
+                        </label>
 
-                        <input
-                            className="session-type-button"
+                        <label className="radio-box">
+                            <input className="radio-session-type-input" onChange={this.updateRadio("days_left")} name="group1" type="radio" value="60" checked={this.state.selectedOption === '60'}/>
+                            60 Days
+                        </label>
+
+                        <label className="radio-box">
+                            <input className="radio-session-type-input" onChange={this.updateRadio("days_left")} name="group1" type="radio" value="90" checked={this.state.selectedOption === '90'}/>
+                            90 Days
+                        </label>    
+
+
+                        <div className="btn-proj">
+                            <input
+                            className="session-type-button-proj"
                             type="submit"
                             value="Next: Create Your Project"
                         />
+                        </div>
                     </form>
                 </div>
 
