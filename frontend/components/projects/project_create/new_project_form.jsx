@@ -169,30 +169,31 @@ class newProjectForm extends React.Component {
                 {/* Project Info */}
 
                 <div className={this.state.infoSelect}>
-                    <div><h1>Describe what you’ll be creating.</h1></div>
-                    <div><p>And don’t worry, you can edit this later, too.</p></div>
-                    <div>
-                        <form>
+                    <div className="cat-header"><h1>Describe what you’ll be creating.</h1></div>
+                    <div className="cat-sub-header">And don’t worry, you can edit this later, too.</div>
+                    <div className="">
+                        <form className="info-form">
+                            <div className="box-header">Title</div>
+                            <textarea className="session-type-input-info" onChange={this.update("title")} type="text" placeholder="The Community Shoe Kit">
+                    
+                            </textarea>
+                            <div className="box-header">Subtitle</div>
+                            <textarea className="session-type-input-info" onChange={this.update("sub_title")} type="text" placeholder="Explore the shoe world around you with an affordable show kit you construct yourself.">
 
-                            <input className="session-type-input" onChange={this.update("title")} type="text" placeholder="The Community Shoe Kit">
+                            </textarea>
+                            <div className="box-header">Description</div>
+                            <textarea className="session-type-input-info" onChange={this.update("campaign")} type="text" placeholder="From Nike to Adidas, a strange and fantastic world surrounds us. Working with people around the world, The Shoe Company has developed an affordable way to peek into this hidden world.">
 
-                            </input>
+                                </textarea>
 
-                            <input className="session-type-input" onChange={this.update("sub_title")} type="text" placeholder="Explore the shoe world around you with an affordable show kit you construct yourself.">
-
-                            </input>
-
-                            <input className="session-type-input" onChange={this.update("campaign")} type="text" placeholder="From Nike to Adidas, a strange and fantastic world surrounds us. Working with people around the world, The Shoe Company has developed an affordable way to peek into this hidden world.">
-
-                            </input>
-
-                            
+                        <div className="btn-proj">
                             <input
-                                className="session-type-button"
+                                className="session-type-button-proj"
                                 type="submit"
                                 value="Next: Location"
                                 onClick={this.handleClickInfo}
                             />
+                        </div>
                         </form>
                     </div>
                 </div>
