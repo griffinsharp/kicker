@@ -174,11 +174,11 @@ class newProjectForm extends React.Component {
                     <div className="">
                         <form className="info-form">
                             <div className="box-header">Title</div>
-                            <textarea className="session-type-input-info" onChange={this.update("title")} type="text" placeholder="The Community Shoe Kit">
+                            <textarea className="session-type-input-info-short" onChange={this.update("title")} type="text" placeholder="The Community Shoe Kit">
                     
                             </textarea>
                             <div className="box-header">Subtitle</div>
-                            <textarea className="session-type-input-info" onChange={this.update("sub_title")} type="text" placeholder="Explore the shoe world around you with an affordable show kit you construct yourself.">
+                            <textarea className="session-type-input-info-short" onChange={this.update("sub_title")} type="text" placeholder="Explore the shoe world around you with an affordable show kit you construct yourself.">
 
                             </textarea>
                             <div className="box-header">Description</div>
@@ -202,17 +202,26 @@ class newProjectForm extends React.Component {
 
                 <div className={this.state.locationSelect}>
                     <div>
-                        <div> <h1>Briefly tell more about yourself or your company.</h1></div>
-                        <form>
-                            <input className="session-type-input" onChange={this.update("about")} type="text" placeholder="Born on Kickstarter in 2013, The Shoe Company is a San Francisco-based startup in love with shoes and obsessed with product design.">
-                            </input>
+                            <div className="cat-header"><h1>Just a few more things.</h1></div>
+                            <div className="cat-sub-header">You're almost done.</div>
+                            <div className="page-3-info">
+                                <div className="box-header">Company Bio</div>
+                                <div className="info-sub-header">This will appear on your project page.</div>
+                            </div>
+                            <form className="info-form">
+                            <textarea className="session-type-input-info" onChange={this.update("about")} type="text" placeholder="Born on Kickstarter in 2013, The Shoe Company is a San Francisco-based startup in love with shoes and obsessed with product design.">
+                            </textarea>
 
                         </form>
                     </div>
-                    <div><h1>Tell us where you’re based and provide a little more about your company to display alongside your campaign.</h1></div>
-                    <div>
-                        <form>
-                            <select defaultValue="0" onChange={this.update("location")} >
+                    <div className="page-3-info">
+                            <div className="box-header">Project location</div>
+                            <div className="info-sub-header">Enter the location that best describes where your project is based.</div>
+                    </div>
+                       
+                    
+                        <form className="dropform">
+                            <select defaultValue="0" onChange={this.update("location")} className="session-type-input-proj">
                                 <option value="0" disabled hidden>Select your country</option>
                                 <option value="Australia">Australia</option>
                                 <option value="Austria">Austria</option>
@@ -236,14 +245,16 @@ class newProjectForm extends React.Component {
                                 <option value="the United Kingdom">the United Kingdom</option>
                                 <option value="the United States">the United States</option>
                             </select>
-                            <input
-                                className="session-type-button"
+                                <div className="btn-proj">
+                                    <input
+                                        className="session-type-button-proj"
                                 type="submit"
                                 value="Next: Funding"
                                 onClick={this.handleClickLoc}
                             />
+                            </div>
                         </form>
-                    </div> 
+                    
                 </div>
 
                 {/* Funding Info*/}

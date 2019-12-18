@@ -26,6 +26,14 @@
     padding-top: 100px;
 }
 
+.choose-loc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 19px;
+    padding-top: 100px;
+}
+
 .cat-header {
     font-size: 29px;
     margin-bottom: 17px;
@@ -55,6 +63,7 @@
     width: 100%;
     font-size: 18px;
     margin-bottom: 85px;
+    cursor: pointer;
 }
 
 .session-type-button-proj {
@@ -64,6 +73,7 @@
     color: #ffffff;
     font-size: 14px;
     font-family: inherit;
+    cursor: pointer;
 }
 
 .btn-proj {
@@ -84,10 +94,10 @@
 .session-type-input-info {
     margin: 0px 0px 38px;
     height: 70px;
-    width: 596px;
+    width: 566px;
     padding-top: 12px;
     padding-left: 12px;
-    resize: vertical;
+    resize: none;
     padding: 16px 18px;
     background-color: white;
     -webkit-appearance: none;
@@ -116,10 +126,10 @@ textarea:focus {
 }
 
 
-.session-type-input-info:nth-child(2), .session-type-input-info:nth-child(4) {
+.session-type-input-info-short {
     margin: 0px 0px 38px;
     height: 20px;
-    width: 596px;
+    width: 566px;
     padding-top: 12px;
     padding-left: 12px;
     resize: none;
@@ -134,10 +144,33 @@ textarea:focus {
   color: hsl(180, 2%, 68%);
 }
 
+.session-type-input-info-short::placeholder {
+  color: hsl(180, 2%, 68%);
+}
+
 .box-header {
     margin-right: auto;
     margin-left: 0;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
+.page-3-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+
+}
+
+.info-header {
+    font-size: 29px;
+    margin-bottom: 40px;
+}
+
+.info-sub-header {
+    color: rgba(0,0,0,0.6);
+    margin-bottom: 22px;
+    font-size: 16px;
+    
+}
 
