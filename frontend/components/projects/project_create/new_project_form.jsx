@@ -125,16 +125,15 @@ class newProjectForm extends React.Component {
 
         return (
             <div className="new-proj-section">
-                <div className='sweet-loading'>
-                    <FadeLoader
-                        css={override}
-                        loading={this.state.loading}
-                    />
-                </div> 
             {this.renderNumCount()}  
             <div className="new-proj-container">
                 {/* Category Select */}
-                
+                    <div className='sweet-loading'>
+                        <FadeLoader
+                            css={override}
+                            loading={this.state.loading}
+                        />
+                    </div> 
                 <div className={this.state.categorySelect}>
                     <div className="cat-header"><h1>First, let's get you set up.</h1></div>
                     <div className="cat-sub-header">Pick a project category to connect with a specific community. You can always update this later.</div>
