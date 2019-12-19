@@ -28,7 +28,8 @@ def self.find_by_credentials(email, password)
     user
 end
 
-# Make our password digest equal to a bcrypt object we generated using the user's password.
+# Make our password digest equal to a bcrypt object we
+# generated using the user's password.
 def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
@@ -39,7 +40,8 @@ def is_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)
 end
 
-# If we have a session token already, use that value. If we do not, create a new session token, thus ensuring one exists.
+# If we have a session token already, use that value.
+# If we do not, create a new session token, thus ensuring one exists.
 def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64
 end
