@@ -64,7 +64,7 @@ Here is a fairly straightforward `Rails` controller. When an ajax `POST` request
 
 **User Model**
 
-Kicker's user authentication utilizes the `BCrypt` gem to safely hash and salt password, avoiding the storage of password in a plain-text format. There are backend model and migration level validations, such as password length and email uniqueness, to require users to sign up with valid credentials, and the failure to do so results in the rendering of an associated error.
+Kicker's user authentication utilizes the `BCrypt` gem to safely hash and salt password, avoiding the storage of password in a plain-text format. There are `Rails` backend model and migration level validations, such as password length and email uniqueness, to require users to sign up with valid credentials, and the failure to do so results in the rendering of an associated error.
 
 <p align="center"> 
 <img src="https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/usermodel.png">
