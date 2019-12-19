@@ -23,8 +23,6 @@ Contributing to a project should update the total amount pledged immediately. If
 <img src="https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/KickerProjectPage.png">
 </p>
 
-**User Auth**
-
 **Search Results**
 
 Users can filter projects by category and location, and sort by company favorites, newest, nearly funded, end date, most backed, and random.
