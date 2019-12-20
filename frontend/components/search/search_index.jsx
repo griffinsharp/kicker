@@ -112,66 +112,69 @@ class SearchIndex extends React.Component {
     render() {
        
         return(
-            <div>
-                <p>Show Me</p>
-                <div>
-                    <form>
-                        <select defaultValue="" onChange={this.update("category_id")} >
-                            <option value="">All Categories</option>
-                            <option value="1" >Arts</option>
-                            <option value="2" >Comics & Illustration</option>
-                            <option value="3">Design & Tech</option>
-                            <option value="4">Film</option>
-                            <option value="5">Food & Craft</option>
-                            <option value="6">Games</option>
-                            <option value="7">Music</option>
-                            <option value="8">Publishing</option>
-                        </select>
-                    </form>                    
+            <div class="search-and-proj">
+                <div className="search-container">
+                    <p className="search-text">Show Me</p>
+                    <div className="search-form-container">
+                        <form className="dropform">
+                            <select defaultValue="" className="search-type-input" onChange={this.update("category_id")} >
+                                <option value="">All Categories</option>
+                                <option value="1" >Arts</option>
+                                <option value="2" >Comics & Illustration</option>
+                                <option value="3">Design & Tech</option>
+                                <option value="4">Film</option>
+                                <option value="5">Food & Craft</option>
+                                <option value="6">Games</option>
+                                <option value="7">Music</option>
+                                <option value="8">Publishing</option>
+                            </select>
+                        </form>
+                    </div>
+                    <p className="search-text">projects on</p>
+                    <div className="search-form-container">
+                        <form className="dropform">
+                            <select defaultValue="" className="search-type-input" onChange={this.update("location")} >
+                                <option value="">Earth</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Austria">Austria</option>
+                                <option value="Belgium">Belgium</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Denmark">Denmark</option>
+                                <option value="France">France</option>
+                                <option value="Germany">Germany</option>
+                                <option value="Ireland">Ireland</option>
+                                <option value="Italy">Italy</option>
+                                <option value="Japan">Japan</option>
+                                <option value="Luxembourg">Luxembourg</option>
+                                <option value="Mexico">Mexico</option>
+                                <option value="New Zealand">New Zealand</option>
+                                <option value="Norway">Norway</option>
+                                <option value="Singapore">Singapore</option>
+                                <option value="Spain">Spain</option>
+                                <option value="Sweden">Sweden</option>
+                                <option value="Switzerland">Switzerland</option>
+                                <option value="the Netherlands">the Netherlands</option>
+                                <option value="the United Kingdom">the United Kingdom</option>
+                                <option value="the United States">the United States</option>
+                            </select>
+                        </form>
+                    </div>
+                    <p className="search-text">sorted by</p>
+                    <div className="search-form-container">
+                        <form className="dropform">
+                            <select defaultValue="" className="search-type-input" value={this.state.filter} onChange={this.update("filter")} >
+                                <option value="">Magic</option>
+                                <option value="loved">Projects We Love</option>
+                                <option value="newest">Newest</option>
+                                <option value="enddate">End Date</option>
+                                <option value="funded">Most Funded</option>
+                                <option value="backed">Most Backed</option>
+                                <option value="random">Random</option>
+                            </select>
+                        </form>
+                    </div>
                 </div>
-                <p>projects on</p>
-                <div>
-                    <form>
-                        <select defaultValue="" onChange={this.update("location")} >
-                            <option value="">Earth</option>
-                            <option value="Australia">Australia</option>
-                            <option value="Austria">Austria</option>
-                            <option value="Belgium">Belgium</option>
-                            <option value="Canada">Canada</option>
-                            <option value="Denmark">Denmark</option>
-                            <option value="France">France</option>
-                            <option value="Germany">Germany</option>
-                            <option value="Ireland">Ireland</option>
-                            <option value="Italy">Italy</option>
-                            <option value="Japan">Japan</option>
-                            <option value="Luxembourg">Luxembourg</option>
-                            <option value="Mexico">Mexico</option>
-                            <option value="New Zealand">New Zealand</option>
-                            <option value="Norway">Norway</option>
-                            <option value="Singapore">Singapore</option>
-                            <option value="Spain">Spain</option>
-                            <option value="Sweden">Sweden</option>
-                            <option value="Switzerland">Switzerland</option>
-                            <option value="the Netherlands">the Netherlands</option>
-                            <option value="the United Kingdom">the United Kingdom</option>
-                            <option value="the United States">the United States</option>
-                        </select>
-                    </form>
-                </div>
-                <p>sorted by</p>
-                <div>
-                    <form>
-                        <select defaultValue='' value={this.state.filter} onChange={this.update("filter")} >
-                            <option value="">Magic</option>
-                            <option value="loved">Projects We Love</option>
-                            <option value="newest">Newest</option>
-                            <option value="enddate">End Date</option>
-                            <option value="funded">Most Funded</option>
-                            <option value="backed">Most Backed</option>
-                            <option value="random">Random</option>
-                        </select>
-                    </form>
-                </div>
+                
                    {this.checkProj()}
             </div>
         )
