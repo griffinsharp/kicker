@@ -75,15 +75,12 @@ class SearchIndex extends React.Component {
        
     }
 
-
     update(field) {
         return e => {
             this.setState({ [field]: e.currentTarget.value });
             this.searchFilter(this.props.projects);
         };
     }
-
-
 
     // this will handle the lifecycle of the projects.
     // if its non existant, we haven't fetched yet, so return null.
@@ -95,14 +92,17 @@ class SearchIndex extends React.Component {
         } else {
             if (this.state.filtprojects.length > 0) {
                 return (
-                    <div>
-                        {this.state.filtprojects.map(project => <SearchIndexItem project={project} />)}
+                    <div className="proj-and-amt">
+                        <div className="proj-amt">Explore <div className="green-amt">&nbsp;{this.state.filtprojects.length} projects</div></div>
+                        <div className="proj-search-container">
+                            {this.state.filtprojects.map(project => <SearchIndexItem project={project} />)}
+                        </div>
                     </div>
                 )
             } else if (this.state.filtprojects.length === 0) {
                 return (
                     <div>
-                        No projects matched your search.
+                        Oops! Looks like we couldn’t find any results. Why not change some things around or broaden your search?
                     </div>
                 )
             }
@@ -114,7 +114,7 @@ class SearchIndex extends React.Component {
         return(
             <div class="search-and-proj">
                 <div className="search-container">
-                    <p className="search-text">Show Me</p>
+                    <p className="search-text">Show me</p>
                     <div className="search-form-container">
                         <form className="dropform">
                             <select defaultValue="" className="search-type-input" onChange={this.update("category_id")} >
@@ -174,7 +174,7 @@ class SearchIndex extends React.Component {
                         </form>
                     </div>
                 </div>
-                
+                   
                    {this.checkProj()}
             </div>
         )

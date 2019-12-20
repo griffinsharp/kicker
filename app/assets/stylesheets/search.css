@@ -35,3 +35,26 @@
 .search-form-container {
     margin-right: 12px;
 }
+
+.proj-and-amt {
+    min-width: 892px;
+    max-width: 1246px;
+    margin: 0 auto;
+}
+
+.proj-amt {
+    font-size: 22px;
+    display: flex;
+}
+
+.green-amt {
+    color: #019d74;
+    font-weight: bold;
+}
+
+.proj-search-container {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 892px;
+    max-width: 1246px;
+}
