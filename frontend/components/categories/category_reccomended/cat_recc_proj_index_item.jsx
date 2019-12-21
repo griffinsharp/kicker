@@ -21,7 +21,7 @@ class CatReccProjIndexItem extends React.Component {
 
         return (
 
-            
+
             <div className="recc-project-index-item">
                 <div className="author">
                     <Link to={`/projects/${projectId}`}>

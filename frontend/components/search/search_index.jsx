@@ -112,7 +112,7 @@ class SearchIndex extends React.Component {
     render() {
        
         return(
-            <div class="search-and-proj">
+            <div className="search-and-proj">
                 <div className="search-container">
                     <p className="search-text">Show me</p>
                     <div className="search-form-container">
