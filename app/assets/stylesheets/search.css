@@ -38,13 +38,19 @@
 
 .proj-and-amt {
     min-width: 892px;
-    max-width: 1246px;
+    max-width: 1282px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 }
+
 
 .proj-amt {
     font-size: 22px;
     display: flex;
+    margin-left: 19px;
+    margin-top: 50px;
+    margin-bottom: 4px;
 }
 
 .green-amt {
@@ -54,7 +60,64 @@
 
 .proj-search-container {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    min-width: 892px;
-    max-width: 1246px;
+}
+
+/* search index items */
+
+.search-index-item {
+    height: 550px;
+    max-width: 390px;
+    min-width: auto;
+    margin: 0 17px;
+    margin-top: 32px;
+    border: 1px solid hsl(150, 3%, 87%);
+}
+
+.search-index-item-pic {
+    object-fit: cover;
+    width: 100%;
+    display: block;
+    max-height: 220px;
+    height: 222px;
+}
+
+.search-index-item-info {
+    font-size: 19px;
+    padding-top: 11px;  
+}
+
+.search-index-item-title {
+    font-size: 19px;
+    padding-top: 11px;
+}
+
+.search-index-item-subtitle {
+    font-family: 'Sorts Mill Goudy', 'Georgia', 'Times New Roman', 'Times', 'serif';
+    font-size: 15px;
+    padding: 12px 0;
+    line-height: 24px;
+}
+
+.search-author {
+    font-size: 13px;
+    color: #7e8383;
+}
+
+.search-author a {
+    font-size: 13px;
+    color: #7e8383;
+}
+
+.featured-project .search-author a:hover {
+    text-decoration: underline;
+}
+
+.search-img-container {
+    max-width: 390px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
 }

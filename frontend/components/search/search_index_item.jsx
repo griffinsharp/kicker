@@ -12,17 +12,19 @@ class SearchIndexItem extends React.Component {
         const { project, key } = this.props;
 
         return (
-            <div className="project-index-item">
-                <img className="project-index-item-pic" src={project.photoURL} alt="" />
-                <p className="project-index-item-info">
+            <div className="search-index-item">
+                <div className="search-img-container">
+                    <img className="search-index-item-pic" src={project.photoURL} alt="" />
+                </div>
+                <p className="search-index-item-info">
                     <Link
                         to={`/projects/${project.id}`}
-                        className="proj-index-item-title"
+                        className="search-index-item-title"
                     >
                         {project.title}
                     </Link>
-                    <div className="proj-index-item-subtitle">{project.sub_title}</div>
-                    <p className="author">
+                    <div className="search-index-item-subtitle">{project.sub_title}</div>
+                    <p className="search-author">
                         By <Link to={`/projects/${project.id}`}>{project.authorName}</Link>
                     </p>
                 </p>
