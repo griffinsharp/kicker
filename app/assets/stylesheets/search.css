@@ -97,7 +97,7 @@
 }
 
 .search-index-item-subtitle {
-    font-family: 'Sorts Mill Goudy', 'Georgia', 'Times New Roman', 'Times', 'serif';
+    font-family: 'Didact Gothic', 'Helvetica Neue', 'sans-serif', 'Helvetica', 'Arial', 'sans-serif';
     font-size: 15px;
     padding: 12px 0;
     line-height: 24px;
@@ -164,17 +164,23 @@
 }
 
 .search-info-cat {
-   color: hsla(180, 1%, 43%, 1);
+    color: hsla(180, 1%, 43%, 1);
     text-decoration: underline;
+    margin-right: 24px;
 }
 
 .search-info-loc {
     color: hsla(180, 1%, 43%, 1);
     text-decoration: underline;
-    margin-left: 24px;
 }
 
 .search-info-cat:hover, .search-info-loc:hover{
    color: hsl(0, 0%, 16%);
+}
+
+.map-svg {
+    color: hsla(180, 1%, 43%, 1);
+    font-size: 12px;
+    margin-right: 4px;
 }
 

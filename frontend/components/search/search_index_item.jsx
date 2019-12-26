@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+
 
 class SearchIndexItem extends React.Component {
 
@@ -58,12 +61,13 @@ class SearchIndexItem extends React.Component {
                                 category_id: '', location: `${project.lcategory}`, filter: '', filtprojects: ''
                             }
                         }}>{project.category}</Link>
+
                         <Link className="search-info-loc" to={{
                             pathname: '/search',
                             state: {
                                 category_id: '', location: `${project.location}`, filter: '', filtprojects: ''
                             }
-                        }}>{project.location}</Link>
+                        }}><FontAwesomeIcon className="map-svg" icon={faMapMarkerAlt} alt="" />{project.location}</Link>
                     </div>
                 </div>
                 
