@@ -198,3 +198,12 @@
 .search-author a:hover {
     text-decoration: underline;
 }
+
+.no-search-result {
+    font-size: 22px;
+    color: #282828;
+    margin-top: 76px;
+    text-align: left;
+    width: 758px;
+    line-height: 30px;
+}

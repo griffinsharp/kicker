@@ -101,8 +101,12 @@ class SearchIndex extends React.Component {
                 )
             } else if (this.state.filtprojects.length === 0) {
                 return (
-                    <div>
-                        Oops! Looks like we couldn’t find any results. Why not change some things around or broaden your search?
+                    <div className="proj-and-amt">
+                        <div className="proj-search-container">
+                            <div className="no-search-result">
+                                Oops! Looks like we couldn’t find any results. Why not change some things around or broaden your search?
+                            </div>
+                        </div>
                     </div>
                 )
             }
