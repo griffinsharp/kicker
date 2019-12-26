@@ -15,16 +15,15 @@ class Navbar extends React.Component {
         this.handleExplore = this.handleExplore.bind(this);
     }
 
-    handleExplore() {
-      if (this.state.modalAppear === "hidden") {
-        this.setState({ modalAppear: "navbar-and-modal" });
-      } else if (this.state.modalAppear === "navbar-and-modal"){
-        this.setState({ modalAppear: "hidden" });
-      }
-      
+  handleExplore() {
+    if (this.state.modalAppear === "hidden") {
+      this.setState({ modalAppear: "modal" });
+    } else if (this.state.modalAppear === "modal") {
+      this.setState({ modalAppear: "hidden" });
     }
-    
 
+  }
+    
     render() {
         let stateButton;
         if (this.props.currentUser === null) {
@@ -52,6 +51,7 @@ class Navbar extends React.Component {
         return (
           <div className="navbar-and-modal">
               <div className={this.state.modalAppear}>
+              <div className="modal-x-btn" onClick={() => this.handleExplore()}>X</div>
                 <div className="modal-header">Collections
                   <div className="modal-links">
                   <Link onClick={() => this.handleExplore()} to={{

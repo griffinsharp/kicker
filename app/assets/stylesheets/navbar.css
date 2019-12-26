@@ -58,8 +58,18 @@ set within its class attribute */
     flex-direction: column;
 }
 
+.nav-link:hover {
+   cursor: pointer;
+   color: #037362;
+}
+
 .link {
     margin-right: 16px;
+}
+
+.link:hover {
+    cursor: pointer;
+   color: #037362;
 }
 
 .search-icon {
