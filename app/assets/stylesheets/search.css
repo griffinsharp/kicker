@@ -96,12 +96,23 @@
     padding-top: 11px;
 }
 
+.search-index-item-title:hover {
+    font-size: 19px;
+    padding-top: 11px;
+    text-decoration: underline;
+}
+
 .search-index-item-subtitle {
     font-family: 'Didact Gothic', 'Helvetica Neue', 'sans-serif', 'Helvetica', 'Arial', 'sans-serif';
     font-size: 15px;
     padding: 12px 0;
     line-height: 24px;
     color: #9B9E9E;
+}
+
+.search-index-item-subtitle:hover {
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .search-author {
@@ -154,23 +165,23 @@
 }
 
 .search-perc-funded {
-    color: hsla(180, 1%, 43%, 1);
+    color: #9ea1a1;
     margin-bottom: 7px;
 }
 
 .search-days-left {
-   color: hsla(180, 1%, 43%, 1);
+   color: #9ea1a1;;
    margin-bottom: 18px;
 }
 
 .search-info-cat {
-    color: hsla(180, 1%, 43%, 1);
+    color: #9ea1a1;;
     text-decoration: underline;
     margin-right: 24px;
 }
 
 .search-info-loc {
-    color: hsla(180, 1%, 43%, 1);
+    color: #9ea1a1;;
     text-decoration: underline;
 }
 
@@ -179,8 +190,11 @@
 }
 
 .map-svg {
-    color: hsla(180, 1%, 43%, 1);
+    color: #656969;
     font-size: 12px;
     margin-right: 4px;
 }
 
+.search-author a:hover {
+    text-decoration: underline;
+}
