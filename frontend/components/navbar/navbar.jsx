@@ -19,9 +19,11 @@ class Navbar extends React.Component {
 
   handleExplore() {
     if (this.state.modalAppear === "hidden") {
+      document.body.style.overflow = "hidden";
       this.setState({ modalAppear: "modal" });
       this.setState({ modalAppearClear: "modalclear" });
     } else if (this.state.modalAppear === "modal") {
+      document.body.style.overflow = "auto";
       this.setState({ modalAppear: "hidden" });
       this.setState({ modalAppearClear: "hidden" });
     }
