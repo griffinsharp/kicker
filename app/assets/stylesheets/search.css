@@ -85,7 +85,10 @@
 
 .search-index-item-info {
     font-size: 19px;
-    padding-top: 11px;  
+    padding: 18px;
+    padding-top: 24px;
+    height: 156px;
+    padding-bottom: 0px;
 }
 
 .search-index-item-title {
@@ -98,16 +101,17 @@
     font-size: 15px;
     padding: 12px 0;
     line-height: 24px;
+    color: #9B9E9E;
 }
 
 .search-author {
-    font-size: 13px;
-    color: #7e8383;
+    font-size: 14px;
+    color: #282828;
 }
 
 .search-author a {
-    font-size: 13px;
-    color: #7e8383;
+    font-size: 14px;
+    color: #282828;
 }
 
 .featured-project .search-author a:hover {
@@ -123,5 +127,54 @@
 }
 
 .search-index-item-bottom {
-
+    padding: 18px;
+    height: 111px;
+    font-size: 14px;
 }
+
+.search-index-item-text {
+    
+}
+
+.progress-bar-search-container {
+    width: 100%;
+    height: 3px;
+    background-color: #e8e7e8;
+    margin-bottom: 20px;
+}
+
+.progress-bar-search {
+    background-color: #037362;
+    height: 100%;
+}
+
+.search-pledge-amt {
+    color: #037362;
+    margin-bottom: 7px;
+}
+
+.search-perc-funded {
+    color: hsla(180, 1%, 43%, 1);
+    margin-bottom: 7px;
+}
+
+.search-days-left {
+   color: hsla(180, 1%, 43%, 1);
+   margin-bottom: 18px;
+}
+
+.search-info-cat {
+   color: hsla(180, 1%, 43%, 1);
+    text-decoration: underline;
+}
+
+.search-info-loc {
+    color: hsla(180, 1%, 43%, 1);
+    text-decoration: underline;
+    margin-left: 24px;
+}
+
+.search-info-cat:hover, .search-info-loc:hover{
+   color: hsl(0, 0%, 16%);
+}
+

@@ -29,40 +29,44 @@ class SearchIndexItem extends React.Component {
                 <div className="search-img-container">
                     <img className="search-index-item-pic" src={project.photoURL} alt="" />
                 </div>
-                <div className="search-index-item-info">
-                    <Link
-                        to={`/projects/${project.id}`}
-                        className="search-index-item-title"
-                    >
-                        {project.title}
-                    </Link>
-                    <div className="search-index-item-subtitle">{project.sub_title}</div>
-                    <p className="search-author">
-                        By <Link to={`/projects/${project.id}`}>{project.authorName}</Link>
-                    </p>
+                <div className="search-index-item-text">
+                    <div className="search-index-item-info">
+                        <Link
+                            to={`/projects/${project.id}`}
+                            className="search-index-item-title"
+                        >
+                            {project.title}
+                        </Link>
+                        <div className="search-index-item-subtitle">{project.sub_title}</div>
+                        <p className="search-author">
+                            by <Link to={`/projects/${project.id}`}>{project.authorName}</Link>
+                        </p>
+                    </div>
+                    <div className="search-index-item-bottom">
+                        <div className="progress-bar-search-container">
+                            <div className="progress-bar-search" style={progressBar}></div>
+                        </div>
+                        <div className="search-pledge-amt">{`$${project.newPledgeAmount} pledged`}</div>
+                        <div className="search-perc-funded">{this.percentFunded(
+                            project.newPledgeAmount,
+                            project.goal_amount
+                        )}% funded</div>
+                        <div className="search-days-left">{project.days_left} days to go</div>
+                        <Link className="search-info-cat" to={{
+                            pathname: '/search',
+                            state: {
+                                category_id: '', location: `${project.lcategory}`, filter: '', filtprojects: ''
+                            }
+                        }}>{project.category}</Link>
+                        <Link className="search-info-loc" to={{
+                            pathname: '/search',
+                            state: {
+                                category_id: '', location: `${project.location}`, filter: '', filtprojects: ''
+                            }
+                        }}>{project.location}</Link>
+                    </div>
                 </div>
-                <div className="search-index-item-bottom">
-                    <div>{`$${project.newPledgeAmount} pledged`}</div>
-                    <div>{this.percentFunded(
-                        project.newPledgeAmount,
-                        project.goal_amount
-                    )}% funded</div>
-                    <div>{project.days_left} days to go</div>
-                    <Link to={{
-                        pathname: '/search',
-                        state: {
-                            category_id: '', location: `${project.lcategory}`, filter: '', filtprojects: ''
-                        }
-                    }}> {project.category}</Link>
-                    <Link to={{
-                        pathname: '/search',
-                        state: {
-                            category_id: '', location: `${project.location}`, filter: '', filtprojects: ''
-                        }
-                    }}> {project.location}</Link>
                 
-                
-                </div>
                 
             </div>
         );
