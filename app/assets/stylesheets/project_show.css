@@ -257,11 +257,13 @@ a.campaign-tab {
     border: solid 1px #DCDEDD;
     margin: 22px 0;
     padding: 18px;
+    padding-top: 22px;
 }
 
 .author-name-badge {
     font-weight: bold;
     font-size: 18px;
+    margin-bottom: 18px;
 }
 
 .user-info-container {
@@ -294,7 +296,6 @@ a.campaign-tab {
     width: 100%;
     display: block;
     font-family: 'Didact Gothic', 'Helvetica Neue', 'sans-serif', 'Helvetica', 'Arial', 'sans-serif';
-    margin-top: 29px;
     -webkit-transition: all 0.30s ease-in-out;
 }
 
@@ -307,14 +308,102 @@ a.campaign-tab {
     display: flex;
     padding: 10px;
     font-size: 14px;
+    margin-bottom: 20px;
 }
 
 .pledge-reward-amount {
     font-size: 18px;
-    margin-bottom: 18px;
+    margin-bottom: 22px;
 }
 
 .no-reward-header {
     font-size: 18px;
     margin-bottom: 18px;
+}
+
+.funding-box-rew {
+    display: flex;
+    width: 100%;
+}
+
+.dollar-sign-rew {
+    font-size: 13px;
+    margin-bottom: 20px;
+    width: 56px;
+    border: 1px solid #e8e8e8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3px;
+    color: #b6b8b8;
+    border-right: none;
+    -webkit-transition: all 0.30s ease-in-out;
+}
+
+.session-type-input-funding-rew {
+    margin: 0px 0px 20px;
+    height: 8px;
+    width: 100%;
+    resize: none;
+    padding: 16px 12px;
+    padding-top: 14px;
+    padding-bottom: 18px;
+    background-color: white;
+    border-radius: unset;
+    font-size: 17px;
+    border: 1px solid #e8e8e8;
+    color: #282828;
+    -webkit-transition: all 0.30s ease-in-out;
+}
+
+.session-type-input-funding-rew:focus {
+    outline: none;
+    border: 1px solid #009E74;
+    -webkit-transition: all 0.30s ease-in-out;
+}
+
+.reward-subdesc {
+    font-size: 14px;
+    margin-top: 14px;
+    color: hsl(180, 1%, 54%);
+    margin-bottom: 24px;
+}
+
+.deliv-and-ship {
+    display: flex;
+
+}
+
+.deliv {
+    width: 50%;
+}
+
+.ship {
+    width: 50%;
+}
+
+.small-reward-header {
+    color: #8c9090;
+    font-size: 11px;
+    margin-bottom: 7px;
+}
+
+.reward-sub-header {
+    font-size: 15px;
+    color: #020621;
+    margin-bottom: 24px;
+}
+
+.reward-backers {
+    color: #8c9090;
+    font-size: 13px;
+    margin-bottom: 38px;
+}
+
+.pledge-amt {
+    color: #656969;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 13px;
 }

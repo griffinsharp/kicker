@@ -50,13 +50,15 @@ class NoReward extends React.Component {
 
             <form className="pledge-form" onSubmit={this.handleSubmit}>
               <div className="no-reward-pledge">
-                <div className="no-reward-header">Make a pledge without a reward</div>
-                <input
-                  className="pledge-text-input"
-                  type="text"
-                    onChange={this.update("backing_amount")}
-                    value={this.state.backing_amount}
-                />
+                <div className="no-reward-header">Pledge without a reward</div>
+
+                    <div className="funding-box-rew">
+                        <div className="dollar-sign-rew">$</div>
+                        <input className="session-type-input-funding-rew" onChange={this.update("backing_amount")}
+                            value={this.state.backing_amount} type="number" >
+                        </input>
+                    </div>
+
                 <input
                   className="pledge-submit-button"
                   type="submit"

@@ -284,3 +284,7 @@ textarea:focus {
     margin-left: 5px;
     margin-top: 100px;
 }
+
+input[type='radio']:checked {
+   background-color: green;
+}

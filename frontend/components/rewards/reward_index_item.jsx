@@ -49,22 +49,36 @@ class RewardIndexItem extends React.Component {
           <div className="reward-index-item">
             <p className="pledge-reward-amount">Pledge US$ {reward.amount} or more </p>
             <p>{reward.desc}</p>
-            <p>{reward.subdesc}</p>
-            <p>Estimated Delivery {reward.delivery}</p>
-            <p>Ships to {reward.shipping}</p>
-            <p>{reward.newRewardBackers} backers</p>
+            <p className="reward-subdesc">{reward.subdesc}</p>
+            
+            <div className="deliv-and-ship">
+              <div className="deliv">
+                <div className="small-reward-header">ESTIMATED DELIVERY</div>
+                <div className="reward-sub-header">{reward.delivery}</div>
+              </div>
+
+              <div className="ship">
+                <div className="small-reward-header">SHIPS TO</div>
+                <div className="reward-sub-header">{reward.shipping}</div>
+              </div>
+            </div>
+            
+          
+            <p className="reward-backers">{reward.newRewardBackers} backers</p>
 
             <form className="pledge-form" onSubmit={this.handleSubmit}>
               {this.renderErrors()}
               <div className="pledge-contents">
-                {" "}
-                Pledge Amount
-                <input
-                  className="pledge-text-input"
-                  type="text"
-                  onChange={this.update("backing_amount")}
-                   value={this.state.backing_amount}
-                />
+                <div className="pledge-amt">Pledge amount</div>
+                <div className="funding-box-rew">
+                  <div className="dollar-sign-rew">$</div>
+                  <input className="session-type-input-funding-rew" onChange={this.update("backing_amount")}
+                    value={this.state.backing_amount} type="number" >
+                  </input>
+                </div>
+
+
+
                 <input
                   className="pledge-submit-button"
                   type="submit"
