@@ -26,7 +26,7 @@ class ProjectIndexItem extends React.Component {
           </Link>
           <div className="proj-index-item-subtitle">{project.sub_title}</div>
           <p className="author">
-            By <Link to={`/projects/${project.id}`}>{project.authorName}</Link>
+            By <Link className="author-link" to={`/projects/${project.id}`}>{project.authorName}</Link>
           </p>
           {/* <div className="author-name">By {project.authorName}</div> */}
         </p>

@@ -52,6 +52,11 @@
     padding-top: 11px;
 }
 
+.proj-index-item-title:hover {
+    color: #037362;
+    text-decoration: underline;
+}
+
 .proj-index-item-subtitle{
     font-family: 'Sorts Mill Goudy', 'Georgia', 'Times New Roman', 'Times', 'serif';
     font-size: 15px;

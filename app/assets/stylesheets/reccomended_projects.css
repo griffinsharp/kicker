@@ -84,3 +84,7 @@
     padding-right: 24px;
     
 }
+
+.author-link:hover {
+    text-decoration: underline;
+}
