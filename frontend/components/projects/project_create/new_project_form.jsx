@@ -2,6 +2,8 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import { css } from '@emotion/core';
 import FadeLoader from 'react-spinners/FadeLoader';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretDown} from "@fortawesome/free-solid-svg-icons";
 
 const override = css`
     display: inline-block;
@@ -35,7 +37,9 @@ class newProjectForm extends React.Component {
             rewardsSelect: "hidden",
             selectedOption: "30",
             newProjId: (this.props.projects.length + 1),
-            loading: false
+            loading: false,
+            dropdown: "Select your category",
+            catbox: "hidden"
         }),
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -69,7 +73,18 @@ class newProjectForm extends React.Component {
     
     // handling a generic update to a field
     update(field) {
+
         return e => this.setState({[field]: e.currentTarget.value});
+    }
+
+    updatedrop(field, cat) {
+        
+        return e => {this.setState({ [field]: e.currentTarget.value }), this.setState({ dropdown: [cat] }), this.setState({catbox: "hidden"})};
+
+    }
+
+    selectCat() {
+        this.setState({ catbox: "cat-box" });
     }
 
     updateNum(field) {
@@ -139,18 +154,21 @@ class newProjectForm extends React.Component {
                     <div className="cat-sub-header">Pick a project category to connect with a specific community. You can always update this later.</div>
                    
                        <form className="dropform">
-    
-                            <select defaultValue="0" onChange={this.update("category_id")} className="session-type-input-proj">
-                                <option value="0" disabled hidden>Select your category</option>
-                                <option value="1" >Arts</option>
-                                <option value="2" >Comics & Illustration</option>
-                                <option value="3">Design & Tech</option>
-                                <option value="4">Film</option>
-                                <option value="5">Food & Craft</option>
-                                <option value="6">Games</option>
-                                <option value="7">Music</option>
-                                <option value="8">Publishing</option>
-                            </select>
+                            <div className="session-type-input-proj-drop" onClick={() => this.selectCat()}>{this.state.dropdown}
+                                <FontAwesomeIcon className="caret-svg" icon={faCaretDown} alt="" />
+                            </div>
+                                <div className={this.state.catbox}> 
+                                    <div onClick={this.updatedrop("category_id", "Arts")} value="1" className="cat-box-option">Arts</div>
+                                    <div onClick={this.updatedrop("category_id", "Comics & Illustration")} value="2" className="cat-box-option">Comics & Illustration</div>
+                                    <div onClick={this.updatedrop("category_id", "Design & Tech")} value="3" className="cat-box-option">Design & Tech</div>
+                                    <div onClick={this.updatedrop("category_id", "Film")} value="4" className="cat-box-option">Film</div>
+                                    <div onClick={this.updatedrop("category_id", "Food & Craft")} value="5" className="cat-box-option">Food & Craft</div>
+                                    <div onClick={this.updatedrop("category_id", "Games")} value="6" className="cat-box-option">Games</div>
+                                    <div onClick={this.updatedrop("category_id", "Music")} value="7" className="cat-box-option">Music</div>
+                                    <div onClick={this.updatedrop("category_id", "Publishing")} value="8" className="cat-box-option">Publishing</div>
+                            </div>
+                            
+                    
             
                         </form>
 

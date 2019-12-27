@@ -47,7 +47,7 @@ class RewardIndexItem extends React.Component {
        
         return (
           <div className="reward-index-item">
-            <p className="pledge-reward-amount">Pledge US$ {reward.amount} or more </p>
+            <p className="pledge-reward-amount">Pledge ${reward.amount} or more </p>
             <p>{reward.desc}</p>
             <p className="reward-subdesc">{reward.subdesc}</p>
             

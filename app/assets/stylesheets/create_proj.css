@@ -58,6 +58,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    position: relative;
 }
 
 .page-count {
@@ -288,4 +289,62 @@ textarea:focus {
 
 input[type='radio']:checked {
    background-color: green;
+}
+
+/* dropdown */
+
+.session-type-input-proj-drop {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+    background-color: white;
+    -webkit-appearance: none;
+    border-radius: unset;
+    color: rgba(0,0,0,0.6);
+    font-size: 18px;
+    margin-bottom: 83px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    text-align: left;
+    padding-left: 18px;
+    padding-right: 18px;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.17);
+    -webkit-transition: all 0.30s ease-in-out;
+}
+
+.session-type-input-proj-drop:hover {
+    border: 1px solid #282828;
+    -webkit-transition: all 0.30s ease-in-out;
+}
+
+.cat-box {
+    overflow-y: scroll;
+    position: absolute;
+    top: 60px;
+    background-color: #ffffff;
+    padding: 6px;
+    height: 285px;
+    z-index: 100;
+    box-shadow: 0 3px 6px 1px rgba(0,0,0,0.17);
+    width: 98.7%;
+    padding-right: 0;
+    border: 1px hsl(0, 0%, 16%) solid;
+}
+
+.cat-box-option {
+    padding: 15px 11px;
+    text-align: left;
+    -webkit-transition: all 0.30s ease-in-out;
+    padding-right: 0;
+}
+
+.cat-box-option:hover {
+    background-color: #e8e7e8;
+    -webkit-transition: all 0.30s ease-in-out;
+    cursor: pointer;
+}
+
+.caret-svg {
+    color: #000000;
+    font-size: 16px;
 }
