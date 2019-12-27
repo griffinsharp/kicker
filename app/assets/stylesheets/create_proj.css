@@ -314,6 +314,7 @@ input[type='radio']:checked {
 
 .session-type-input-proj-drop:hover {
     border: 1px solid #282828;
+    transform: translateY(-1px);
     -webkit-transition: all 0.30s ease-in-out;
 }
 
@@ -347,4 +348,8 @@ input[type='radio']:checked {
 .caret-svg {
     color: #000000;
     font-size: 16px;
+}
+
+.black {
+    color: hsl(0, 0%, 16%);
 }

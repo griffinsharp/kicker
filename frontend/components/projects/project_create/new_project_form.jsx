@@ -39,13 +39,19 @@ class newProjectForm extends React.Component {
             newProjId: (this.props.projects.length + 1),
             loading: false,
             dropdown: "Select your category",
-            catbox: "hidden"
+            dropdowntwo: "Select your country",
+            catbox: "hidden",
+            catboxtwo: "hidden",
+            formColor: "",
+            formColorTwo: ""
         }),
         this.updatedrop = this.updatedrop.bind(this);
+        this.updatedroptwo = this.updatedroptwo.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderNumCount = this.renderNumCount.bind(this);
         this.handleClickCat = this.handleClickCat.bind(this);
         this.selectCat = this.selectCat.bind(this);
+        this.selectLoc = this.selectLoc.bind(this);
         this.handleClickInfo = this.handleClickInfo.bind(this);
         this.handleClickLoc = this.handleClickLoc.bind(this);
     }
@@ -81,11 +87,32 @@ class newProjectForm extends React.Component {
     updatedrop(cat, num) {
         this.setState({ category_id: num });
         this.setState({ dropdown: cat });
+        this.setState({ formColor: "black"})
         this.setState({ catbox: "hidden" });
     }
 
+    updatedroptwo(loc) {
+        this.setState({ location: loc });
+        this.setState({ dropdowntwo: loc });
+        this.setState({ formColorTwo: "black" })
+        this.setState({ catboxtwo: "hidden" });
+    }
+
     selectCat() {
-        this.setState({ catbox: "cat-box" });
+        if (this.state.catbox === "hidden") {
+            this.setState({ catbox: "cat-box" });
+        } else {
+            this.setState({ catbox: "hidden" });
+        }
+        
+    }
+
+    selectLoc() {
+        if (this.state.catboxtwo === "hidden") {
+            this.setState({ catboxtwo: "cat-box" });
+        } else {
+            this.setState({ catboxtwo: "hidden" });
+        }
     }
 
     updateNum(field) {
@@ -155,7 +182,7 @@ class newProjectForm extends React.Component {
                     <div className="cat-sub-header">Pick a project category to connect with a specific community. You can always update this later.</div>
                    
                        <form className="dropform">
-                            <div className="session-type-input-proj-drop" onClick={() => this.selectCat()}>{this.state.dropdown}
+                            <div className={`session-type-input-proj-drop ${this.state.formColor}`} onClick={() => this.selectCat()}>{this.state.dropdown}
                                 <FontAwesomeIcon className="caret-svg" icon={faCaretDown} alt="" />
                             </div>
                                 <div className={this.state.catbox}> 
@@ -237,41 +264,46 @@ class newProjectForm extends React.Component {
                             <div className="info-sub-header">Enter the location that best describes where your project is based.</div>
                     </div>
                        
-                    
                         <form className="dropform">
-                            <select defaultValue="0" onChange={this.update("location")} className="session-type-input-proj">
-                                <option value="0" disabled hidden>Select your country</option>
-                                <option value="Australia">Australia</option>
-                                <option value="Austria">Austria</option>
-                                <option value="Belgium">Belgium</option>
-                                <option value="Canada">Canada</option>
-                                <option value="Denmark">Denmark</option>
-                                <option value="France">France</option>
-                                <option value="Germany">Germany</option>
-                                <option value="Ireland">Ireland</option>
-                                <option value="Italy">Italy</option>
-                                <option value="Japan">Japan</option>
-                                <option value="Luxembourg">Luxembourg</option>
-                                <option value="Mexico">Mexico</option>
-                                <option value="New Zealand">New Zealand</option>
-                                <option value="Norway">Norway</option>
-                                <option value="Singapore">Singapore</option>
-                                <option value="Spain">Spain</option>
-                                <option value="Sweden">Sweden</option>
-                                <option value="Switzerland">Switzerland</option>
-                                <option value="the Netherlands">the Netherlands</option>
-                                <option value="the United Kingdom">the United Kingdom</option>
-                                <option value="the United States">the United States</option>
-                            </select>
-                                <div className="btn-proj">
-                                    <input
-                                        className="session-type-button-proj"
-                                type="submit"
-                                value="Next: Funding"
-                                onClick={this.handleClickLoc}
-                            />
+                            <div className={`session-type-input-proj-drop ${this.state.formColorTwo}`} onClick={() => this.selectLoc()}>{this.state.dropdowntwo}
+                                <FontAwesomeIcon className="caret-svg" icon={faCaretDown} alt="" />
                             </div>
+                            <div className={this.state.catboxtwo}>
+                                <div onClick={() => this.updatedroptwo("Australia")} className="cat-box-option">Australia</div>
+                                <div onClick={() => this.updatedroptwo("Austria")} className="cat-box-option">Austria</div>
+                                <div onClick={() => this.updatedroptwo("Belgium")} className="cat-box-option">Belgium</div>
+                                <div onClick={() => this.updatedroptwo("Canada")} className="cat-box-option">Canada</div>
+                                <div onClick={() => this.updatedroptwo("Denmark")} className="cat-box-option">Denmark</div>
+                                <div onClick={() => this.updatedroptwo("France")} className="cat-box-option">France</div>
+                                <div onClick={() => this.updatedroptwo("Germany")} className="cat-box-option">Germany</div>
+                                <div onClick={() => this.updatedroptwo("Ireland")} className="cat-box-option">Ireland</div>
+                                <div onClick={() => this.updatedroptwo("Italy")} className="cat-box-option">Italy</div>
+                                <div onClick={() => this.updatedroptwo("Japan")} className="cat-box-option">Japan</div>
+                                <div onClick={() => this.updatedroptwo("Luxembourg")} className="cat-box-option">Luxembourg</div>
+                                <div onClick={() => this.updatedroptwo("Mexico")} className="cat-box-option">Mexico</div>
+                                <div onClick={() => this.updatedroptwo("New Zealand")} className="cat-box-option">New Zealand</div>
+                                <div onClick={() => this.updatedroptwo("Norway")} className="cat-box-option">Norway</div>
+                                <div onClick={() => this.updatedroptwo("Singapore")} className="cat-box-option">Singapore</div>
+                                <div onClick={() => this.updatedroptwo("Spain")} className="cat-box-option">Spain</div>
+                                <div onClick={() => this.updatedroptwo("Sweden")} className="cat-box-option">Sweden</div>
+                                <div onClick={() => this.updatedroptwo("Switzerland")} className="cat-box-option">Switzerland</div>
+                                <div onClick={() => this.updatedroptwo("the Netherlands")} className="cat-box-option">the Netherlands</div>
+                                <div onClick={() => this.updatedroptwo("the United Kingdom")} className="cat-box-option">the United Kingdom</div>
+                                <div onClick={() => this.updatedroptwo("the United States")} className="cat-box-option">the United States</div>
+                            </div>
+
+                            <div className="btn-proj">
+                                <input
+                                    className="session-type-button-proj"
+                                    type="submit"
+                                    value="Next: Funding"
+                                    onClick={this.handleClickLoc}
+                                />
+                            </div>
+
                         </form>
+                    
+                        
                     
                 </div>
 
