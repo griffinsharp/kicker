@@ -41,10 +41,11 @@ class newProjectForm extends React.Component {
             dropdown: "Select your category",
             catbox: "hidden"
         }),
-
+        this.updatedrop = this.updatedrop.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderNumCount = this.renderNumCount.bind(this);
         this.handleClickCat = this.handleClickCat.bind(this);
+        this.selectCat = this.selectCat.bind(this);
         this.handleClickInfo = this.handleClickInfo.bind(this);
         this.handleClickLoc = this.handleClickLoc.bind(this);
     }
@@ -77,10 +78,10 @@ class newProjectForm extends React.Component {
         return e => this.setState({[field]: e.currentTarget.value});
     }
 
-    updatedrop(field, cat) {
-        
-        return e => {this.setState({ [field]: e.currentTarget.value }), this.setState({ dropdown: [cat] }), this.setState({catbox: "hidden"})};
-
+    updatedrop(cat, num) {
+        this.setState({ category_id: num });
+        this.setState({ dropdown: cat });
+        this.setState({ catbox: "hidden" });
     }
 
     selectCat() {
@@ -137,7 +138,7 @@ class newProjectForm extends React.Component {
 
 
     render () {
-
+       
         return (
             <div className="new-proj-section">
             {this.renderNumCount()}  
@@ -158,14 +159,14 @@ class newProjectForm extends React.Component {
                                 <FontAwesomeIcon className="caret-svg" icon={faCaretDown} alt="" />
                             </div>
                                 <div className={this.state.catbox}> 
-                                    <div onClick={this.updatedrop("category_id", "Arts")} value="1" className="cat-box-option">Arts</div>
-                                    <div onClick={this.updatedrop("category_id", "Comics & Illustration")} value="2" className="cat-box-option">Comics & Illustration</div>
-                                    <div onClick={this.updatedrop("category_id", "Design & Tech")} value="3" className="cat-box-option">Design & Tech</div>
-                                    <div onClick={this.updatedrop("category_id", "Film")} value="4" className="cat-box-option">Film</div>
-                                    <div onClick={this.updatedrop("category_id", "Food & Craft")} value="5" className="cat-box-option">Food & Craft</div>
-                                    <div onClick={this.updatedrop("category_id", "Games")} value="6" className="cat-box-option">Games</div>
-                                    <div onClick={this.updatedrop("category_id", "Music")} value="7" className="cat-box-option">Music</div>
-                                    <div onClick={this.updatedrop("category_id", "Publishing")} value="8" className="cat-box-option">Publishing</div>
+                                    <div onClick={() => this.updatedrop("Arts", 1)} className="cat-box-option">Arts</div>
+                                    <div onClick={() => this.updatedrop("Comics & Illustration", 2)} className="cat-box-option">Comics & Illustration</div>
+                                    <div onClick={() => this.updatedrop("Design & Tech", 3)}  className="cat-box-option">Design & Tech</div>
+                                    <div onClick={() => this.updatedrop("Film", 4)}  className="cat-box-option">Film</div>
+                                    <div onClick={() => this.updatedrop("Food & Craft", 5)}  className="cat-box-option">Food & Craft</div>
+                                    <div onClick={() => this.updatedrop("Games", 6)} className="cat-box-option">Games</div>
+                                    <div onClick={() => this.updatedrop("Music", 7)} className="cat-box-option">Music</div>
+                                    <div onClick={() => this.updatedrop("Publishing", 8)} className="cat-box-option">Publishing</div>
                             </div>
                             
                     
