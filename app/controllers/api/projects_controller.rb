@@ -23,7 +23,7 @@ class Api::ProjectsController < ApplicationController
             newphoto = open("https://kicker-seed.s3-us-west-1.amazonaws.com/allBirds.png")
             @project.photo.attach(io: newphoto, filename: 'allBirds.png')
 
-        if @project.save!
+        if @project.save
             render "api/projects/show"
         else
             render json: ["The email address and password you entered do not match."], status: 401
