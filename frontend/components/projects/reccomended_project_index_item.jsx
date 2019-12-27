@@ -37,7 +37,7 @@ class ReccomendedProjectIndexItem extends React.Component {
                   )}
                   % funded
                 </p>
-                <p className="author-name">By {project.authorName}</p>
+                <p className="author-name">By&nbsp;<p className="proj-name-underline">{project.authorName}</p></p>
               </div>
               <div className="heart-container">
                 <FontAwesomeIcon className="heart" icon={faHeart} />

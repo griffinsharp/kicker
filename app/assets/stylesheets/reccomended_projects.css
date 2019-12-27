@@ -66,6 +66,15 @@
 
 .author-name {
     color: #7e8383;
+
+}
+
+.proj-name-underline {
+    color: #7e8383;
+}
+
+.proj-name-underline:hover {
+    text-decoration: underline;
 }
 
 .recc-project-index-item-pic{
