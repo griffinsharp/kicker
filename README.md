@@ -15,12 +15,20 @@ This is what users are greeted with upon navigating to the website. A navbar, on
 <img src="https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/kickerhome.gif">
 </p>
 
-**A Typical Project Page with Reward Tiers**
+**Project Page with Reward Tiers**
 
 Contributing to a project should update the total amount pledged immediately. If the project is featured on the home page or its category's page, it should update there too. 
 
 <p align="center"> 
 <img src="https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/KickerProjectPage.png">
+</p>
+
+**Project Creation**
+
+Users can create their own projects, able to customize their campaign by title, subtitle, description, company bio, category, project location, goal amount, and campaign duration. If you're in a rush and just want to see your project live, values for these fields will automaticaly be filled in for you. 
+
+<p align="center"> 
+<img src="https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/createproj.gif">
 </p>
 
 **Search Results**
