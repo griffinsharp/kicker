@@ -43,6 +43,14 @@ Essentially, each category has its own 'home' page with its own featured, reccom
 
 Many user actions on Kicker require an account (creating or backing a project, for example), but I didn't want to make this a barrier to accessing all the site's features. To get around this, the user signup/login pages have a 'demo user' option if one wants to get the full experience without taking the time to sign up. 
 
+**Explore Modal**
+
+Clicking "explore" on the navigation bar allows for quick access to many parts of the website via a pop-up modal. 
+
+<p align="center"> 
+<img src="https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/modal.gif">
+</p>
+
 ## Code Snippets
 
 **Session Component**
