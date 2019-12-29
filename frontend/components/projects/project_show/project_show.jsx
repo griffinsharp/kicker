@@ -12,10 +12,15 @@ class ProjectShow extends React.Component {
 
     constructor(props) {
         super(props);
+        this.scrollReward = this.scrollReward.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchProject(this.props.match.params.projectId);
+    }
+
+    scrollReward() {
+      this.refs.header.scrollIntoView({ behavior: 'smooth' });
     }
 
     render() {
@@ -77,7 +82,7 @@ class ProjectShow extends React.Component {
                       <p className="light-grey sub-text">backers</p>
                       <p className="main-text light-grey">{project.days_left}</p>
                       <p className="light-grey sub-text">days to go</p>
-                      <input type="submit" value="Back this project" className="backing-btn"/>
+                      <input type="submit" value="Back this project" className="backing-btn" onClick={this.scrollReward}/>
                      <div className="remind-and-favs">
                         <div className="project-remind-btn-container">
                           <input type="submit" value="Remind me" className="project-remind-btn"/>
@@ -122,7 +127,7 @@ class ProjectShow extends React.Component {
                     <div className="author-name-badge">{project.authorName}</div>
                     <div>{project.about}</div>
                   </div>
-                  <div className="reward-header">Support</div>
+                  <div ref="header" className="reward-header">Support</div>
                   <RewardIndex
                     createBacking={createBacking}
                     fetchProject={fetchProject}
