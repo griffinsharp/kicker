@@ -29,7 +29,7 @@ class ProjectShow extends React.Component {
         // we want to return null so that our componentDidMount has a chance to fetch the correct project.
         if (!this.props.project) return null;
          
-        const { fetchProject, project, createBacking, user, errors, rewards } = this.props;
+        const { fetchProject, project, createBacking, user, errors, rewards, currentUser } = this.props;
 
         let loved;
         if (this.props.project.loved === true) {
@@ -129,6 +129,7 @@ class ProjectShow extends React.Component {
                   </div>
                   <div ref="header" className="reward-header">Support</div>
                   <RewardIndex
+                    currentUser={currentUser}
                     createBacking={createBacking}
                     fetchProject={fetchProject}
                     user={user}

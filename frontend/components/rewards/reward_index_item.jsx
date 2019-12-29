@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Redirect, withRouter } from 'react-router-dom';
 
 class RewardIndexItem extends React.Component {
 
@@ -19,9 +20,15 @@ class RewardIndexItem extends React.Component {
   }
 
   handleSubmit(e) {
-        e.preventDefault();
-        const backing = Object.assign({}, this.state);
-        this.props.createBacking(backing).then(() => this.handleErrors());
+    e.preventDefault();
+
+    if (this.props.currentUser === null) {
+      this.props.history.push('/login');
+    } else {
+      const backing = Object.assign({}, this.state);
+      this.props.createBacking(backing).then(() => this.handleErrors());
+    }
+
   }
 
   handleErrors() {
@@ -43,6 +50,7 @@ class RewardIndexItem extends React.Component {
   }
 
     render() {
+      console.log(this.props);
         const { reward, createBacking, user, errors } = this.props;
        
         return (
@@ -92,4 +100,4 @@ class RewardIndexItem extends React.Component {
     }
 }
 
-export default RewardIndexItem;
+export default withRouter(RewardIndexItem);

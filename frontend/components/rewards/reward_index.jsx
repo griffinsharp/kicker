@@ -14,6 +14,7 @@ class RewardIndex extends React.Component {
     if (reward.id % 4 === (1 % 4)) {
       return (
         <NoReward
+          currentUser={this.props.currentUser}
           errors={this.props.errors}
           reward={reward}
           createBacking={this.props.createBacking}
@@ -24,6 +25,7 @@ class RewardIndex extends React.Component {
     } else {
       return (
         <RewardIndexItem
+          currentUser={this.props.currentUser}
           errors={this.props.errors}
           reward={reward}
           createBacking={this.props.createBacking}
