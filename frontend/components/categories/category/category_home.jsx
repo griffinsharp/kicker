@@ -26,7 +26,7 @@ class CategoryHome extends React.Component {
             text = "From fine design to innovative tech, discover projects from creators working to build a more beautiful future.";
         } else if (projectCategory == 'Film') {
             text = "Join forces with the intrepid filmmakers and festival creators changing the way stories get told on screen.";
-        } else if (projectCategory == 'Foods & Craft') {
+        } else if (projectCategory == 'Food & Craft') {
             text = "See how artisans and entrepreneurs are using Kickstarter to break new ground in food, fashion, and crafts.";
         } else if (projectCategory == 'Games') {
             text = "From tabletop adventures to beloved revivals, discover the projects forging the future of gameplay.";
