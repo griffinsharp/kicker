@@ -14,7 +14,7 @@ class RewardIndexItem extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleErrors = this.handleErrors.bind(this);
     }
-
+ 
   update(field) {
     return e => this.setState({ [field]: e.currentTarget.value });
   }

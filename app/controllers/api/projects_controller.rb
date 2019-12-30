@@ -18,7 +18,7 @@ class Api::ProjectsController < ApplicationController
 
     def create
         @project = Project.new(project_params)
-        puts (@project)
+        
         @project.user_id = current_user.id
             newphoto = open("https://kicker-seed.s3-us-west-1.amazonaws.com/allBirds.png")
             @project.photo.attach(io: newphoto, filename: 'allBirds.png')

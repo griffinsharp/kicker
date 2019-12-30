@@ -30,9 +30,13 @@
 
 .featured-pic {
     display: flex;
-    min-width: 335px;
     max-width: 100%;
+    width: 100%;
     margin-bottom: 20px;
+    max-height: 365px;
+    object-fit: cover;
+    min-height: 270px;
+    min-width: 470px;
 }
 
 
