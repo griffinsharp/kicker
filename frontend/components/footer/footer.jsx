@@ -38,7 +38,8 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="footer-credits">
-                            <a href="https://kicker-app.herokuapp.com/#/"><FontAwesomeIcon icon={faKickstarterK} alt="kickstarter-icon" /></a>
+                            <a href="https://kicker-app.herokuapp.com/#/"><FontAwesomeIcon className="k-icon" icon={faKickstarterK} alt="kickstarter-icon" /></a>
+                            <div className="trademark">Griffin Sharp, © 2020 </div>
                         </div>
                     </div>
                 </div>
