@@ -22,7 +22,7 @@ demo = User.create!(email: 'demouser@demo.com', password: 'demo123', name: "Demo
 allBirds = User.create!(email: 'allBirds@bob.com', password: 'allbirds123', name: "All Birds")
 nike = User.create!(email: 'nike@bob.com', password: 'nike123', name: "Nike")
 adidas = User.create!(email: 'adidas@bob.com', password: 'adidas123', name: "Adidas")
-blazer = User.create!(email: 'blazer@bob.com', password: 'blazer123', name: "Blazer")
+sandlot = User.create!(email: 'blazer@bob.com', password: 'blazer123', name: "The Sandlot")
 golf = User.create!(email: 'golf@bob.com', password: 'golf123', name: "Golf")
 offWhite = User.create!(email: 'offWhite@bob.com', password: 'offwhite123', name: "Off-White")
 shoeCreator = User.create!(email: 'shoeCreator@bob.com', password: 'shoecreator123', name: "Alex Ports")
@@ -93,8 +93,8 @@ allBirdsProject = Project.create!(title: 'All Birds',
         category_id: art.id,
         user_id: allBirds.id)
 
-nikeProject = Project.create!(title: 'Nike',
-        sub_title: 'Just Do It.',
+nikeProject = Project.create!(title: 'Nike: The Art Collection',
+        sub_title: 'An iconic brand with even more iconic art. Just Do It. Summer 2020.',
         total_pledged: 123,
         goal_amount: 12345,
         num_backers: 1,
@@ -106,21 +106,21 @@ nikeProject = Project.create!(title: 'Nike',
         category_id: comics_ill.id,
         user_id: nike.id)
 
-adidasProject = Project.create!(title: 'Adidas',
-        sub_title: 'Stripes over checks.',
-        total_pledged: 123,
-        goal_amount: 2500,
-        num_backers: 1,
-        days_left: 2,
+tech3Project = Project.create!(title: 'AirMag',
+        sub_title: "No more laces. Just style.",
+        total_pledged: 0,
+        goal_amount: 0,
+        num_backers: 0,
+        days_left: 0,
         loved: true,
         location: 'the United States',
         campaign: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        about: 'Stripes over checks.',
+        about: 'This is a company profile with some info.',
         category_id: design_tech.id,
-        user_id: adidas.id)
+        user_id: tech3.id)
 
-blazerProject = Project.create!(title: "Blazing Fast",
-        sub_title: "Embrace the simplicity of the 1972 classic and find the latest styles and color combinations of Nike Blazer shoes.",
+sandlotProject = Project.create!(title: "Run Faster, Jump Higher",
+        sub_title: "Like it's 1993 all over again.",
         total_pledged: 123,
         goal_amount: 56740,
         num_backers: 1,
@@ -128,9 +128,9 @@ blazerProject = Project.create!(title: "Blazing Fast",
         loved: true,
         location: 'the United States',
         campaign: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        about: 'No time to explain.',
+        about: 'Benny Was Here.',
         category_id: film.id,
-        user_id: blazer.id)
+        user_id: sandlot.id)
 
 golfProject = Project.create!(title: 'GOLF',
         sub_title: "Help Tyler, the Creator launch his new Fall/Winter line.",
@@ -145,21 +145,21 @@ golfProject = Project.create!(title: 'GOLF',
         category_id: music.id,
         user_id: golf.id)
 
-offWhiteProject = Project.create!(title: 'Off-White',
-        sub_title: "Not black. Not White. Somewhere in the middle. Help us create the future.",
-        total_pledged: 123,
-        goal_amount: 5000,
-        num_backers: 1,
-        days_left: 2,
-        loved: true,
+game4Project = Project.create!(title: 'Modern Shoefare',
+        sub_title: "The most shoe-centric Call of Duty yet. Watch your (Jordan) 6, solider.",
+        total_pledged: 0,
+        goal_amount: 0,
+        num_backers: 0,
+        days_left: 0,
+        loved: false,
         location: 'the United States',
         campaign: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        about: 'This is a company profile w some info.',
+        about: 'This is a company profile with some info.',
         category_id: games.id,
-        user_id: offWhite.id)
+        user_id: game1.id)
 
-shoeCreatorProject = Project.create!(title: 'Alex Ports',
-        sub_title: "Nobody likes shopping for shoes by themselves. We are here to change that.",
+shoeCreatorProject = Project.create!(title: 'Crafty',
+        sub_title: "Nobody likes generic clothing. Learn how to make your own with Crafty.",
         total_pledged: 123,
         goal_amount: 8000,
         num_backers: 1,
@@ -167,7 +167,7 @@ shoeCreatorProject = Project.create!(title: 'Alex Ports',
         loved: true,
         location: 'the United States',
         campaign: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        about: 'Alex Ports is a U.S. fashion brand.',
+        about: 'Crafty is a U.S. fashion brand.',
         category_id: food_craft.id,
         user_id: shoeCreator.id)
 
@@ -401,18 +401,18 @@ tech2Project = Project.create!(title: 'Glow Up',
         user_id: tech2.id)
 
 
-tech3Project = Project.create!(title: 'AirMag',
-        sub_title: "No more laces. Just style.",
-        total_pledged: 0,
-        goal_amount: 0,
-        num_backers: 0,
-        days_left: 0,
+adidasProject = Project.create!(title: 'Adidas',
+        sub_title: 'Stripes over checks.',
+        total_pledged: 123,
+        goal_amount: 2500,
+        num_backers: 1,
+        days_left: 2,
         loved: true,
         location: 'the United States',
         campaign: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        about: 'This is a company profile with some info.',
+        about: 'Stripes over checks.',
         category_id: design_tech.id,
-        user_id: tech3.id)
+        user_id: adidas.id)
 
 
 tech4Project = Project.create!(title: 'RunTrackR',
@@ -699,18 +699,18 @@ game3Project = Project.create!(title: 'Up Down Punch Kick',
         category_id: games.id,
         user_id: game3.id)
 
-game4Project = Project.create!(title: 'Modern Shoefare',
-        sub_title: "The most shoe-centric Call of Duty yet. Coming November 2020.",
-        total_pledged: 0,
-        goal_amount: 0,
-        num_backers: 0,
-        days_left: 0,
-        loved: false,
+offWhiteProject = Project.create!(title: 'Off-White',
+        sub_title: "Not black. Not White. Somewhere in the middle. Help us create the future.",
+        total_pledged: 123,
+        goal_amount: 5000,
+        num_backers: 1,
+        days_left: 2,
+        loved: true,
         location: 'the United States',
         campaign: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        about: 'This is a company profile with some info.',
+        about: 'This is a company profile w some info.',
         category_id: games.id,
-        user_id: game1.id)
+        user_id: offWhite.id)
 
 game5Project = Project.create!(title: '2K Kicks',
         sub_title: "The new mobile app to accompany NBA 2K. Get your players look right before you hit the court.",
@@ -945,8 +945,8 @@ nikePhoto = File.open('app/assets/images/nike.jpeg')
 nikeProject.photo.attach(io: nikePhoto, filename: 'nike.jpeg')
 adidasPhoto = File.open('app/assets/images/adidas.jpeg')
 adidasProject.photo.attach(io: adidasPhoto, filename: 'adidas.jpeg')
-blazerPhoto = File.open('app/assets/images/blazer.jpg')
-blazerProject.photo.attach(io: blazerPhoto, filename: 'blazer.jpg')
+sandlotPhoto = File.open('app/assets/images/pf.jpg')
+sandlotProject.photo.attach(io: sandlotPhoto, filename: 'pf.jpg')
 golfPhoto = File.open('app/assets/images/golf.jpg')
 golfProject.photo.attach(io: golfPhoto, filename: 'golf.jpg')
 offWhitePhoto = File.open('app/assets/images/offwhite.jpg')
