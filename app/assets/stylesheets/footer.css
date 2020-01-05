@@ -54,11 +54,17 @@
 .footer-socials {
     display: flex;
     align-items: center;
+    margin-right: 28px;
 }
+
 
 .social-fav-footer {
     margin-right: 24px;
     font-size: 17px;
+}
+
+.social-fav-footer a:hover {
+    color: #037362;
 }
 
 .footer-credits {
@@ -68,4 +74,8 @@
 
 .k-icon {
     font-size: 17px;
+}
+
+.k-icon:hover {
+    color: #037362;
 }
