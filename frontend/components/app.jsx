@@ -17,6 +17,7 @@ import NavbarContainer from './navbar/navbar_container';
 import ProjectShowContainer from './projects/project_show/project_show_container';
 import ProjectFormContainer from './projects/project_create/new_project_form_container';
 import SearchIndexContainer from './search/search_index_container';
+import Footer from './footer/footer';
 
 // Purely functional component
 
@@ -32,6 +33,7 @@ const App = () => (
             <Route exact path="/category/:categoryId" component={CategoryHomeContainer} />
             <Route path="/" component={Home}/>
         </Switch>
+        <Footer/>
     </div>
 );
 
