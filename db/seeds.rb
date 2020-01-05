@@ -945,7 +945,7 @@ nikePhoto = File.open('app/assets/images/nike.jpeg')
 nikeProject.photo.attach(io: nikePhoto, filename: 'nike.jpeg')
 adidasPhoto = File.open('app/assets/images/adidas.jpeg')
 adidasProject.photo.attach(io: adidasPhoto, filename: 'adidas.jpeg')
-sandlotPhoto = File.open('app/assets/images/pf.jpg')
+sandlotPhoto = open("https://kicker-seed.s3-us-west-1.amazonaws.com/pf.jpg")
 sandlotProject.photo.attach(io: sandlotPhoto, filename: 'pf.jpg')
 golfPhoto = File.open('app/assets/images/golf.jpg')
 golfProject.photo.attach(io: golfPhoto, filename: 'golf.jpg')
@@ -1145,7 +1145,7 @@ pub7Project.photo.attach(io: pub7Photo, filename: 'pub7.jpg')
 allBirdsProject.save!
 nikeProject.save!
 adidasProject.save!
-blazerProject.save!
+sandlotProject.save!
 golfProject.save!
 offWhiteProject.save!
 shoeCreatorProject.save!
@@ -1237,10 +1237,10 @@ reward1Adidas = Reward.create!(amount: 100, desc: "adidas2", subdesc: "test test
 reward2Adidas = Reward.create!(amount: 150, desc: "adidas3", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 2, project_id: adidasProject.id)
 reward3Adidas = Reward.create!(amount: 150, desc: "adidas3", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 2, project_id: adidasProject.id)
 
-reward0Blazer = Reward.create!(amount: 10, desc: "test test test test", subdesc: "test test test test test", delivery: "Tomorrow", shipping: "International", num_backers: 30, project_id: blazerProject.id)  
-reward1Blazer = Reward.create!(amount: 65, desc: "test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 5, project_id: blazerProject.id) 
-reward2Blazer = Reward.create!(amount: 150, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 2, project_id: blazerProject.id)
-reward3Blazer = Reward.create!(amount: 150, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 2, project_id: blazerProject.id)
+reward0Blazer = Reward.create!(amount: 10, desc: "test test test test", subdesc: "test test test test test", delivery: "Tomorrow", shipping: "International", num_backers: 30, project_id: sandlotProject.id)  
+reward1Blazer = Reward.create!(amount: 65, desc: "test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 5, project_id: sandlotProject.id) 
+reward2Blazer = Reward.create!(amount: 150, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 2, project_id: sandlotProject.id)
+reward3Blazer = Reward.create!(amount: 150, desc: "test test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 2, project_id: sandlotProject.id)
 
 reward0Golf = Reward.create!(amount: 10, desc: "test test test test", subdesc: "test test test test test", delivery: "Tomorrow", shipping: "International", num_backers: 25, project_id: golfProject.id)  
 reward1Golf = Reward.create!(amount: 90, desc: "test test test", subdesc: "test test test", delivery: "Tomorrow", shipping: "International", num_backers: 3, project_id: golfProject.id) 
