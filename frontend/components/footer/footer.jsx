@@ -34,7 +34,7 @@ const Footer = () => {
                                 <a href="https://www.linkedin.com/in/griffinesharp/" target="_blank"><FontAwesomeIcon icon={faLinkedin} alt="linkedin-icon" /></a>
                             </div>
                             <div className="social-fav-footer">
-                                <a href="http://www.griffinsharp.com"><FontAwesomeIcon icon={faCode} alt="code-icon" /></a>
+                            <a href="http://griffinsharp.com/"><FontAwesomeIcon icon={faCode} alt="code-icon" /></a>
                             </div>
                         </div>
                         <div className="footer-credits">
