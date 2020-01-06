@@ -16,7 +16,6 @@ class newProjectForm extends React.Component {
 
     constructor(props) {
         super(props);
-
         (this.state = {
             title: `My Great Project ${Math.floor(Math.random() * 10000 )}`,
             sub_title: 'My Great Project Subtitle',
@@ -35,8 +34,8 @@ class newProjectForm extends React.Component {
             locationSelect: "hidden",
             fundingSelect: "hidden",
             rewardsSelect: "hidden",
-            selectedOption: "30",
             newProjId: (this.props.projects.length + 1),
+            selectedOption: "30",
             loading: false,
             dropdown: "Select your category",
             dropdowntwo: "Select your country",
@@ -54,10 +53,11 @@ class newProjectForm extends React.Component {
         this.selectLoc = this.selectLoc.bind(this);
         this.handleClickInfo = this.handleClickInfo.bind(this);
         this.handleClickLoc = this.handleClickLoc.bind(this);
+
     }
 
     componentDidMount() {
-        this.props.fetchProjects().then(() => this.setState({ newProjId: this.props.projects.length + 1}));
+        this.props.fetchProjects();
     }
 
     renderNumCount() {
@@ -165,7 +165,7 @@ class newProjectForm extends React.Component {
 
 
     render () {
-       
+
         return (
             <div className="new-proj-section">
             {this.renderNumCount()}  
