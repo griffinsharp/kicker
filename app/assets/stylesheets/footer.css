@@ -21,7 +21,7 @@
 .footer-below-container {
     display: flex;
     height: 50px;
-    padding: 48px 60px;
+    padding: 48px 0;
     margin: 0 auto;
     width: 1246px;
     justify-content: flex-end;
