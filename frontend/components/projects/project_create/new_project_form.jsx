@@ -165,7 +165,6 @@ class newProjectForm extends React.Component {
 
 
     render () {
-
         return (
             <div className="new-proj-section">
             {this.renderNumCount()}  

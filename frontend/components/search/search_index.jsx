@@ -1,6 +1,9 @@
 import React from 'react';
 import SearchIndexItem from './search_index_item';
 import { withRouter } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 class SearchIndex extends React.Component {
     constructor(props) {
@@ -10,9 +13,19 @@ class SearchIndex extends React.Component {
             location: '',
             filter: '',
             filtprojects: '',
+            dropdown: "All Categories",
+            dropdowntwo: "Earth",
+            dropdownthree:"Magic",
+            catbox: "hidden",
+            catboxtwo: "hidden",
+            formColor: "",
+            formColorTwo: "",
+            svg: "arrow",
         };
         this.searchFilter = this.searchFilter.bind(this);
         this.checkProj = this.checkProj.bind(this);
+        this.updatedrop = this.updatedrop.bind(this);
+        this.updatedroptwo = this.updatedroptwo.bind(this);
     }
     
 
@@ -82,6 +95,47 @@ class SearchIndex extends React.Component {
         };
     }
 
+    updatedrop(cat, num) {
+        if (num === '') {
+            this.state.svg = "arrow";
+        } else {
+            this.state.svg = "times";
+        }
+
+        this.setState({ category_id: num });
+        this.searchFilter(this.props.projects);
+        this.setState({ dropdown: cat });
+        this.setState({ catbox: "hidden" });
+    }
+
+    updatedroptwo(loc) {
+        
+        this.setState({ location: loc });
+        this.searchFilter(this.props.projects);
+        this.setState({ dropdowntwo: loc });
+        this.setState({ catboxtwo: "hidden" });
+    }
+
+    selectCat(e) {
+
+        if (e.currentTarget !== e.target) return;
+
+        if (this.state.catbox === "hidden") {
+            this.setState({ catbox: "cat-box" });
+        } else {
+            this.setState({ catbox: "hidden" });
+        }
+
+    }
+
+    selectLoc() {
+        if (this.state.catboxtwo === "hidden") {
+            this.setState({ catboxtwo: "cat-box" });
+        } else {
+            this.setState({ catboxtwo: "hidden" });
+        }
+    }
+
     // this will handle the lifecycle of the projects.
     // if its non existant, we haven't fetched yet, so return null.
     // once fetched, if the array has a length, lets display each project.
@@ -114,26 +168,37 @@ class SearchIndex extends React.Component {
     }
 
     render() {
+        let svgIcon;
+        if (this.state.svg === "arrow") {
+            svgIcon = <FontAwesomeIcon className="caret-svg-search" icon={faCaretDown} alt="" />
+        } else if (this.state.svg === "times") {
+            svgIcon = <FontAwesomeIcon className="caret-svg-search" icon={faTimes} alt="" onClick={() =>{
+               
+                this.updatedrop('All Categories','')}} />
+        }
        
         return(
             <div className="search-and-proj">
                 <div className="search-container">
                     <p className="search-text">Show me</p>
-                    <div className="search-form-container">
-                        <form className="dropform">
-                            <select defaultValue="" className="search-type-input" onChange={this.update("category_id")} >
-                                <option value="">All Categories</option>
-                                <option value="1" >Arts</option>
-                                <option value="2" >Comics & Illustration</option>
-                                <option value="3">Design & Tech</option>
-                                <option value="4">Film</option>
-                                <option value="5">Food & Craft</option>
-                                <option value="6">Games</option>
-                                <option value="7">Music</option>
-                                <option value="8">Publishing</option>
-                            </select>
-                        </form>
-                    </div>
+                    
+                    <form className="dropform-search">
+                        <div className={`session-type-input-proj-drop-search ${this.state.formColor}`} onClick={(e) => this.selectCat(e)}>{this.state.dropdown}
+                           {svgIcon}
+                        </div>
+                        <div className={this.state.catbox}>
+                            <div onClick={() => this.updatedrop("All Categories", '')} className="cat-box-option">All Categories</div>
+                            <div onClick={() => this.updatedrop("Arts", 1)} className="cat-box-option">Arts</div>
+                            <div onClick={() => this.updatedrop("Comics & Illustration", 2)} className="cat-box-option">Comics & Illustration</div>
+                            <div onClick={() => this.updatedrop("Design & Tech", 3)} className="cat-box-option">Design & Tech</div>
+                            <div onClick={() => this.updatedrop("Film", 4)} className="cat-box-option">Film</div>
+                            <div onClick={() => this.updatedrop("Food & Craft", 5)} className="cat-box-option">Food & Craft</div>
+                            <div onClick={() => this.updatedrop("Games", 6)} className="cat-box-option">Games</div>
+                            <div onClick={() => this.updatedrop("Music", 7)} className="cat-box-option">Music</div>
+                            <div onClick={() => this.updatedrop("Publishing", 8)} className="cat-box-option">Publishing</div>
+                        </div>
+                    </form>
+
                     <p className="search-text">projects on</p>
                     <div className="search-form-container">
                         <form className="dropform">
@@ -178,7 +243,6 @@ class SearchIndex extends React.Component {
                         </form>
                     </div>
                 </div>
-                   
                    {this.checkProj()}
             </div>
         )
