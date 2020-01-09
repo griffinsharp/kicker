@@ -333,6 +333,21 @@ input[type='radio']:checked {
     border: 1px hsl(0, 0%, 16%) solid;
 }
 
+.cat-box-search {
+    overflow-y: scroll;
+    position: absolute;
+    top: 60px;
+    background-color: #ffffff;
+    padding: 6px;
+    height: 285px;
+    z-index: 100;
+    box-shadow: 0 3px 6px 1px rgba(0,0,0,0.17);
+    width: 230px;
+    padding-right: 0;
+    border: 1px hsl(0, 0%, 16%) solid;
+}
+
+
 .cat-box-option {
     padding: 15px 11px;
     text-align: left;

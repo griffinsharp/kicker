@@ -121,7 +121,7 @@ class SearchIndex extends React.Component {
         if (e.currentTarget !== e.target) return;
 
         if (this.state.catbox === "hidden") {
-            this.setState({ catbox: "cat-box" });
+            this.setState({ catbox: "cat-box-search" });
         } else {
             this.setState({ catbox: "hidden" });
         }
@@ -176,6 +176,8 @@ class SearchIndex extends React.Component {
                
                 this.updatedrop('All Categories','')}} />
         }
+
+        const { catbox, formColor, dropdown, filter } = this.state;
        
         return(
             <div className="search-and-proj">
@@ -183,10 +185,10 @@ class SearchIndex extends React.Component {
                     <p className="search-text">Show me</p>
                     
                     <form className="dropform-search">
-                        <div className={`session-type-input-proj-drop-search ${this.state.formColor}`} onClick={(e) => this.selectCat(e)}>{this.state.dropdown}
+                        <div className={`session-type-input-proj-drop-search ${formColor}`} onClick={(e) => this.selectCat(e)}>{dropdown}
                            {svgIcon}
                         </div>
-                        <div className={this.state.catbox}>
+                        <div className={catbox}>
                             <div onClick={() => this.updatedrop("All Categories", '')} className="cat-box-option">All Categories</div>
                             <div onClick={() => this.updatedrop("Arts", 1)} className="cat-box-option">Arts</div>
                             <div onClick={() => this.updatedrop("Comics & Illustration", 2)} className="cat-box-option">Comics & Illustration</div>
@@ -231,7 +233,7 @@ class SearchIndex extends React.Component {
                     <p className="search-text">sorted by</p>
                     <div className="search-form-container">
                         <form className="dropform">
-                            <select defaultValue="" className="search-type-input" value={this.state.filter} onChange={this.update("filter")} >
+                            <select defaultValue="" className="search-type-input" value={filter} onChange={this.update("filter")} >
                                 <option value="">Magic</option>
                                 <option value="loved">Projects We Love</option>
                                 <option value="newest">Newest</option>
