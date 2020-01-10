@@ -101,12 +101,13 @@ class SearchIndex extends React.Component {
         } else {
             this.state.svg = "times";
         }
-
         this.setState({ category_id: num });
         this.searchFilter(this.props.projects);
         this.setState({ dropdown: cat });
         this.setState({ catbox: "hidden" });
     }
+
+
 
     updatedroptwo(loc) {
         
@@ -117,7 +118,6 @@ class SearchIndex extends React.Component {
     }
 
     selectCat(e) {
-
         if (e.currentTarget !== e.target) return;
 
         if (this.state.catbox === "hidden") {
@@ -125,7 +125,14 @@ class SearchIndex extends React.Component {
         } else {
             this.setState({ catbox: "hidden" });
         }
+    }
 
+    selectX() {
+        if (this.state.catbox === "hidden") {
+            this.setState({ catbox: "cat-box-search" });
+        } else {
+            this.setState({ catbox: "hidden" });
+        }
     }
 
     selectLoc() {
@@ -170,11 +177,9 @@ class SearchIndex extends React.Component {
     render() {
         let svgIcon;
         if (this.state.svg === "arrow") {
-            svgIcon = <FontAwesomeIcon className="caret-svg-search" icon={faCaretDown} alt="" />
+            svgIcon = <FontAwesomeIcon className="caret-svg-search" icon={faCaretDown} alt="" onClick={() => this.selectX() } />
         } else if (this.state.svg === "times") {
-            svgIcon = <FontAwesomeIcon className="caret-svg-search" icon={faTimes} alt="" onClick={() =>{
-               
-                this.updatedrop('All Categories','')}} />
+            svgIcon = <FontAwesomeIcon className="caret-svg-search" icon={faTimes} alt="" onClick={() =>{this.updatedrop('All Categories','')}} />
         }
 
         const { catbox, formColor, dropdown, filter } = this.state;
