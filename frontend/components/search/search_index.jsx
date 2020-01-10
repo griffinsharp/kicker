@@ -107,8 +107,6 @@ class SearchIndex extends React.Component {
         this.setState({ catbox: "hidden" });
     }
 
-
-
     updatedroptwo(loc) {
         
         this.setState({ location: loc });
