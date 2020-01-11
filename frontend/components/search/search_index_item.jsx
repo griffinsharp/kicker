@@ -30,7 +30,12 @@ class SearchIndexItem extends React.Component {
         return (
             <div className="search-index-item">
                 <div className="search-img-container">
+                    <Link
+                        to={`/projects/${project.id}`}
+                        
+                    >
                     <img className="search-index-item-pic" src={project.photoURL} alt="" />
+                    </Link>
                 </div>
                 <div className="search-index-item-text">
                     <div className="search-index-item-info">

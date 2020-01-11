@@ -21,11 +21,12 @@ class SearchIndex extends React.Component {
             formColor: "",
             formColorTwo: "",
             svg: "arrow",
+            svgTwo: "arrow"
         };
         this.searchFilter = this.searchFilter.bind(this);
         this.checkProj = this.checkProj.bind(this);
         this.updatedrop = this.updatedrop.bind(this);
-        this.updatedroptwo = this.updatedroptwo.bind(this);
+        this.updateDropTwo = this.updateDropTwo.bind(this);
     }
     
 
@@ -60,7 +61,7 @@ class SearchIndex extends React.Component {
                 results = projects.filter(project => (this.state.category_id == project.category_id));
             }
 
-            if (this.state.location === '') {
+            if (this.state.location === 'Earth') {
                 results2 = results;
             } else {
                 results2 = results.filter(project => (this.state.location == project.location));
@@ -107,7 +108,13 @@ class SearchIndex extends React.Component {
         this.setState({ catbox: "hidden" });
     }
 
-    updatedroptwo(loc) {
+    updateDropTwo(loc) {
+
+        if (loc === 'Earth') {
+            this.state.svgTwo = "arrow";
+        } else {
+            this.state.svgTwo = "times";
+        }
         
         this.setState({ location: loc });
         this.searchFilter(this.props.projects);
@@ -133,13 +140,26 @@ class SearchIndex extends React.Component {
         }
     }
 
-    selectLoc() {
+    selectLoc(e) {
+
+        if (e.currentTarget !== e.target) return;
+
         if (this.state.catboxtwo === "hidden") {
-            this.setState({ catboxtwo: "cat-box" });
+            this.setState({ catboxtwo: "cat-box-search" });
         } else {
             this.setState({ catboxtwo: "hidden" });
         }
     }
+
+    selectXTwo() {
+        if (this.state.catboxtwo === "hidden") {
+            this.setState({ catboxtwo: "cat-box-search" });
+        } else {
+            this.setState({ catboxtwo: "hidden" });
+        }
+    }
+
+    
 
     // this will handle the lifecycle of the projects.
     // if its non existant, we haven't fetched yet, so return null.
@@ -174,13 +194,22 @@ class SearchIndex extends React.Component {
 
     render() {
         let svgIcon;
+        let svgIconTwo;
         if (this.state.svg === "arrow") {
             svgIcon = <FontAwesomeIcon className="caret-svg-search" icon={faCaretDown} alt="" onClick={() => this.selectX() } />
         } else if (this.state.svg === "times") {
             svgIcon = <FontAwesomeIcon className="caret-svg-search" icon={faTimes} alt="" onClick={() =>{this.updatedrop('All Categories','')}} />
         }
 
-        const { catbox, formColor, dropdown, filter } = this.state;
+        if (this.state.svgTwo === "arrow") {
+            svgIconTwo = <FontAwesomeIcon className="caret-svg-search" icon={faCaretDown} alt="" onClick={() => this.selectXTwo()} />
+        } else if (this.state.svgTwo === "times") {
+            svgIconTwo = <FontAwesomeIcon className="caret-svg-search" icon={faTimes} alt="" onClick={() => { this.updateDropTwo('Earth') }} />
+        }
+
+
+
+        const { catbox, catboxtwo, formColor, dropdown, dropdowntwo, filter } = this.state;
        
         return(
             <div className="search-and-proj">
@@ -204,35 +233,40 @@ class SearchIndex extends React.Component {
                         </div>
                     </form>
 
+
+                    
+
                     <p className="search-text">projects on</p>
-                    <div className="search-form-container">
-                        <form className="dropform">
-                            <select defaultValue="" className="search-type-input" onChange={this.update("location")} >
-                                <option value="">Earth</option>
-                                <option value="Australia">Australia</option>
-                                <option value="Austria">Austria</option>
-                                <option value="Belgium">Belgium</option>
-                                <option value="Canada">Canada</option>
-                                <option value="Denmark">Denmark</option>
-                                <option value="France">France</option>
-                                <option value="Germany">Germany</option>
-                                <option value="Ireland">Ireland</option>
-                                <option value="Italy">Italy</option>
-                                <option value="Japan">Japan</option>
-                                <option value="Luxembourg">Luxembourg</option>
-                                <option value="Mexico">Mexico</option>
-                                <option value="New Zealand">New Zealand</option>
-                                <option value="Norway">Norway</option>
-                                <option value="Singapore">Singapore</option>
-                                <option value="Spain">Spain</option>
-                                <option value="Sweden">Sweden</option>
-                                <option value="Switzerland">Switzerland</option>
-                                <option value="the Netherlands">the Netherlands</option>
-                                <option value="the United Kingdom">the United Kingdom</option>
-                                <option value="the United States">the United States</option>
-                            </select>
-                        </form>
-                    </div>
+                    <form className="dropform-search">
+                        <div className={`session-type-input-proj-drop-search ${formColor}`} onClick={(e) => this.selectLoc(e)}>{dropdowntwo}
+                            {svgIconTwo}
+                        </div>
+                        <div className={catboxtwo}>
+                            <div onClick={() => this.updateDropTwo("Earth")} className="cat-box-option">Earth</div>
+                            <div onClick={() => this.updateDropTwo("Australia")} className="cat-box-option">Australia</div>
+                            <div onClick={() => this.updateDropTwo("Austria")} className="cat-box-option">Austria</div>
+                            <div onClick={() => this.updateDropTwo("Belgium")} className="cat-box-option">Belgium</div>
+                            <div onClick={() => this.updateDropTwo("Canada")} className="cat-box-option">Canada</div>
+                            <div onClick={() => this.updateDropTwo("Denmark")} className="cat-box-option">Denmark</div>
+                            <div onClick={() => this.updateDropTwo("France")} className="cat-box-option">France</div>
+                            <div onClick={() => this.updateDropTwo("Germany")} className="cat-box-option">Germany</div>
+                            <div onClick={() => this.updateDropTwo("Ireland")} className="cat-box-option">Ireland</div>
+                            <div onClick={() => this.updateDropTwo("Italy")} className="cat-box-option">Italy</div>
+                            <div onClick={() => this.updateDropTwo("Japan")} className="cat-box-option">Japan</div>
+                            <div onClick={() => this.updateDropTwo("Luxembourg")} className="cat-box-option">Luxembourg</div>
+                            <div onClick={() => this.updateDropTwo("Mexico")} className="cat-box-option">Mexico</div>
+                            <div onClick={() => this.updateDropTwo("New Zealand")} className="cat-box-option">New Zealand</div>
+                            <div onClick={() => this.updateDropTwo("Singapore")} className="cat-box-option">Singapore</div>
+                            <div onClick={() => this.updateDropTwo("Spain")} className="cat-box-option">Spain</div>
+                            <div onClick={() => this.updateDropTwo("Sweden")} className="cat-box-option">Sweden</div>
+                            <div onClick={() => this.updateDropTwo("Switzerland")} className="cat-box-option">Switzerland</div>
+                            <div onClick={() => this.updateDropTwo("the Netherlands")} className="cat-box-option">the Netherlands</div>
+                            <div onClick={() => this.updateDropTwo("the United Kingdom")} className="cat-box-option">the United Kingdom</div>
+                            <div onClick={() => this.updateDropTwo("the United States")} className="cat-box-option">the United States</div>
+                            
+                        </div>
+                    </form>
+
                     <p className="search-text">sorted by</p>
                     <div className="search-form-container">
                         <form className="dropform">
