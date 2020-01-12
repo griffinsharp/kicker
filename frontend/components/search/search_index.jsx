@@ -34,6 +34,7 @@ class SearchIndex extends React.Component {
     
 
     componentDidMount() {
+        
 
         if (typeof this.props.location.state !== 'undefined') {
             this.props.fetchProjects().then(() => {
@@ -45,6 +46,7 @@ class SearchIndex extends React.Component {
                 });
                 this.searchFilter(this.props.projects);
                 this.updateDropTwo(`${this.props.location.state.location}`);
+                this.updateDropThree(`${this.props.location.state.filter}`)
             });
         } else {
             this.props.fetchProjects().then(() => {
@@ -60,34 +62,29 @@ class SearchIndex extends React.Component {
         console.log(this.props.location)
         if ((this.props.location.state !== prevProps.location.state) && (typeof this.props.location.state !== 'undefined')) {
             
+
             if (this.props.location.state.category_id) {
                 this.setState({
-                    category_id: this.props.location.state.category_id,
-                    filtprojects: prevProps.projects,
+                    category_id: this.props.location.state.category_id
                 });
-                this.searchFilter(this.state.filtprojects);
                 this.updatedrop(`${this.props.location.state.category_id}`);
             }
 
             if (this.props.location.state.location) {
                 this.setState({
-                    location: this.props.location.state.location,
-                    filtprojects: prevProps.projects,
+                    location: this.props.location.state.location
                 });
-                this.searchFilter(this.state.filtprojects);
                 this.updateDropTwo(`${this.props.location.state.location}`);
             }
 
             if (this.props.location.state.filter) {
                 this.setState({
-                    filter: this.props.location.state.filter,
-                    filtprojects: prevProps.projects,
+                    filter: this.props.location.state.filter
                 });
-                this.searchFilter(this.state.filtprojects);
                 this.updateDropThree(`${this.props.location.state.filter}`);
             }
         
-               
+            this.searchFilter(this.state.filtprojects);    
         } 
 
     }
@@ -241,22 +238,22 @@ class SearchIndex extends React.Component {
         if (this.state.filtprojects === '') {
             return null;
         } else {
-            if (this.state.filtprojects.length > 0) {
-                return (
-                    <div className="proj-and-amt">
-                        <div className="proj-amt">Explore <div className="green-amt">&nbsp;{this.state.filtprojects.length} projects</div></div>
-                        <div className="proj-search-container">
-                            {this.state.filtprojects.map(project => <SearchIndexItem project={project} />)}
-                        </div>
-                    </div>
-                )
-            } else if ((typeof this.state.filtprojects === "undefined")) {
+            if ((typeof this.state.filtprojects === "undefined")) {
                 return (
                     <div className="proj-and-amt">
                         <div className="proj-search-container">
                             <div className="no-search-result">
                                 Oops! Looks like we couldn’t find any results. Why not change some things around or broaden your search?
                             </div>
+                        </div>
+                    </div>
+                )
+            } else if (this.state.filtprojects.length > 0) {
+                return (
+                    <div className="proj-and-amt">
+                        <div className="proj-amt">Explore <div className="green-amt">&nbsp;{this.state.filtprojects.length} projects</div></div>
+                        <div className="proj-search-container">
+                            {this.state.filtprojects.map(project => <SearchIndexItem project={project} />)}
                         </div>
                     </div>
                 )
