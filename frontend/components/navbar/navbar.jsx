@@ -71,25 +71,25 @@ class Navbar extends React.Component {
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
                       pathname: '/search',
                     state: {
-                      filter: 'loved'
+                      filter: 'Projects We Love'
                     }
                       }}> Projects We Love </Link>
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
                     pathname: '/search',
                     state: {
-                      filter: 'funded'
+                      filter: 'Most Funded'
                     }
                   }}> Nearly Funded </Link>
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
                     pathname: '/search',
                     state: {
-                      filter: 'newest'
+                      filter: 'Newest'
                     }
                   }}>Just Launched </Link>
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
                     pathname: '/search',
                     state: {
-                      
+                      filter: 'Magic'
                     }
                   }}>Everything </Link>
                   </div>

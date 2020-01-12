@@ -111,7 +111,7 @@ class SearchIndex extends React.Component {
 
             if (this.state.filter === 'Magic') {
                 results3 = results2;
-            } else if (this.state.filter === 'Project We Love') {
+            } else if (this.state.filter === 'Projects We Love') {
                 results3 = results2.filter(project => (project.loved == true));
             } else if (this.state.filter === 'Newest') {
                 results3 = results2.sort( (a,b) => (b.days_left - a.days_left) );
@@ -250,7 +250,17 @@ class SearchIndex extends React.Component {
                         </div>
                     </div>
                 )
-            } else if ((this.state.filtprojects.length === 0) || (typeof this.state.filtprojects === "undefined")) {
+            } else if ((typeof this.state.filtprojects === "undefined")) {
+                return (
+                    <div className="proj-and-amt">
+                        <div className="proj-search-container">
+                            <div className="no-search-result">
+                                Oops! Looks like we couldn’t find any results. Why not change some things around or broaden your search?
+                            </div>
+                        </div>
+                    </div>
+                )
+            } else if ((this.state.filtprojects.length === 0)) {
                 return (
                     <div className="proj-and-amt">
                         <div className="proj-search-container">
