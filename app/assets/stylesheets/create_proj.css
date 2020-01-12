@@ -340,7 +340,7 @@ input[type='radio']:checked {
     background-color: #ffffff;
     padding: 6px;
     height: 285px;
-    z-index: 100;
+    z-index: 99;
     box-shadow: 0 3px 6px 1px rgba(0,0,0,0.17);
     width: 230px;
     padding-right: 0;

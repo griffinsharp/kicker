@@ -50,7 +50,7 @@ class RewardIndexItem extends React.Component {
   }
 
     render() {
-      console.log(this.props);
+      
         const { reward, createBacking, user, errors } = this.props;
        
         return (

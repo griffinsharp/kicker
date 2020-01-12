@@ -10,18 +10,21 @@ class SearchIndex extends React.Component {
         super(props);
         this.state = {
             category_id: '',
-            location: '',
-            filter: '',
+            location: 'Earth',
+            filter: 'Magic',
             filtprojects: '',
             dropdown: "All Categories",
             dropdowntwo: "Earth",
             dropdownthree:"Magic",
             catbox: "hidden",
             catboxtwo: "hidden",
+            catboxthree: "hidden",
             formColor: "",
             formColorTwo: "",
+            formColorThree: "",
             svg: "arrow",
-            svgTwo: "arrow"
+            svgTwo: "arrow",
+            svgThree: "arrow"
         };
         this.searchFilter = this.searchFilter.bind(this);
         this.checkProj = this.checkProj.bind(this);
@@ -31,6 +34,7 @@ class SearchIndex extends React.Component {
     
 
     componentDidMount() {
+
         if (typeof this.props.location.state !== 'undefined') {
             this.props.fetchProjects().then(() => {
                 this.setState({
@@ -40,6 +44,7 @@ class SearchIndex extends React.Component {
                     filtprojects: this.props.projects,
                 });
                 this.searchFilter(this.props.projects);
+                this.updateDropTwo(`${this.props.location.state.location}`);
             });
         } else {
             this.props.fetchProjects().then(() => {
@@ -48,6 +53,36 @@ class SearchIndex extends React.Component {
                 });
             });
         }
+    }
+
+
+    componentDidUpdate (prevProps) {
+    
+        if ((this.props.location.state !== prevProps.location.state) && (typeof this.props.location.state !== 'undefined')) {
+                this.setState({
+                    category_id: this.props.location.state.category_id,
+                    location: this.props.location.state.location,
+                    filter: this.props.location.state.filter,
+                    filtprojects: this.props.projects,
+                });
+                this.searchFilter(this.props.projects);
+                this.updateDropTwo(`${this.props.location.state.location}`);
+        } else if ((this.props.location.state !== prevProps.location.state) && (typeof this.props.location.state === 'undefined')) {
+            this.props.fetchProjects().then(() => {
+                this.setState({
+                    filtprojects: this.props.projects,
+                    category_id: '',
+                    catbox: "hidden",
+                    location: 'Earth',
+                    dropdown: 'All Categories',
+                    dropdowntwo: 'Earth',
+                    catboxtwo: "hidden",
+                    svg: "arrow",
+                    svgTwo: "arrow"
+                });
+            });
+        }
+
     }
 
     searchFilter(projects) {
@@ -67,19 +102,19 @@ class SearchIndex extends React.Component {
                 results2 = results.filter(project => (this.state.location == project.location));
             }
 
-            if (this.state.filter === '') {
+            if (this.state.filter === 'Magic') {
                 results3 = results2;
-            } else if (this.state.filter === 'loved') {
+            } else if (this.state.filter === 'Project We Love') {
                 results3 = results2.filter(project => (project.loved == true));
-            } else if (this.state.filter === 'newest') {
+            } else if (this.state.filter === 'Newest') {
                 results3 = results2.sort( (a,b) => (b.days_left - a.days_left) );
-            } else if (this.state.filter === 'funded') {
+            } else if (this.state.filter === 'Most Funded') {
                 results3 = results2.sort((a, b) => ((b.total_pledged / b.goal_amount) - (a.total_pledged / a.goal_amount)));
-            } else if (this.state.filter === 'random') {
+            } else if (this.state.filter === 'Random') {
                 results3 = results2.sort(() => Math.random() - 0.5);
-            } else if (this.state.filter === 'enddate') {
+            } else if (this.state.filter === 'End Date') {
                 results3 = results2.sort((a, b) => (a.days_left - b.days_left));
-            } else if (this.state.filter === 'backed') {
+            } else if (this.state.filter === 'Most Backed') {
                 results3 = results2.sort((a, b) => (b.num_backers - a.num_backers));
             }
 
@@ -122,6 +157,19 @@ class SearchIndex extends React.Component {
         this.setState({ catboxtwo: "hidden" });
     }
 
+    updateDropThree(filter) {
+        if (filter === 'Magic') {
+            this.state.svgThree = "arrow";
+        } else {
+            this.state.svgThree = "times";
+        }
+
+        this.setState({ filter: filter });
+        this.searchFilter(this.props.projects);
+        this.setState({ dropdownthree: filter });
+        this.setState({ catboxthree: "hidden" });
+    }
+
     selectCat(e) {
         if (e.currentTarget !== e.target) return;
 
@@ -159,6 +207,23 @@ class SearchIndex extends React.Component {
         }
     }
 
+    selectFilt(e) {
+        if (e.currentTarget !== e.target) return;
+
+        if (this.state.catboxthree === "hidden") {
+            this.setState({ catboxthree: "cat-box-search" });
+        } else {
+            this.setState({ catboxthree: "hidden" });
+        }
+    }
+
+    selectXThree() {
+        if (this.state.catboxthree === "hidden") {
+            this.setState({ catboxthree: "cat-box-search" });
+        } else {
+            this.setState({ catboxthree: "hidden" });
+        }
+    }
     
 
     // this will handle the lifecycle of the projects.
@@ -195,6 +260,7 @@ class SearchIndex extends React.Component {
     render() {
         let svgIcon;
         let svgIconTwo;
+        let svgIconThree;
         if (this.state.svg === "arrow") {
             svgIcon = <FontAwesomeIcon className="caret-svg-search" icon={faCaretDown} alt="" onClick={() => this.selectX() } />
         } else if (this.state.svg === "times") {
@@ -207,9 +273,14 @@ class SearchIndex extends React.Component {
             svgIconTwo = <FontAwesomeIcon className="caret-svg-search" icon={faTimes} alt="" onClick={() => { this.updateDropTwo('Earth') }} />
         }
 
+        if (this.state.svgThree === "arrow") {
+            svgIconThree = <FontAwesomeIcon className="caret-svg-search" icon={faCaretDown} alt="" onClick={() => this.selectXThree()} />
+        } else if (this.state.svgThree === "times") {
+            svgIconThree = <FontAwesomeIcon className="caret-svg-search" icon={faTimes} alt="" onClick={() => { this.updateDropThree('Magic') }} />
+        }
 
 
-        const { catbox, catboxtwo, formColor, dropdown, dropdowntwo, filter } = this.state;
+        const { catbox, catboxtwo, catboxthree, formColor, dropdown, dropdowntwo, dropdownthree, filter } = this.state;
        
         return(
             <div className="search-and-proj">
@@ -268,19 +339,21 @@ class SearchIndex extends React.Component {
                     </form>
 
                     <p className="search-text">sorted by</p>
-                    <div className="search-form-container">
-                        <form className="dropform">
-                            <select defaultValue="" className="search-type-input" value={filter} onChange={this.update("filter")} >
-                                <option value="">Magic</option>
-                                <option value="loved">Projects We Love</option>
-                                <option value="newest">Newest</option>
-                                <option value="enddate">End Date</option>
-                                <option value="funded">Most Funded</option>
-                                <option value="backed">Most Backed</option>
-                                <option value="random">Random</option>
-                            </select>
-                        </form>
-                    </div>
+                    <form className="dropform-search">
+                        <div className={`session-type-input-proj-drop-search ${formColor}`} onClick={(e) => this.selectFilt(e)}>{dropdownthree}
+                            {svgIconThree}
+                        </div>
+                        <div className={catboxthree}>
+                            <div onClick={() => this.updateDropThree("Magic")} className="cat-box-option">Magic</div>
+                            <div onClick={() => this.updateDropThree("Projects We Love")} className="cat-box-option">Projects We Love</div>
+                            <div onClick={() => this.updateDropThree("Newest")} className="cat-box-option">Newest</div>
+                            <div onClick={() => this.updateDropThree("End Date")} className="cat-box-option">End Date</div>
+                            <div onClick={() => this.updateDropThree("Most Funded")} className="cat-box-option">Most Funded</div>
+                            <div onClick={() => this.updateDropThree("Most Backed")} className="cat-box-option">Most Backed</div>
+                            <div onClick={() => this.updateDropThree("Random")} className="cat-box-option">Random</div>
+
+                        </div>
+                    </form>
                 </div>
                    {this.checkProj()}
             </div>
