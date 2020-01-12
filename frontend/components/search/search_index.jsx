@@ -57,31 +57,38 @@ class SearchIndex extends React.Component {
 
 
     componentDidUpdate (prevProps) {
-    
+        console.log(this.props.location)
         if ((this.props.location.state !== prevProps.location.state) && (typeof this.props.location.state !== 'undefined')) {
+            
+            if (this.props.location.state.category_id) {
                 this.setState({
                     category_id: this.props.location.state.category_id,
-                    location: this.props.location.state.location,
-                    filter: this.props.location.state.filter,
-                    filtprojects: this.props.projects,
+                    filtprojects: prevProps.projects,
                 });
-                this.searchFilter(this.props.projects);
-                this.updateDropTwo(`${this.props.location.state.location}`);
-        } else if ((this.props.location.state !== prevProps.location.state) && (typeof this.props.location.state === 'undefined')) {
-            this.props.fetchProjects().then(() => {
+                this.searchFilter(this.state.filtprojects);
+                this.updatedrop(`${this.props.location.state.category_id}`);
+            }
+
+            if (this.props.location.state.location) {
                 this.setState({
-                    filtprojects: this.props.projects,
-                    category_id: '',
-                    catbox: "hidden",
-                    location: 'Earth',
-                    dropdown: 'All Categories',
-                    dropdowntwo: 'Earth',
-                    catboxtwo: "hidden",
-                    svg: "arrow",
-                    svgTwo: "arrow"
+                    location: this.props.location.state.location,
+                    filtprojects: prevProps.projects,
                 });
-            });
-        }
+                this.searchFilter(this.state.filtprojects);
+                this.updateDropTwo(`${this.props.location.state.location}`);
+            }
+
+            if (this.props.location.state.filter) {
+                this.setState({
+                    filter: this.props.location.state.filter,
+                    filtprojects: prevProps.projects,
+                });
+                this.searchFilter(this.state.filtprojects);
+                this.updateDropThree(`${this.props.location.state.filter}`);
+            }
+        
+               
+        } 
 
     }
 
@@ -231,7 +238,7 @@ class SearchIndex extends React.Component {
     // once fetched, if the array has a length, lets display each project.
     // if there is no length, return a statement letting the user know. 
     checkProj() {
-        if (this.state.filtprojects === '' || !this.state.filtprojects) {
+        if (this.state.filtprojects === '') {
             return null;
         } else {
             if (this.state.filtprojects.length > 0) {
@@ -243,7 +250,7 @@ class SearchIndex extends React.Component {
                         </div>
                     </div>
                 )
-            } else if (this.state.filtprojects.length === 0) {
+            } else if ((this.state.filtprojects.length === 0) || (typeof this.state.filtprojects === "undefined")) {
                 return (
                     <div className="proj-and-amt">
                         <div className="proj-search-container">

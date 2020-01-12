@@ -71,25 +71,25 @@ class Navbar extends React.Component {
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
                       pathname: '/search',
                     state: {
-                      category_id: '', location: '', filter: 'loved', filtprojects: ''
+                      filter: 'loved'
                     }
                       }}> Projects We Love </Link>
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
                     pathname: '/search',
                     state: {
-                      category_id: '', location: '', filter: 'funded', filtprojects: ''
+                      filter: 'funded'
                     }
                   }}> Nearly Funded </Link>
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
                     pathname: '/search',
                     state: {
-                      category_id: '', location: '', filter: 'newest', filtprojects: ''
+                      filter: 'newest'
                     }
                   }}>Just Launched </Link>
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
                     pathname: '/search',
                     state: {
-                      category_id: '', location: '', filter: '', filtprojects: ''
+                      
                     }
                   }}>Everything </Link>
                   </div>
@@ -112,135 +112,135 @@ class Navbar extends React.Component {
                   </div>
                   <div className="modal-links">
                     <Link className="modal-link" onClick={() => this.handleExplore()} to={{
-                      pathname: `/search/Earth%${Math.floor(100 * Math.random(1000))}`,
+                      pathname: `/search/Earth${Math.floor(100 * Math.random(1000))}`,
                       state: {
-                        category_id: '', location: 'Earth', filter: '', filtprojects: ''
+                        location: 'Earth',
                       }
                     }}>Earth</Link>
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
-                    pathname: `/search/Australia%${Math.floor(100 * Math.random(1000))}`,
+                    pathname: `/search/Australia${Math.floor(100 * Math.random(1000))}`,
                     state: {
-                      category_id: '', location: 'Australia', filter: '', filtprojects: ''
+                      location: 'Australia',
                     }
                   }}>Australia</Link>
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
-                      pathname: `/search/Austria%${Math.floor(100 * Math.random(1000))}`,
+                      pathname: `/search/Austria${Math.floor(100 * Math.random(1000))}`,
                     state: {
-                      category_id: '', location: 'Austria', filter: '', filtprojects: ''
+                      location: 'Austria',
                     }
                   }}>Austria</Link>
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
-                      pathname: `/search/Belgium%${Math.floor(100 * Math.random(1000))}`
+                      pathname: `/search/Belgium${Math.floor(100 * Math.random(1000))}`,
                     state: {
-                      category_id: '', location: 'Belgium', filter: '', filtprojects: ''
+                      location: 'Belgium',
                     }
                   }}>Belgium</Link>
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
-                      pathname: `/search/Canada%${Math.floor(100 * Math.random(1000))}`,
+                      pathname: `/search/Canada${Math.floor(100 * Math.random(1000))}`,
                     state: {
-                      category_id: '', location: 'Canada', filter: '', filtprojects: ''
+                      location: 'Canada',
                     }
                   }}>Canada</Link>
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
-                      pathname: `/search/Denmark%${Math.floor(100 * Math.random(1000))}`,
+                      pathname: `/search/Denmark${Math.floor(100 * Math.random(1000))}`,
                     state: {
-                      category_id: '', location: 'Denmark', filter: '', filtprojects: ''
+                      location: 'Denmark',
                     }
                   }}>Denmark</Link>
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
-                      pathname: `/search/France%${Math.floor(100 * Math.random(1000))}`,
+                      pathname: `/search/France${Math.floor(100 * Math.random(1000))}`,
                     state: {
-                      category_id: '', location: 'France', filter: '', filtprojects: ''
+                      location: 'France',
                     }
                   }}>France</Link>
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
-                      pathname: `/search/Germany%${Math.floor(100 * Math.random(1000))}`,
+                      pathname: `/search/Germany${Math.floor(100 * Math.random(1000))}`,
                     state: {
-                      category_id: '', location: 'Germany', filter: '', filtprojects: ''
+                      location: 'Germany',
                     }
                   }}>Germany</Link>
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
-                      pathname: `/search/Ireland%${Math.floor(100 * Math.random(1000))}`,
+                      pathname: `/search/Ireland${Math.floor(100 * Math.random(1000))}`,
                     state: {
-                      category_id: '', location: 'Ireland', filter: '', filtprojects: ''
+                      location: 'Ireland',
                     }
                   }}>Ireland</Link>
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
-                    pathname: `/search/Australia%${Math.floor(100 * Math.random(1000))}`,
+                      pathname: `/search/Italy${Math.floor(100 * Math.random(1000))}`,
                     state: {
-                      category_id: '', location: 'Italy', filter: '', filtprojects: ''
+                      location: 'Italy',
                     }
                   }}>Italy</Link>
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
-                    pathname: `/search/Australia%${Math.floor(100 * Math.random(1000))}`,
+                      pathname: `/search/Japan${Math.floor(100 * Math.random(1000))}`,
                     state: {
-                      category_id: '', location: 'Japan', filter: '', filtprojects: ''
+                      location: 'Japan',
                     }
                   }}>Japan</Link>
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
-                    pathname: `/search/Australia%${Math.floor(100 * Math.random(1000))}`,
+                      pathname: `/search/Luxembourg${Math.floor(100 * Math.random(1000))}`,
                     state: {
-                      category_id: '', location: 'Luxembourg', filter: '', filtprojects: ''
+                      location: 'Luxembourg',
                     }
                   }}>Luxembourg</Link>
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
-                    pathname: `/search/Australia%${Math.floor(100 * Math.random(1000))}`,
+                      pathname: `/search/Mexico${Math.floor(100 * Math.random(1000))}`,
                     state: {
-                      category_id: '', location: 'Mexico', filter: '', filtprojects: ''
+                      location: 'Mexico',
                     }
                   }}>Mexico</Link>
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
-                    pathname: `/search/Australia%${Math.floor(100 * Math.random(1000))}`,
+                      pathname: `/search/NewZealand${Math.floor(100 * Math.random(1000))}`,
                     state: {
-                      category_id: '', location: 'New Zealand', filter: '', filtprojects: ''
+                      location: 'New Zealand',
                     }
                   }}>New Zealand</Link>
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
-                    pathname: `/search/Australia%${Math.floor(100 * Math.random(1000))}`,
+                      pathname: `/search/Norway${Math.floor(100 * Math.random(1000))}`,
                     state: {
-                      category_id: '', location: 'Norway', filter: '', filtprojects: ''
+                      location: 'Norway',
                     }
                   }}>Norway</Link>
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
-                    pathname: `/search/Australia%${Math.floor(100 * Math.random(1000))}`,
+                      pathname: `/search/Singapore${Math.floor(100 * Math.random(1000))}`,
                     state: {
-                      category_id: '', location: 'Singapore', filter: '', filtprojects: ''
+                      location: 'Singapore',
                     }
                   }}>Singapore</Link>
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
-                    pathname: `/search/Australia%${Math.floor(100 * Math.random(1000))}`,
+                      pathname: `/search/Spain${Math.floor(100 * Math.random(1000))}`,
                     state: {
-                      category_id: '', location: 'Spain', filter: '', filtprojects: ''
+                      location: 'Spain',
                     }
                   }}>Spain</Link>
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
-                    pathname: `/search/Australia%${Math.floor(100 * Math.random(1000))}`,
+                      pathname: `/search/Sweden${Math.floor(100 * Math.random(1000))}`,
                     state: {
-                      category_id: '', location: 'Sweden', filter: '', filtprojects: ''
+                      location: 'Sweden',
                     }
                   }}>Sweden</Link>
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
-                    pathname: `/search/Australia%${Math.floor(100 * Math.random(1000))}`,
+                      pathname: `/search/Switzerland${Math.floor(100 * Math.random(1000))}`,
                     state: {
-                      category_id: '', location: 'Switzerland', filter: '', filtprojects: ''
+                      location: 'Switzerland',
                     }
                   }}>Switzerland</Link>
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
-                    pathname: `/search/Australia%${Math.floor(100 * Math.random(1000))}`,
+                      pathname: `/search/Netherlands${Math.floor(100 * Math.random(1000))}`,
                     state: {
-                      category_id: '', location: 'the Netherlands', filter: '', filtprojects: ''
+                      location: 'the Netherlands',
                     }
                   }}>the Netherlands</Link>
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
-                    pathname: `/search/Australia%${Math.floor(100 * Math.random(1000))}`,
+                    pathname: `/search/UK${Math.floor(100 * Math.random(1000))}`,
                     state: {
-                      category_id: '', location: 'the United Kingdom', filter: '', filtprojects: ''
+                      location: 'the United Kingdom',
                     }
                   }}>the United Kingdom</Link>
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
-                    pathname: `/search/Australia%${Math.floor(100 * Math.random(1000))}`,
+                    pathname: `/search/USA${Math.floor(100 * Math.random(1000))}`,
                     state: {
-                      category_id: '', location: 'the United States', filter: '', filtprojects: ''
+                      location: 'the United States',
                     }
                   }}>the United States</Link>
                 
