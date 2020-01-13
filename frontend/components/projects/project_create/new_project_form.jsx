@@ -56,10 +56,6 @@ class newProjectForm extends React.Component {
 
     }
 
-    componentDidMount() {
-        this.props.fetchProjects();
-    }
-
     renderNumCount() {
         let count = "";
         if (this.state.categorySelect === "choose-cat") {
@@ -155,7 +151,9 @@ class newProjectForm extends React.Component {
                 this.props.createReward(newReward1).then(() => (
                     this.props.createReward(newReward2).then(() => (
                         this.props.createReward(newReward3).then(() => (
-                            this.props.history.push(`/projects/${this.state.newProjId}`)
+                            this.props.fetchProjects().then(() => (
+                                this.props.history.push(`/projects/${this.state.newProjId}`)
+                            )) 
                         ))
                     ))
                 ))
