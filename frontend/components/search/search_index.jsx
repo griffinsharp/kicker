@@ -4,6 +4,16 @@ import { withRouter } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import FadeLoader from 'react-spinners/FadeLoader';
+import { css } from '@emotion/core';
+
+const override = css`
+    display: inline-block;
+    margin: 100px auto;
+    color: #DCDEDD;
+    size: 35px;
+    
+`;
 
 class SearchIndex extends React.Component {
     constructor(props) {
@@ -24,7 +34,8 @@ class SearchIndex extends React.Component {
             formColorThree: "",
             svg: "arrow",
             svgTwo: "arrow",
-            svgThree: "arrow"
+            svgThree: "arrow",
+            loading: true
         };
         this.searchFilter = this.searchFilter.bind(this);
         this.checkProj = this.checkProj.bind(this);
@@ -64,7 +75,7 @@ class SearchIndex extends React.Component {
 
 
     componentDidUpdate (prevProps) {
-        console.log(this.props.location)
+       
         if ((this.props.location.state !== prevProps.location.state) && (typeof this.props.location.state !== 'undefined')) {
             
 
@@ -241,7 +252,13 @@ class SearchIndex extends React.Component {
     // if there is no length, return a statement letting the user know. 
     checkProj() {
         if (this.state.filtprojects === '') {
-            return null;
+            return (
+                <div className="proj-and-amt">
+                
+                    <FadeLoader css={override} loading={this.state.loading} />;
+          
+            </div>
+            )
         } else {
             if ((typeof this.state.filtprojects === "undefined")) {
                 return (
