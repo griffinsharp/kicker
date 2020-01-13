@@ -275,7 +275,7 @@ class Navbar extends React.Component {
                   <Link className="modal-link" onClick={() => this.handleExplore()} to={{
                       pathname: `/search/Netherlands${Math.floor(100 * Math.random(1000))}`,
                     state: {
-                      category_id: '1',
+                      category_id: '',
                       filter: 'Magic',
                       location: 'the Netherlands',
                     }

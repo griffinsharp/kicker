@@ -34,7 +34,7 @@ class SearchIndex extends React.Component {
     
 
     componentDidMount() {
-        
+        // if the component mounts because of a modal click, we need to prefilter state
 
         if (typeof this.props.location.state !== 'undefined') {
             this.props.fetchProjects().then(() => {
@@ -44,11 +44,16 @@ class SearchIndex extends React.Component {
                     filter: this.props.location.state.filter,
                     filtprojects: this.props.projects,
                 });
+                // prefilter with params from modal selection
                 this.searchFilter(this.props.projects);
+                // update the text on the dropdowns to match
+                // don't need to edit the first dropdown, modal click from category 
                 this.updateDropTwo(`${this.props.location.state.location}`);
-                this.updateDropThree(`${this.props.location.state.filter}`)
+                this.updateDropThree(`${this.props.location.state.filter}`);
             });
         } else {
+
+        // if the component mounts otherwise
             this.props.fetchProjects().then(() => {
                 this.setState({
                     filtprojects: this.props.projects,
