@@ -81,14 +81,25 @@
 
 .session-type-button-proj {
     border: 0;
-    padding: 11px 20px;
+    padding: 11px 0px;
     background-color: #000000;
     color: #ffffff;
     font-size: 14px;
     font-family: inherit;
     cursor: pointer;
+    text-align: center;
 }
 
+.session-type-button-proj[type=submit] {
+    border: 0;
+    padding: 11px 14px;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    text-align: center;
+}
 .btn-proj {
     width: 100%;
     padding-top: 20px;

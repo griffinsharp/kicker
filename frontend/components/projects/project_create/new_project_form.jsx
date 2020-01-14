@@ -49,10 +49,11 @@ class newProjectForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderNumCount = this.renderNumCount.bind(this);
         this.handleClickCat = this.handleClickCat.bind(this);
-        this.selectCat = this.selectCat.bind(this);
-        this.selectLoc = this.selectLoc.bind(this);
         this.handleClickInfo = this.handleClickInfo.bind(this);
         this.handleClickLoc = this.handleClickLoc.bind(this);
+        this.selectCat = this.selectCat.bind(this);
+        this.selectLoc = this.selectLoc.bind(this);
+    
 
     }
 
@@ -121,16 +122,19 @@ class newProjectForm extends React.Component {
     }
 
     handleClickCat() {
+      
         this.setState({categorySelect: "hidden"});
         this.setState({infoSelect: "choose-info"});
     }
 
     handleClickInfo() {
+
         this.setState({ infoSelect: "hidden" });
         this.setState({ locationSelect: "choose-loc" });
     }
 
     handleClickLoc() {
+       
         this.setState({locationSelect: "hidden"});
         this.setState({fundingSelect: "choose-funding"});
     }
@@ -200,7 +204,7 @@ class newProjectForm extends React.Component {
                         <div className="btn-proj">
                             <input
                                 className="session-type-button-proj"
-                                type="submit"
+                             
                                 value="Next: Project Idea"
                                 onClick={this.handleClickCat}
                             />
@@ -231,7 +235,7 @@ class newProjectForm extends React.Component {
                         <div className="btn-proj">
                             <input
                                 className="session-type-button-proj"
-                                type="submit"
+                               
                                 value="Next: Location"
                                 onClick={this.handleClickInfo}
                             />
@@ -292,7 +296,7 @@ class newProjectForm extends React.Component {
                             <div className="btn-proj">
                                 <input
                                     className="session-type-button-proj"
-                                    type="submit"
+                                  
                                     value="Next: Funding"
                                     onClick={this.handleClickLoc}
                                 />
