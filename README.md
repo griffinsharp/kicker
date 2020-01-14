@@ -5,7 +5,7 @@
 Kicker's design documents, such as database schema, sample state, and frontend/backend routes, can be found on the [Wiki](https://github.com/griffinsharp/Kicker/wiki).
 
 ## Features
-Here are a few screenshots/gifs of Kicker. To experience the full functionality of the site, please create an account or login as a demo user!
+Here are a few screenshots/gifs of Kicker. **To experience the full functionality of the site (back projects, create projects, etc.), please create an account or login as a demo user!**
 
 **Site Landing/Home Page**
 
