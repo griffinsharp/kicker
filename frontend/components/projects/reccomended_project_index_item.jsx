@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
-
 class ReccomendedProjectIndexItem extends React.Component {
   constructor(props) {
     super(props);
@@ -12,7 +11,7 @@ class ReccomendedProjectIndexItem extends React.Component {
   }
 
   percentFunded(pledged, total) {
-    return Math.floor((pledged / total)*100);
+    return Math.floor((pledged / total) * 100);
   }
 
   render() {
@@ -37,7 +36,10 @@ class ReccomendedProjectIndexItem extends React.Component {
                   )}
                   % funded
                 </p>
-                <p className="author-name">By&nbsp;<p className="proj-name-underline">{project.authorName}</p></p>
+                <p className="author-name">
+                  By&nbsp;
+                  <p className="proj-name-underline">{project.authorName}</p>
+                </p>
               </div>
               <div className="heart-container">
                 <FontAwesomeIcon className="heart" icon={faHeart} />

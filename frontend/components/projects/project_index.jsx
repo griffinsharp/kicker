@@ -30,12 +30,16 @@ class ProjectIndex extends React.Component {
   render() {
     const { projects, fetchProject } = this.props;
     return (
-    
       <div className="project-bar">
         <div className="small-header-proj-index">
           FRESH FAVORITES{" "}
           <Link className="discover-link" to="/search">
-            Discover more <FontAwesomeIcon className="arrow-svg" icon={faChevronRight} alt=""/>
+            Discover more{" "}
+            <FontAwesomeIcon
+              className="arrow-svg"
+              icon={faChevronRight}
+              alt=""
+            />
           </Link>
         </div>
         <div className="project-index-item-container">

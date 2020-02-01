@@ -1,17 +1,16 @@
-import React from 'react';
-import RewardIndexItem from './reward_index_item';
-import NoReward from './no_reward';
+import React from "react";
+import RewardIndexItem from "./reward_index_item";
+import NoReward from "./no_reward";
 
 class RewardIndex extends React.Component {
-
-    constructor(props) {
-      super(props);
-      this.rewardDisplay = this.rewardDisplay.bind(this);
-      // this.noRewardDisplay = this.noRewardDisplay.bind(this);
-    }
+  constructor(props) {
+    super(props);
+    this.rewardDisplay = this.rewardDisplay.bind(this);
+    // this.noRewardDisplay = this.noRewardDisplay.bind(this);
+  }
 
   rewardDisplay(reward) {
-    if (reward.id % 4 === (1 % 4)) {
+    if (reward.id % 4 === 1 % 4) {
       return (
         <NoReward
           currentUser={this.props.currentUser}
@@ -20,7 +19,8 @@ class RewardIndex extends React.Component {
           createBacking={this.props.createBacking}
           user={this.props.user}
           key={reward.id}
-          project={this.props.project} />
+          project={this.props.project}
+        />
       );
     } else {
       return (
@@ -31,7 +31,8 @@ class RewardIndex extends React.Component {
           createBacking={this.props.createBacking}
           user={this.props.user}
           key={reward.id}
-          project={this.props.project} />
+          project={this.props.project}
+        />
       );
     }
   }
@@ -50,21 +51,18 @@ class RewardIndex extends React.Component {
   //   }
   // }
 
-    render() {
-        const { rewards, createBacking, user, project, errors } = this.props;
+  render() {
+    const { rewards, createBacking, user, project, errors } = this.props;
 
-        return (
-          <div>
-            {/* <div>
+    return (
+      <div>
+        {/* <div>
                 {rewards.map(reward => this.noRewardDisplay(reward))}
             </div> */}
-              <div>
-                {rewards.map(reward => this.rewardDisplay(reward))}
-              </div>
-          </div>
-        );
-    }
-
+        <div>{rewards.map(reward => this.rewardDisplay(reward))}</div>
+      </div>
+    );
+  }
 }
 
 export default RewardIndex;

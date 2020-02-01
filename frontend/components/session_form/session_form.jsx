@@ -60,10 +60,14 @@ class SessionForm extends React.Component {
   }
 
   demoUserLogin() {
-    const user = Object.assign({}, {
-      email: 'demouser@demo.com',
-      password: 'demo123',
-      name: "Demo User"});
+    const user = Object.assign(
+      {},
+      {
+        email: "demouser@demo.com",
+        password: "demo123",
+        name: "Demo User"
+      }
+    );
     this.props.login(user).then(this.props.history.push("/"));
   }
 
@@ -141,7 +145,11 @@ class SessionForm extends React.Component {
 
               <a className={onlyLogIn}>Forgot your password?</a>
 
-              <input className="session-btn-top" type="submit" value={formType} />
+              <input
+                className="session-btn-top"
+                type="submit"
+                value={formType}
+              />
               <div className={`${onlyLogIn} s-two check-container`}>
                 <input type="checkbox" />
                 Remember Me
@@ -151,11 +159,18 @@ class SessionForm extends React.Component {
                 <div className="or">or</div>
                 <div className="or-line"></div>
               </div>
-              <input className="session-btn" type="submit" value="Demo User" onClick={this.demoUserLogin}/>
+              <input
+                className="session-btn"
+                type="submit"
+                value="Demo User"
+                onClick={this.demoUserLogin}
+              />
             </form>
             {/* bottom */}
             <div className="session-bottom">
-              <div className={`${onlyLogIn} s-two bottom-call`}>New to Kickstarter?{navLink}</div>
+              <div className={`${onlyLogIn} s-two bottom-call`}>
+                New to Kickstarter?{navLink}
+              </div>
             </div>
           </div>
         </div>

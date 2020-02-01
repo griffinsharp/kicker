@@ -17,7 +17,7 @@ class ReccomendedProjectIndex extends React.Component {
         <ReccomendedProjectIndexItem
           project={project}
           key={project.id}
-          projectId = {project.id}
+          projectId={project.id}
           fetchProject={this.props.fetchProject}
         />
       );
@@ -27,9 +27,9 @@ class ReccomendedProjectIndex extends React.Component {
   render() {
     const { projects, fetchProject } = this.props;
     return (
-        <div className="reccomended-project-bar">
-          {projects.map(project => this.projectReccomended(project))}
-        </div>
+      <div className="reccomended-project-bar">
+        {projects.map(project => this.projectReccomended(project))}
+      </div>
     );
   }
 }

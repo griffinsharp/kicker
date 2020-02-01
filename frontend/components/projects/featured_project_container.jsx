@@ -1,10 +1,7 @@
 import { connect } from "react-redux";
 import {
   fetchProjects,
-  fetchProject,
-  createProject,
-  updateProject,
-  deleteProject
+  fetchProject
 } from "../../actions/project_actions";
 import FeaturedProject from "./featured_project";
 
