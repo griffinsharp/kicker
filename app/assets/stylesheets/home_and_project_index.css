@@ -1,12 +1,11 @@
 .home-container {
-    width: auto;
+  width: auto;
 }
 
 .author-name {
-    display: flex;
+  display: flex;
 }
 
 .project-index-container {
-    display: flex;
-    
+  display: flex;
 }

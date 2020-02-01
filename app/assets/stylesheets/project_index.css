@@ -1,79 +1,78 @@
 .small-header-proj-index {
-    color: #656969;
-    font-size: 13.5px;
-    font-weight: bold;
-    margin-top: 48px;
-    margin-bottom: 60px;
-    display: flex;
-    align-items: center;
+  color: #656969;
+  font-size: 13.5px;
+  font-weight: bold;
+  margin-top: 48px;
+  margin-bottom: 60px;
+  display: flex;
+  align-items: center;
 }
 
 .project-index-container {
-    height: 553px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: horizontal;
-    border-bottom: solid 1px #DCDEDD;
+  height: 553px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: horizontal;
+  border-bottom: solid 1px #dcdedd;
 }
 
 .project-bar {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    /* taken out until carousel */
-    /* padding: 0 60px; */
-    max-width: 1366px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  /* taken out until carousel */
+  /* padding: 0 60px; */
+  max-width: 1366px;
 }
 
 .project-index-item-container {
-    display: flex;
-    flex-direction: row;
-    margin-right: 14px;
+  display: flex;
+  flex-direction: row;
+  margin-right: 14px;
 }
 
 .project-index-item-info {
-    font-size: 19px;
-    padding-top: 11px;
+  font-size: 19px;
+  padding-top: 11px;
 }
 
 .project-index-item {
-    width: 295px;
-    padding-right: 13px; 
+  width: 295px;
+  padding-right: 13px;
 }
 
 .project-index-item-pic {
-    height: 170px;
-    width: 295px;
-    object-fit: cover;
+  height: 170px;
+  width: 295px;
+  object-fit: cover;
 }
 
-.proj-index-item-title{
-    font-size: 19px;
-    padding-top: 11px;
+.proj-index-item-title {
+  font-size: 19px;
+  padding-top: 11px;
 }
 
 .proj-index-item-title:hover {
-    color: #037362;
-    text-decoration: underline;
+  color: #037362;
+  text-decoration: underline;
 }
 
-.proj-index-item-subtitle{
-    font-family: 'Sorts Mill Goudy', 'Georgia', 'Times New Roman', 'Times', 'serif';
-    font-size: 15px;
-    padding: 12px 0;
-    line-height: 24px;
+.proj-index-item-subtitle {
+  font-family: "Sorts Mill Goudy", "Georgia", "Times New Roman", "Times",
+    "serif";
+  font-size: 15px;
+  padding: 12px 0;
+  line-height: 24px;
 }
 
-.discover-link{
-    margin-left: 18px;
-    color: #4C6CF8;
-    font-size: 13.5px;
+.discover-link {
+  margin-left: 18px;
+  color: #4c6cf8;
+  font-size: 13.5px;
 }
 
 .arrow-svg {
-    margin-left: 6px;
-    font-size: 12px;
+  margin-left: 6px;
+  font-size: 12px;
 }
-
-

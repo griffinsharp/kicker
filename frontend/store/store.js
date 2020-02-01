@@ -6,7 +6,11 @@ import RootReducer from "../reducers/root_reducer";
 // Make sure to add the logger middleware last or our app will throw some errors.
 
 const configureStore = (preloadedState = {}) => {
-    return createStore(RootReducer, preloadedState, applyMiddleware(thunk, logger));
-}
+  return createStore(
+    RootReducer,
+    preloadedState,
+    applyMiddleware(thunk, logger)
+  );
+};
 
 export default configureStore;

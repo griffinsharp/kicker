@@ -1,29 +1,29 @@
 .navbar {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #E8E8E8;
-    font-size: 15px;
-    color: #282828;
-    text-align: justify;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e8e8e8;
+  font-size: 15px;
+  color: #282828;
+  text-align: justify;
 }
 
 .left-bar {
-    display: flex;
-    padding-left: 24px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    flex: 1 1 0;
-    justify-content: flex-start;
+  display: flex;
+  padding-left: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  flex: 1 1 0;
+  justify-content: flex-start;
 }
 
 .right-bar {
-    display: flex;
-    padding-right: 24px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    /* flex-grow of 2, flex-shrink of 1, flex-basis of 0 for even spacing of different sized containers in nav bar */
-    flex: 1 1 0;
-    justify-content: flex-end;
+  display: flex;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  /* flex-grow of 2, flex-shrink of 1, flex-basis of 0 for even spacing of different sized containers in nav bar */
+  flex: 1 1 0;
+  justify-content: flex-end;
 }
 
 /* all element with the parent class being .left-bar and child class being .navlink */
@@ -31,48 +31,48 @@
 set within its class attribute */
 
 .left-bar .nav-link {
-    margin-right: 12px;
-} 
+  margin-right: 12px;
+}
 
 .logo-bar {
-    display: flex;
-    height: 42px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  height: 42px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .logo-img {
-    display: flex;
-    width: 30%;
-    justify-content: center;
-    flex-direction: row;
-    margin: auto;
+  display: flex;
+  width: 30%;
+  justify-content: center;
+  flex-direction: row;
+  margin: auto;
 }
 
 .nav-link {
-    display: flex;
-    height: 42px;
-    justify-content: center;
-    flex-direction: column;
+  display: flex;
+  height: 42px;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .nav-link:hover {
-   cursor: pointer;
-   color: #037362;
+  cursor: pointer;
+  color: #037362;
 }
 
 .link {
-    margin-right: 16px;
+  margin-right: 16px;
 }
 
 .link:hover {
-    cursor: pointer;
-   color: #037362;
+  cursor: pointer;
+  color: #037362;
 }
 
 .search-icon {
-    margin-left: 4px;
-    font-size: 13px;
+  margin-left: 4px;
+  font-size: 13px;
 }

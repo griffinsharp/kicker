@@ -1,81 +1,79 @@
 .footer-container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer-cats {
-    height: 67px;
-    border-top: 2px #9b9e9f solid;
-    border-bottom: 2px #dcdedd solid;
-    display: flex;
-    align-items: center;
+  height: 67px;
+  border-top: 2px #9b9e9f solid;
+  border-bottom: 2px #dcdedd solid;
+  display: flex;
+  align-items: center;
 }
 
 .footer-cats-inner {
-    padding: 0 60px;
-    margin: 0 auto;
-    justify-content: left;
-    width: 1246px;
+  padding: 0 60px;
+  margin: 0 auto;
+  justify-content: left;
+  width: 1246px;
 }
 
 .footer-below-container {
-    display: flex;
-    height: 50px;
-    padding: 48px 0;
-    margin: 0 auto;
-    width: 1246px;
-    justify-content: flex-end;
+  display: flex;
+  height: 50px;
+  padding: 48px 0;
+  margin: 0 auto;
+  width: 1246px;
+  justify-content: flex-end;
 }
 
 .footer-below {
-    display: flex;
+  display: flex;
 }
 
 .footer-link {
-    margin-right: 30px;
-    color: #282828;
-    font-size: 15px;
+  margin-right: 30px;
+  color: #282828;
+  font-size: 15px;
 }
 
 .footer-link:hover {
-    color: #037362;
-    text-decoration: underline;
+  color: #037362;
+  text-decoration: underline;
 }
 
 .footer-right {
-
 }
 
 .trademark {
-    font-size: 14px;
-    margin-left: 12px;
+  font-size: 14px;
+  margin-left: 12px;
 }
 
 .footer-socials {
-    display: flex;
-    align-items: center;
-    margin-right: 28px;
+  display: flex;
+  align-items: center;
+  margin-right: 28px;
 }
 
-
 .social-fav-footer {
-    margin-right: 24px;
-    font-size: 17px;
+  margin-right: 24px;
+  font-size: 17px;
 }
 
 .social-fav-footer a:hover {
-    color: #037362;
+  color: #037362;
 }
 
 .footer-credits {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .k-icon {
-    font-size: 17px;
+  font-size: 17px;
 }
 
 .k-icon:hover {
-    color: #037362;
+  color: #037362;
 }

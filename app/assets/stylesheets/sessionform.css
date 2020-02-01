@@ -1,154 +1,152 @@
 /* outermost div */
-.main-session{
-    background-color: #f7f6f5;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    min-height: 100%;
-    justify-content: center;
+.main-session {
+  background-color: #f7f6f5;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  min-height: 100%;
+  justify-content: center;
 }
 
 /* form and bottom demo */
 .session-form-container {
-    display: flex;
-    background-color: #fff;
-    width: 400px;
-    margin: 60px auto;
-    min-height: 747px;
-    height: 100%;
-    flex-direction: column;
+  display: flex;
+  background-color: #fff;
+  width: 400px;
+  margin: 60px auto;
+  min-height: 747px;
+  height: 100%;
+  flex-direction: column;
 }
 
 /* top on sign up for when user has an account already */
 
 /* form itself */
 .session-top {
-   display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .session-form {
-    display: flex;
-    flex-direction: column;
-    padding: 30px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
 }
 
 /* easy signup at bottom */
 .session-bottom {
-    display: flex;
-   flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 /* form header */
-.session-header{
-    font-size: 30px;
-    padding-bottom: 10px;
+.session-header {
+  font-size: 30px;
+  padding-bottom: 10px;
 }
 
 /* all the text inputs */
-.session-type-input{
-    padding: 10px;
-    font-size: 14px;
+.session-type-input {
+  padding: 10px;
+  font-size: 14px;
 }
 
 .bottom-call {
-    margin: 0;
-    text-align: center;
-    padding: 22px 0;
-    border-bottom: 1px solid #F1EEEA;
-    border-top: 1px solid #F1EEEA;
+  margin: 0;
+  text-align: center;
+  padding: 22px 0;
+  border-bottom: 1px solid #f1eeea;
+  border-top: 1px solid #f1eeea;
 }
 
-
-
 .s-two {
-    margin-top: 18px;
+  margin-top: 18px;
 }
 
 .check-container {
-    margin-top: 4px;
-    padding-left: 0px;
+  margin-top: 4px;
+  padding-left: 0px;
 }
 
 .check-box {
-    padding-left: 0;
+  padding-left: 0;
 }
-.session-btn{
-    background-color: #009E74;
-    color: #FFF;
-    font-size: 14px;
-    cursor: pointer;
-    padding: 11px;
-}
-
-.session-btn-top{
-    background-color: #009E74;
-    color: #FFF;
-    font-size: 14px;
-    cursor: pointer;
-    padding: 11px;
-    margin-top: 18px;
+.session-btn {
+  background-color: #009e74;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 11px;
 }
 
-
-
-.session-btn-demo{
-    background-color: #39579a;
-    color: #FFF;
-    font-size: 14px;
-    cursor: pointer;
-    padding: 11px;
+.session-btn-top {
+  background-color: #009e74;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 11px;
+  margin-top: 18px;
 }
 
-.hidden{
-    display: none;
+.session-btn-demo {
+  background-color: #39579a;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 11px;
+}
+
+.hidden {
+  display: none;
 }
 
 .or-line-container {
-    display: flex;
-    align-items: center;
-    margin-top: 18px;
-    margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  margin-top: 18px;
+  margin-bottom: 22px;
 }
 
 .or-line {
-    height: 1px;
-    width: 100%;
-    background-color:#F1EEEA;
-    display: flex;
+  height: 1px;
+  width: 100%;
+  background-color: #f1eeea;
+  display: flex;
 }
 
 .or {
-    display: flex;
-    width: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
+  display: flex;
+  width: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 a.session-type-input {
-    padding: 10px 0 0 0;
-    color: #2953ff;
-    font-size: 13px;
+  padding: 10px 0 0 0;
+  color: #2953ff;
+  font-size: 13px;
 }
 
 .session-link {
-    color: #2953ff;
+  color: #2953ff;
 }
 
 .have-acc {
-    background-color: rgba(241,238,234,0.2);
-    margin: 0;
-    text-align: center;
-    padding: 22px 0;
-    border-bottom: 1px solid #F1EEEA;
+  background-color: rgba(241, 238, 234, 0.2);
+  margin: 0;
+  text-align: center;
+  padding: 22px 0;
+  border-bottom: 1px solid #f1eeea;
 }
 
-input[type=text], input[type=password] {
+input[type="text"],
+input[type="password"] {
   outline: none;
-  border: 1px solid #DDDDDD;
-  -webkit-transition: all 0.30s ease-in-out;
+  border: 1px solid #dddddd;
+  -webkit-transition: all 0.3s ease-in-out;
 }
 
-input[type=text]:focus, input[type=password]:focus {
-  border: 1px solid #009E74;
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border: 1px solid #009e74;
 }

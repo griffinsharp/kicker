@@ -1,58 +1,57 @@
 .call-to-action-container {
-    height: 340px;
-    border-bottom: solid 1px #DCDEDD;
-    display: flex;
-    justify-content: center;
-    width: 100%;
+  height: 340px;
+  border-bottom: solid 1px #dcdedd;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .cta-inner-container {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 .cta {
-    margin: 0 auto;
-    padding: 48px;
-    display: flex;
-    max-width: 1246px;
+  margin: 0 auto;
+  padding: 48px;
+  display: flex;
+  max-width: 1246px;
 }
 
 .cta-pic {
-
 }
 
 .cta-text {
-  font-family: 'Sorts Mill Goudy', 'Georgia', 'Times New Roman', 'Times', 'serif';
+  font-family: "Sorts Mill Goudy", "Georgia", "Times New Roman", "Times",
+    "serif";
   padding-left: 24px;
   display: flex;
   flex-direction: column;
 }
 
 .cta-header {
-    font-size: 30px;
-    font-family: inherit;
-    color: #282828;
-    line-height: 36px;
-    padding-bottom: 18px;
+  font-size: 30px;
+  font-family: inherit;
+  color: #282828;
+  line-height: 36px;
+  padding-bottom: 18px;
 }
 
 .cta-header:hover {
-    color: #037362;
-    text-decoration: underline;
+  color: #037362;
+  text-decoration: underline;
 }
 
 .cta-body {
-    font-size: 20px;
-    font-family: inherit;
-    color: #282828;
-    line-height: 24px;
+  font-size: 20px;
+  font-family: inherit;
+  color: #282828;
+  line-height: 24px;
 }
 
 .cta-text-top {
-    font-family: inherit;
-    border-left: 6px;
-    border-left-color: #037362;
-    border-left-style: solid;
-    padding-left: 18px;
+  font-family: inherit;
+  border-left: 6px;
+  border-left-color: #037362;
+  border-left-style: solid;
+  padding-left: 18px;
 }
-

@@ -1,86 +1,93 @@
 .navbar-and-modal {
-
 }
 
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 100;
-    background-color: #FBFBFA;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: #fbfbfa;
 }
 
 .modal-wrapper {
-    color: #282828;
-    max-width: 1366px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 34px;
-    display: flex;
-    flex-direction: column;
-    margin-top: 34px;
-    padding: 0 60px;
-    margin-bottom: 158px;
+  color: #282828;
+  max-width: 1366px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 34px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 34px;
+  padding: 0 60px;
+  margin-bottom: 158px;
 }
 
 .modal-header {
-    font-size: 16px;
-    color: #037362;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  font-size: 16px;
+  color: #037362;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .modal-links {
-    display: flex;
-    flex-direction: column;
-    margin: 16px 0;
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: 16px 0;
+  margin-bottom: 20px;
 }
 
 .modal-link {
-    margin-bottom: 20px;
-    -webkit-transition: all 0.30s ease-in-out;
-    width: fit-content;
+  margin-bottom: 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  width: fit-content;
 }
 
 .modal-link:hover {
-    color: #007460;
-    -webkit-transition: all 0.30s ease-in-out;
+  color: #007460;
+  -webkit-transition: all 0.3s ease-in-out;
 }
 
 .modal-top {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: #DCDEDD 1px solid;
-    padding: 16px 0;
-    cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: #dcdedd 1px solid;
+  padding: 16px 0;
+  cursor: pointer;
 }
 
 .modal-x-btn {
-    font-size: 18px;
-    color: #037362;
+  font-size: 18px;
+  color: #037362;
 }
 
 .modalclear {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 100;
-    overflow-y: scroll;
-    -webkit-animation: fadein 0.5s, downtoup 0.5s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  overflow-y: scroll;
+  -webkit-animation: fadein 0.5s, downtoup 0.5s;
 }
 
 @keyframes downtoup {
-    from { top: 100px; }
-    to   { top: 0px; }
+  from {
+    top: 100px;
+  }
+  to {
+    top: 0px;
+  }
 }
 
 @keyframes fadein {
-    from { opacity: 0%; }
-    to   { opacity: 100%; }
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
 }

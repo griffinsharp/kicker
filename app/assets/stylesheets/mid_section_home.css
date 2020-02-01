@@ -1,57 +1,55 @@
 .mid-section-container {
-    border-bottom: solid 1px #DCDEDD;
+  border-bottom: solid 1px #dcdedd;
 }
 
 .mid-section {
-    display: flex;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    height: 555px;
-    color: #282828;
-    padding: 0 60px;
-    max-width: 1366px;
-    padding-bottom: 95px;
-    margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: 555px;
+  color: #282828;
+  padding: 0 60px;
+  max-width: 1366px;
+  padding-bottom: 95px;
+  margin-top: 25px;
 }
 
 .featured-project-container {
-  flex-basis:  55%;
+  flex-basis: 55%;
   max-width: 625px;
   padding-right: 60px;
-  border-right: solid 1px #DCDEDD;
+  border-right: solid 1px #dcdedd;
   padding-top: 35px;
 }
 
 .featured-project {
-    width: 100%;
+  width: 100%;
 }
-
 
 .featured-pic {
-    display: flex;
-    max-width: 100%;
-    width: 100%;
-    margin-bottom: 20px;
-    max-height: 365px;
-    object-fit: cover;
-    min-height: 270px;
-    min-width: 470px;
+  display: flex;
+  max-width: 100%;
+  width: 100%;
+  margin-bottom: 20px;
+  max-height: 365px;
+  object-fit: cover;
+  min-height: 270px;
+  min-width: 470px;
 }
 
-
-.reccomended-project-container{
-    flex-basis:  45%;
-    padding-left: 60px;
-    max-width: 500px;
-    padding-top: 35px;
+.reccomended-project-container {
+  flex-basis: 45%;
+  padding-left: 60px;
+  max-width: 500px;
+  padding-top: 35px;
 }
 
 .small-header {
-    color: #656969;
-    font-size: 13.5px;
-    font-weight: bold;
-    margin-bottom: 18px;
+  color: #656969;
+  font-size: 13.5px;
+  font-weight: bold;
+  margin-bottom: 18px;
 }
 
 .mid-header {
@@ -59,31 +57,32 @@
 }
 
 .featured-project a.mid-header:hover {
-    color: #037362;
-    text-decoration: underline;
+  color: #037362;
+  text-decoration: underline;
 }
 
 .mid-paragraph {
   font-size: 20px;
   line-height: 25px;
-  font-family: 'Sorts Mill Goudy', 'Georgia', 'Times New Roman', 'Times', 'serif';
+  font-family: "Sorts Mill Goudy", "Georgia", "Times New Roman", "Times",
+    "serif";
 }
 
 .featured-project > .mid-paragraph {
-    margin-top: 20px; 
-    margin-bottom: 24px;
+  margin-top: 20px;
+  margin-bottom: 24px;
 }
 
 .author {
-    font-size: 13px;
-    color: #7e8383;
+  font-size: 13px;
+  color: #7e8383;
 }
 
 .author a {
-    font-size: 13px;
-    color: #7e8383;
+  font-size: 13px;
+  color: #7e8383;
 }
 
 .featured-project .author a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }

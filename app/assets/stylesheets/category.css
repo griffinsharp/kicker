@@ -1,27 +1,28 @@
 .category-banner-container {
-    height: 265px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    border-bottom: solid 1px #DCDEDD;
+  height: 265px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-bottom: solid 1px #dcdedd;
 }
 
 .category-banner {
-    padding: 48px;
-    display: flex;
-    flex-direction: column;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
 }
 
 .category-banner .session-type-input {
-    width: 460px;
-    color: #9a9d9d;
-    padding-top: 11px;
-    padding-bottom: 7px;
+  width: 460px;
+  color: #9a9d9d;
+  padding-top: 11px;
+  padding-bottom: 7px;
 }
 
 .category-banner .mid-header {
-    font-family: 'Sorts Mill Goudy', 'Georgia', 'Times New Roman', 'Times', 'serif';
+  font-family: "Sorts Mill Goudy", "Georgia", "Times New Roman", "Times",
+    "serif";
 }
 
 .category-banner > .mid-paragraph {
