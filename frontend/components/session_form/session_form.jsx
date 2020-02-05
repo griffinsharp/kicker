@@ -20,12 +20,12 @@ class SessionForm extends React.Component {
 
   // Notes on the following functions/logic:
   // Prevent the default action for a submit, which is to navigate away from the page.
-  // make a new user object based on the local state.
+  // Make a new user object based on the local state.
   // Call processForm with the user object as a param.
   // ProcessForm passed down in props and used to handle dispatching both signin/sign up on one form.
   // Upon reponse for processForm, we should call handle Errors with .then.
   // At this point, we should either have dispatched either receieveErrors or receiveCurrentUser.
-  // If we dispatched any errors, now our errors array should not be empty (handleErrors checks this.
+  // If we dispatched any errors, now our errors array should not be empty (handleErrors checks this).
   // If there are no errors, navigate to the home page. If not, since we altered state, our component should rerender
   // calling this.renderErrors again, which should then render the errors on the page.
 
@@ -72,6 +72,11 @@ class SessionForm extends React.Component {
         name: "Demo User"
       }
     );
+
+    // This will either route to create a new project or back to home depending on where the page was accessed from
+    // If the user tries to click the navbar's "start a project" without being logged in, this "rerouted" portion of state should signify so.
+    // Same logic for trying to donate to a project.
+    // Both of these require the user to be logged in and errors to be displayed accordingly. 
     this.props.login(user).then(() => {
       if (this.props.location.state.rerouted === "true") {
         this.props.history.push("/projects/new");
@@ -83,13 +88,25 @@ class SessionForm extends React.Component {
 
   // Our Errors are stored in an array. Need to map through them and present them individually if they exist.
   // I will call this function below within the render function when appropriate.
+  // routeErrors are the custom errors we want to display if we are rerouting from a protected route.
   renderErrors() {
+    let routeErrors;
+    if (this.props.location.state) {
+      routeErrors = this.props.location.state.errors;
+    } else {
+      routeErrors = null;
+    }
     return (
-      <ul>
+      <div>
+        <ul>
         {this.props.errors.map((error, i) => (
           <li key={`error-number-${i}`}>{error}</li>
         ))}
       </ul>
+      <ul>
+        {routeErrors}
+      </ul>
+      </div>
     );
   }
 

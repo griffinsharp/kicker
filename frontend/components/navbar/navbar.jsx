@@ -558,7 +558,8 @@ class Navbar extends React.Component {
             <Link to={{
               pathname: notLogged,
               state: {
-                rerouted: "true"
+                rerouted: "true",
+                errors: "You must be signed in to create a project."
               }
               }} className="nav-link" >
               Start a project
