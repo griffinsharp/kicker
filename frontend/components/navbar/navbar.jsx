@@ -44,11 +44,13 @@ class Navbar extends React.Component {
     }
 
     let notLogged;
-
+    let reDirect;
     if (this.props.currentUser === null) {
       notLogged = "/login";
+      reDirect = "true";
     } else {
       notLogged = "/projects/new";
+      reDirect = "false";
     }
 
     return (
@@ -553,7 +555,12 @@ class Navbar extends React.Component {
             <p className="nav-link" onClick={() => this.handleExplore()}>
               Explore
             </p>
-            <Link to={notLogged} className="nav-link">
+            <Link to={{
+              pathname: notLogged,
+              state: {
+                rerouted: "true"
+              }
+              }} className="nav-link" >
               Start a project
             </Link>
           </div>

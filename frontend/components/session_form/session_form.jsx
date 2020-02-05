@@ -37,7 +37,11 @@ class SessionForm extends React.Component {
 
   handleErrors() {
     if (this.props.errors.length === 0) {
-      this.props.history.push("/");
+      if (this.props.location.state.rerouted === "true") {
+        this.props.history.push("/projects/new");
+      } else {
+        this.props.history.push("/");
+      }
     }
   }
 
@@ -68,7 +72,13 @@ class SessionForm extends React.Component {
         name: "Demo User"
       }
     );
-    this.props.login(user).then(this.props.history.push("/"));
+    this.props.login(user).then(() => {
+      if (this.props.location.state.rerouted === "true") {
+        this.props.history.push("/projects/new");
+      } else {
+        this.props.history.push("/");
+      }
+    });
   }
 
   // Our Errors are stored in an array. Need to map through them and present them individually if they exist.
@@ -84,6 +94,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    debugger;
     let onlySignUp;
     let onlyLogIn;
     if (this.props.location.pathname === "/login") {
