@@ -39,6 +39,8 @@ class SessionForm extends React.Component {
     if (this.props.errors.length === 0) {
       if (this.props.location.state.rerouted === "true") {
         this.props.history.push("/projects/new");
+      } else if (this.props.location.state.rerouted === "project") {
+        this.props.history.push(this.props.location.state.path);
       } else {
         this.props.history.push("/");
       }
@@ -80,6 +82,8 @@ class SessionForm extends React.Component {
     this.props.login(user).then(() => {
       if (this.props.location.state.rerouted === "true") {
         this.props.history.push("/projects/new");
+      } else if (this.props.location.state.rerouted === "project") {
+        this.props.history.push(this.props.location.state.path);
       } else {
         this.props.history.push("/");
       }

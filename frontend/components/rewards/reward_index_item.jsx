@@ -20,9 +20,16 @@ class RewardIndexItem extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
+    debugger
     if (this.props.currentUser === null) {
-      this.props.history.push("/login");
+      this.props.history.push({
+        pathname: "/login",
+        state: {
+          rerouted: "project",
+          path: `${this.props.location.pathname}`,
+          errors: "You must be signed in to back a project."
+        }
+      });
     } else {
       const backing = Object.assign({}, this.state);
       this.props.createBacking(backing).then(() => this.handleErrors());
