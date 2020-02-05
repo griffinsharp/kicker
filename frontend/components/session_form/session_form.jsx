@@ -37,7 +37,7 @@ class SessionForm extends React.Component {
 
   handleErrors() {
     if (this.props.errors.length === 0) {
-      if (this.props.location.state.rerouted === "true") {
+      if (this.props.location.state.rerouted === "navbar") {
         this.props.history.push("/projects/new");
       } else if (this.props.location.state.rerouted === "project") {
         this.props.history.push(this.props.location.state.path);
@@ -80,7 +80,7 @@ class SessionForm extends React.Component {
     // Same logic for trying to donate to a project.
     // Both of these require the user to be logged in and errors to be displayed accordingly. 
     this.props.login(user).then(() => {
-      if (this.props.location.state.rerouted === "true") {
+      if (this.props.location.state.rerouted === "navbar") {
         this.props.history.push("/projects/new");
       } else if (this.props.location.state.rerouted === "project") {
         this.props.history.push(this.props.location.state.path);
