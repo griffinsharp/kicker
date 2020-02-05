@@ -150,3 +150,19 @@ input[type="text"]:focus,
 input[type="password"]:focus {
   border: 1px solid #009e74;
 }
+
+/* ERRORS */
+
+.session-errors {
+    background: #fd003b;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    line-height: 24px;
+}
+
+.error-li {
+  color: #fff;
+}

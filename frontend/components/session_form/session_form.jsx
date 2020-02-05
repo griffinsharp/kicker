@@ -91,21 +91,30 @@ class SessionForm extends React.Component {
   // routeErrors are the custom errors we want to display if we are rerouting from a protected route.
   renderErrors() {
     let routeErrors;
+    let sessionErrors;
+
+    if (this.props.location.state || this.props.errors.length > 0) {
+      sessionErrors = "session-errors";
+    } else {
+      sessionErrors = "hidden";
+    }
+
     if (this.props.location.state) {
       routeErrors = this.props.location.state.errors;
     } else {
       routeErrors = null;
     }
+
     return (
-      <div>
+      <div className={sessionErrors}>
         <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-number-${i}`}>{error}</li>
-        ))}
-      </ul>
-      <ul>
-        {routeErrors}
-      </ul>
+          {this.props.errors.map((error, i) => (
+            <li className="error-li" key={`error-number-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+        <ul className="error-li" >{routeErrors}</ul>
       </div>
     );
   }
@@ -114,6 +123,9 @@ class SessionForm extends React.Component {
     debugger;
     let onlySignUp;
     let onlyLogIn;
+    
+
+
     if (this.props.location.pathname === "/login") {
       onlySignUp = "hidden";
       onlyLogIn = "session-type-input";
