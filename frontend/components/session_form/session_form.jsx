@@ -78,7 +78,7 @@ class SessionForm extends React.Component {
     // This will either route to create a new project or back to home depending on where the page was accessed from
     // If the user tries to click the navbar's "start a project" without being logged in, this "rerouted" portion of state should signify so.
     // Same logic for trying to donate to a project.
-    // Both of these require the user to be logged in and errors to be displayed accordingly. 
+    // Both of these require the user to be logged in and errors to be displayed accordingly.
     this.props.login(user).then(() => {
       if (this.props.location.state.rerouted === "navbar") {
         this.props.history.push("/projects/new");
@@ -118,7 +118,7 @@ class SessionForm extends React.Component {
             </li>
           ))}
         </ul>
-        <ul className="error-li" >{routeErrors}</ul>
+        <ul className="error-li">{routeErrors}</ul>
       </div>
     );
   }
@@ -127,8 +127,6 @@ class SessionForm extends React.Component {
     debugger;
     let onlySignUp;
     let onlyLogIn;
-    
-
 
     if (this.props.location.pathname === "/login") {
       onlySignUp = "hidden";

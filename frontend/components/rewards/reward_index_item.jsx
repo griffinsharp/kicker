@@ -12,6 +12,16 @@ class RewardIndexItem extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleErrors = this.handleErrors.bind(this);
+    this.scrollToTop = this.scrollToTop.bind(this);
+  }
+
+  
+  scrollToTop () {
+    window.scrollTo({
+      top: 100,
+      left: 100,
+      behavior: "smooth"
+    });
   }
 
   update(field) {
@@ -20,7 +30,6 @@ class RewardIndexItem extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
     if (this.props.currentUser === null) {
       this.props.history.push({
         pathname: "/login",
@@ -43,6 +52,8 @@ class RewardIndexItem extends React.Component {
       this.props.project.total_pledged =
         this.props.project.total_pledged + this.state.pledge_amount;
     }
+    
+    this.scrollToTop();
   }
 
   renderErrors() {
