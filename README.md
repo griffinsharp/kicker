@@ -1,3 +1,7 @@
+<p align="center" > 
+<img src="https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/logo.png">
+</p>
+
 ## Introduction 👟
 
 [Kicker](https://kicker-app.herokuapp.com/#/), a [Kickstarter](https://www.kickstarter.com/) clone, is a crowdfunding application that allows users to collectively help get innovative sneaker related projects, products, and services to the market. If the project receives full funding by the end of its campaign, project backers receive a tiered reward contingent on the amount they pledged. Sneakerheads, rejoice!
@@ -19,25 +23,33 @@ This is what users are greeted with upon navigating to the website. A navbar, on
 
 Contributing to a project should update the total amount pledged immediately. If the project is featured on the home page or its category's page, it should update there too. 
 
-<p align="center"> 
-<img src="https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/KickerProjectPage.png">
+<p align="center" > 
+<img src="https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/projdonate.gif">
 </p>
 
 **Project Creation**
 
 Users can create their own projects, able to customize their campaign by title, subtitle, description, company bio, category, project location, goal amount, and campaign duration. If you're in a rush and just want to see your project live, values for these fields will automaticaly be filled in for you. 
 
-<p align="center"> 
-<img src="https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/createproj.gif">
+<p align="center" > 
+<img src="https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/projcreate.gif">
 </p>
 
 **Search Results**
 
 Users can filter projects by category and location, and sort by company favorites, newest, nearly funded, end date, most backed, and random.
 
+<p align="center"> 
+<img src="https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/search.gif">
+</p>
+
 **Categories**
 
 Essentially, each category has its own 'home' page with its own featured, reccomended, and handpicked projects to dipslay. Here I was able to reuse the home page components with varying content, keeping my code DRY and reusable, while dynamically rendering different header descriptions based on the url `/category/:categoryId` thanks to `React Router`. 
+
+<p align="center"> 
+<img src="https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/categories.gif">
+</p>
 
 **User Auth**
 
@@ -47,8 +59,8 @@ Many user actions on Kicker require an account (creating or backing a project, f
 
 Clicking "explore" on the navigation bar allows for quick access to many parts of the website via a pop-up modal. 
 
-<p align="center"> 
-<img src="https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/modal.gif">
+<p align="center" > 
+<img width="95%" src="https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/newmodal.gif">
 </p>
 
 ## Code Snippets ⚛️
