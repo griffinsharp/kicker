@@ -6,7 +6,6 @@ class Api::BackingsController < ApplicationController
     end
 
     def create
-
         @backing = Backing.new(backing_params)
         @backing.user_id = current_user.id
         
@@ -15,7 +14,6 @@ class Api::BackingsController < ApplicationController
         else
             render json: ["You need to be signed in to pledge to a project."], status: 401
         end
-
     end
 
     private
@@ -23,6 +21,5 @@ class Api::BackingsController < ApplicationController
     def backing_params
         params.require(:backing).permit(:user_id, :reward_id, :project_id, :backing_amount)
     end
-
 
 end
