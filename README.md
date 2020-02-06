@@ -1,10 +1,10 @@
-## Introduction
+## Introduction 👟
 
 [Kicker](https://kicker-app.herokuapp.com/#/), a [Kickstarter](https://www.kickstarter.com/) clone, is a crowdfunding application that allows users to collectively help get innovative sneaker related projects, products, and services to the market. If the project receives full funding by the end of its campaign, project backers receive a tiered reward contingent on the amount they pledged. Sneakerheads, rejoice!
 
-Kicker's design documents, such as database schema, sample state, and frontend/backend routes, can be found on the [Wiki](https://github.com/griffinsharp/Kicker/wiki).
+Kicker's design documents, such as the [database schema](https://github.com/griffinsharp/Kicker/wiki/Database-Schema), [sample state](https://github.com/griffinsharp/Kicker/wiki/Sample-State), and [frontend](https://github.com/griffinsharp/Kicker/wiki/Frontend-Routes)/[backend](https://github.com/griffinsharp/Kicker/wiki/Backend-Routes) routes, can be found on the [Wiki](https://github.com/griffinsharp/Kicker/wiki).
 
-## Features
+## Features ⚡️
 Here are a few screenshots/gifs of Kicker. **To experience the full functionality of the site (back projects, create projects, etc.), please create an account or login as a demo user!**
 
 **Site Landing/Home Page**
@@ -51,7 +51,7 @@ Clicking "explore" on the navigation bar allows for quick access to many parts o
 <img src="https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/modal.gif">
 </p>
 
-## Code Snippets
+## Code Snippets ⚛️
 
 **Session Component**
 
@@ -212,8 +212,7 @@ end
 end
 ```
 		
-
-## Technologies Used
+## Technologies Used 📟 
 
 - `Ruby on Rails` 
 - `React`
@@ -222,6 +221,6 @@ end
 - `jBuilder` 
 - `Webpack` + `Babel` 
 
-## Future Plans
+## Future Plans 🤷‍♂️
 
 - I have plans to make Kicker mobile responsive and fully avaiable to users with web accessibility issues.
