@@ -81,6 +81,9 @@
 .author a {
   font-size: 13px;
   color: #7e8383;
+  display: flex;
+  margin-right: auto;
+  
 }
 
 .featured-project .author a:hover {
