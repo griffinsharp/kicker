@@ -57,40 +57,167 @@ Clicking "explore" on the navigation bar allows for quick access to many parts o
 
 This component renders both the login and sign up forms. This was done via using two different `Redux` containers for `/signup` or `/login`, and providing the proper state (form type, links, errors, etc.) and actions (login or logout) accordingly. `React` components should only really be concerned with the rendering of information, but one is able to change what this information via props. 
 
-<p align="center"> 
-<img src="https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/sessioncomponent.png">
-</p>
+```javascript
+class SessionForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      password: "",
+      name: "",
+      repeatPassword: "hidden",
+      repeatEmail: "hidden"
+    },
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleErrors = this.handleErrors.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.handleEmail = this.handleEmail.bind(this);
+    this.demoUserLogin = this.demoUserLogin.bind(this);
+  }
+
+  update(field) {
+    return e => this.setState({ [field]: e.currentTarget.value });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const user = Object.assign({}, this.state);
+    this.props.processForm(user).then(() => this.handleErrors());
+  }
+
+  handleClick() {
+    if (this.props.location.pathname === "/signup") {
+      this.setState({ repeatPassword: "session-type-input s-two" });
+    }
+  }
+  
+  // ...rest of component
+}
+```
 
 **Projects Reducer**
 
 This `Redux` reducer is reponsible for listening for various actions, such as when a single project's information is requested or a project is backed, and updates the [project slice of state](https://github.com/griffinsharp/Kicker/wiki/Sample-State) accordingly. If an action is executed, and the project reducer doesn't have a case to execute a reponse (such as logging out the current user), it will return the previous state.
 
-<p align="center"> 
-<img src="https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/projectsreducer.png">
-</p>
+```javascript
+const projectsReducer = (oldState = {}, action) => {
+  Object.freeze(oldState);
+  let newState = Object.assign({}, oldState);
+
+  switch (action.type) {
+    case RECEIVE_PROJECTS:
+      return action.projects;
+    case RECEIVE_PROJECT:
+      newState[action.payload.project.id] = action.payload.project;
+      return newState;
+    case RECEIVE_BACKING:
+      newState[action.payload.project.id] = action.payload.project;
+      return newState;
+    default:
+      return oldState;
+  }
+};
+```
 
 **Backings Controller**
 
 Here is a fairly straightforward `Rails` controller. When an ajax `POST` request is made to `/api/backings` to create a new backing for a project, if given the right parameters with a logged in user, the backing will be saved to the database with the proper reward, project, and user associations. A `api/backings/show` view is rendered and presented via jBuilder, specifying what information is needed on the frontend to account for this change. 
 
-<p align="center"> 
-<img src="https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/backingscontroller.png">
-</p>
+```ruby 
+class Api::BackingsController < ApplicationController
+
+    def index
+        @backings = Backing.all
+        render 'api/rewards/index'
+    end
+
+    def create
+        @backing = Backing.new(backing_params)
+        @backing.user_id = current_user.id
+        
+        if @backing.save
+            render 'api/backings/show'
+        else
+            render json: ["You need to be signed in to pledge to a project."], status: 401
+        end
+    end
+
+    private
+
+    def backing_params
+        params.require(:backing).permit(:user_id, :reward_id, :project_id, :backing_amount)
+    end
+
+end
+```
 
 **User Model**
 
 Kicker's user authentication utilizes the `BCrypt` gem to safely hash and salt password, avoiding the storage of password in a plain-text format. There are `Rails` backend model and migration level validations, such as password length and email uniqueness, to require users to sign up with valid credentials, and the failure to do so results in the rendering of an associated error.
 
-<p align="center"> 
-<img src="https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/usermodel.png">
-</p>
+```ruby
+class User < ApplicationRecord
+
+# confirm our 'null: false' database constraint on the model level
+validates :email, :name, :session_token, :password_digest, presence: true
+# confirm our 'unique: true' database constraint on the model level
+validates :email, uniqueness: true
+validates :password, length: {minimum: 6}, allow_nil: true
+
+attr_reader :password 
+
+before_validation :ensure_session_token
+
+has_many :projects,
+foreign_key: :user_id,
+class_name: :Project
+
+has_many :backings,
+foreign_key: :user_id,
+class_name: :Backing
+
+has_many :rewards,
+through: :backings,
+source: :reward
+
+def self.find_by_credentials(email, password)
+    user = User.find_by(email: email)
+    return nil unless user && user.is_password?(password)
+    user
+end
+
+# Make our password digest equal to a bcrypt object we
+# generated using the user's password.
+def password=(password)
+    @password = password
+    self.password_digest = BCrypt::Password.create(password)
+end
+
+def is_password?(password)
+    BCrypt::Password.new(self.password_digest).is_password?(password)
+end
+
+# If we have a session token already, use that value.
+# If we do not, create a new session token, thus ensuring one exists.
+def ensure_session_token
+    self.session_token ||= SecureRandom.urlsafe_base64
+end
+
+def reset_session_token!
+    self.session_token = SecureRandom.urlsafe_base64
+    self.save!
+    self.session_token
+end
+
+end
+```
 		
 
 ## Technologies Used
 
 - `Ruby on Rails` 
-- `React` 
-- `Redux` 
+- `React`
+- `Redux`
 - `PostgreSQL` 
 - `jBuilder` 
 - `Webpack` + `Babel` 
