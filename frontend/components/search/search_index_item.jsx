@@ -14,7 +14,7 @@ class SearchIndexItem extends React.Component {
   }
 
   render() {
-    const { project, key } = this.props;
+    const { project } = this.props;
 
     let percent = Math.floor(
       100 * (project.newPledgeAmount / project.goal_amount)

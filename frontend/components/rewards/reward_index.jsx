@@ -10,7 +10,6 @@ class RewardIndex extends React.Component {
     // this.noRewardDisplay = this.noRewardDisplay.bind(this);
   }
 
-
   rewardDisplay(reward) {
     if (reward.id % 4 === 1 % 4) {
       return (

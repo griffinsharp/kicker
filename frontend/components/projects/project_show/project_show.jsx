@@ -54,6 +54,7 @@ class ProjectShow extends React.Component {
       width: `${percent}%`
     };
 
+    // Dynamic fetching of the projects end date from today's date.
     let futureDate = new Date();
     futureDate.setDate(futureDate.getDate() + project.days_left);
     futureDate.setMinutes(0);

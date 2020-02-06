@@ -277,7 +277,7 @@ class SearchIndex extends React.Component {
             </div>
             <div className="proj-search-container">
               {this.state.filtprojects.map(project => (
-                <SearchIndexItem project={project} />
+                <SearchIndexItem key={project.id} project={project} />
               ))}
             </div>
           </div>

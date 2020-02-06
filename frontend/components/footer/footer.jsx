@@ -59,7 +59,7 @@ const Footer = () => {
               </a>
             </div>
             <div className="social-fav-footer">
-              <a href="http://griffinsharp.com/">
+              <a href="https://griffinsharp.com/" target="_blank">
                 <FontAwesomeIcon icon={faCode} alt="code-icon" />
               </a>
             </div>

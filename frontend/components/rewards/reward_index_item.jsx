@@ -15,8 +15,7 @@ class RewardIndexItem extends React.Component {
     this.scrollToTop = this.scrollToTop.bind(this);
   }
 
-  
-  scrollToTop () {
+  scrollToTop() {
     window.scrollTo({
       top: 100,
       left: 100,
@@ -52,7 +51,7 @@ class RewardIndexItem extends React.Component {
       this.props.project.total_pledged =
         this.props.project.total_pledged + this.state.pledge_amount;
     }
-    
+
     this.scrollToTop();
   }
 

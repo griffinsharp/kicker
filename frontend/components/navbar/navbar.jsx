@@ -555,13 +555,16 @@ class Navbar extends React.Component {
             <p className="nav-link" onClick={() => this.handleExplore()}>
               Explore
             </p>
-            <Link to={{
-              pathname: notLogged,
-              state: {
-                rerouted: "navbar",
-                errors: "You must be signed in to create a project."
-              }
-              }} className="nav-link" >
+            <Link
+              to={{
+                pathname: notLogged,
+                state: {
+                  rerouted: "navbar",
+                  errors: "You must be signed in to create a project."
+                }
+              }}
+              className="nav-link"
+            >
               Start a project
             </Link>
           </div>

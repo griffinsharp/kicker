@@ -8,7 +8,7 @@ class ProjectIndexItem extends React.Component {
   }
 
   render() {
-    const { project, key } = this.props;
+    const { project } = this.props;
 
     return (
       <div className="project-index-item">

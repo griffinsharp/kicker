@@ -37,10 +37,12 @@ class SessionForm extends React.Component {
 
   handleErrors() {
     if (this.props.errors.length === 0) {
-      if (this.props.location.state.rerouted === "navbar") {
-        this.props.history.push("/projects/new");
-      } else if (this.props.location.state.rerouted === "project") {
-        this.props.history.push(this.props.location.state.path);
+      if (this.props.location.state) {
+        if (this.props.location.state.rerouted === "navbar") {
+          this.props.history.push("/projects/new");
+        } else if (this.props.location.state.rerouted === "project") {
+          this.props.history.push(this.props.location.state.path);
+        }
       } else {
         this.props.history.push("/");
       }
@@ -80,10 +82,12 @@ class SessionForm extends React.Component {
     // Same logic for trying to donate to a project.
     // Both of these require the user to be logged in and errors to be displayed accordingly.
     this.props.login(user).then(() => {
-      if (this.props.location.state.rerouted === "navbar") {
-        this.props.history.push("/projects/new");
-      } else if (this.props.location.state.rerouted === "project") {
-        this.props.history.push(this.props.location.state.path);
+      if (this.props.location.state) {
+        if (this.props.location.state.rerouted === "navbar") {
+          this.props.history.push("/projects/new");
+        } else if (this.props.location.state.rerouted === "project") {
+          this.props.history.push(this.props.location.state.path);
+        }
       } else {
         this.props.history.push("/");
       }
@@ -124,7 +128,6 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    debugger;
     let onlySignUp;
     let onlyLogIn;
 
