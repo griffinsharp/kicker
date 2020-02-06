@@ -20,8 +20,8 @@ class CatReccProjIndexItem extends React.Component {
     return (
       <div className="recc-project-index-item">
         <div className="author">
-          <Link to={`/projects/${projectId}`}>
-            <div className="recc-pic-and-body">
+          <div className="recc-pic-and-body">
+            <Link to={`/projects/${projectId}`}>
               <img
                 className="recc-project-index-item-pic"
                 src={project.photoURL}
@@ -41,11 +41,11 @@ class CatReccProjIndexItem extends React.Component {
                   <p className="proj-name-underline">{project.authorName}</p>
                 </p>
               </div>
-              <div className="heart-container">
-                <FontAwesomeIcon className="heart" icon={faHeart} />
-              </div>
+            </Link>
+            <div className="heart-container">
+              <FontAwesomeIcon className="heart" icon={faHeart} />
             </div>
-          </Link>
+          </div>
         </div>
       </div>
     );

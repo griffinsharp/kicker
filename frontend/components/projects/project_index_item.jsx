@@ -22,7 +22,7 @@ class ProjectIndexItem extends React.Component {
           </Link>
           <div className="proj-index-item-subtitle">{project.sub_title}</div>
           <p className="author">
-            By{" "}
+            By&nbsp;
             <Link className="author-link" to={`/projects/${project.id}`}>
               {project.authorName}
             </Link>

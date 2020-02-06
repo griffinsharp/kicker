@@ -20,7 +20,7 @@ class CategoryFeatured extends React.Component {
         </Link>
         <p className="mid-paragraph">{proj[0].sub_title}</p>
         <p className="author">
-          By <Link to={`/projects/${proj[0].id}`}>{proj[0].authorName}</Link>
+          By&nbsp;<Link to={`/projects/${proj[0].id}`}>{proj[0].authorName}</Link>
         </p>
       </div>
     );

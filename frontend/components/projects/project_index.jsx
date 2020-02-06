@@ -34,7 +34,7 @@ class ProjectIndex extends React.Component {
         <div className="small-header-proj-index">
           FRESH FAVORITES{" "}
           <Link className="discover-link" to="/search">
-            Discover more{" "}
+            Discover more
             <FontAwesomeIcon
               className="arrow-svg"
               icon={faChevronRight}

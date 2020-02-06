@@ -72,6 +72,11 @@
   font-size: 13.5px;
 }
 
+a.discover-link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .arrow-svg {
   margin-left: 6px;
   font-size: 12px;

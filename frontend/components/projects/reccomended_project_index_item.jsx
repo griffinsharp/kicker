@@ -24,9 +24,8 @@ class ReccomendedProjectIndexItem extends React.Component {
     return (
       <div className="recc-project-index-item">
         <div className="author">
-          
-            <div className="recc-pic-and-body">
-              <Link to={`/projects/${projectId}`}>
+          <div className="recc-pic-and-body">
+            <Link to={`/projects/${projectId}`}>
               <img
                 className="recc-project-index-item-pic"
                 src={project.photoURL}
@@ -46,12 +45,11 @@ class ReccomendedProjectIndexItem extends React.Component {
                   <p className="proj-name-underline">{project.authorName}</p>
                 </p>
               </div>
-              </Link>
-              <div className="heart-container" onClick={() => this.onClick()}>
-                <FontAwesomeIcon className="heart" icon={faHeart} />
-              </div>
+            </Link>
+            <div className="heart-container" onClick={() => this.onClick()}>
+              <FontAwesomeIcon className="heart" icon={faHeart} />
             </div>
-          
+          </div>
         </div>
       </div>
     );

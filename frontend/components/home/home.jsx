@@ -31,7 +31,7 @@ class Home extends React.Component {
                   smartphone.
                 </p>
                 <p className="author">
-                  By <Link to="/projects/8"> Kick It</Link>
+                  By&nbsp;<Link to="/projects/8"> Kick It</Link>
                 </p>
               </div>
             </div>

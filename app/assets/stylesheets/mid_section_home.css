@@ -80,10 +80,13 @@
 
 .author a {
   font-size: 13px;
-  color: #7e8383;
   display: flex;
   margin-right: auto;
-  
+  color: #7e8383;
+}
+
+p.author {
+  display: flex;
 }
 
 .featured-project .author a:hover {
