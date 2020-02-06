@@ -16,7 +16,7 @@ Here are a few screenshots/gifs of Kicker. **To experience the full functionalit
 This is what users are greeted with upon navigating to the website. A navbar, one featured project, reccomended projects, call to action banners, and some curated projects.
 
 <p align="center"> 
-<img src="https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/kickerhome.gif">
+<img src="https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/homepage.gif">
 </p>
 
 **Project Page with Reward Tiers**
@@ -60,7 +60,7 @@ Many user actions on Kicker require an account (creating or backing a project, f
 Clicking "explore" on the navigation bar allows for quick access to many parts of the website via a pop-up modal. 
 
 <p align="center" > 
-<img width="95%" src="https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/newmodal.gif">
+<img src="https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/newmodal.gif">
 </p>
 
 ## Code Snippets ⚛️
