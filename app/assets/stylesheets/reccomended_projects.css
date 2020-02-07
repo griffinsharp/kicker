@@ -79,3 +79,78 @@
 .author-link:hover {
   text-decoration: underline;
 }
+
+.heart-notification-cont {
+  position: absolute;
+}
+
+.fa-heart {
+  cursor: pointer;
+}
+
+.heart-notification-inner {
+  position: relative;
+  width: 110px;
+  height: 30px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  margin-top: -3px;
+  justify-content: center;
+  top: -28px;
+  left: -2px;
+}
+
+.heart-notification-tri {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  top: -43px;
+  left: 44px;
+  transform: rotate(45deg);
+}
+
+.heart-notif-rel-cont {
+  position: relative;
+  -webkit-animation: heart 0.5s;
+  transition: all 0.3s ease-in-out;
+  top: 0px;
+  left: 65px;
+}
+
+.fadeout {
+  position: relative;
+  -webkit-animation: fadeout 0.5s;
+  transition: all 0.3s ease-in-out;
+}
+
+@keyframes heart {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+
+  from {
+    top: 15px;
+  }
+  to {
+    top: 0px;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}

@@ -8,6 +8,19 @@ import CtaPic from "../../../app/assets/images/retro.png";
 import { Link } from "react-router-dom";
 
 class Home extends React.Component {
+
+  constructor (props) {
+    super(props);
+
+    this.state = {
+      email: ""
+    };
+  }
+
+  update(field) {
+    return e => this.setState({[field]: e.currentTarget.value});
+  }
+
   render() {
     return (
       <div className="home-container">
@@ -47,13 +60,15 @@ class Home extends React.Component {
               Discover the best and brightest projects on Kicker.
             </p>
             <p className="mid-paragraph">
-              Sign up to receive our weekly Projects We Love newsletter.
+              This won't actually email you, it's just a cool form.
             </p>
             <div className="newsletter-inputs">
               <input
+                onChange={this.update("email")}
                 className="session-type-input"
                 type="text"
-                value="Enter email address"
+                placeholder="Enter email address"
+                value={this.state.email}
               />
               <input
                 className="session-type-button"
