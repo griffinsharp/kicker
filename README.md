@@ -51,9 +51,9 @@ Essentially, each category has its own 'home' page with its own featured, reccom
 <img src="https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/categories.gif">
 </p>
 
-**User Auth**
+**Demo User**
 
-Many user actions on Kicker require an account (creating or backing a project, for example), but I didn't want to make this a barrier to accessing all the site's features. To get around this, the user signup/login pages have a 'demo user' option if one wants to get the full experience without taking the time to sign up. 
+Many user actions on Kicker require an account (creating or backing a project, for example), but I didn't want to make this a barrier to accessing all the site's features. To get around this, the user signup/login pages have a 'demo user' option if one wants to get the full experience without taking the time to sign up. Attempting one of these protected actions without being logged in will direct the user to the sign in page. A red error bar will appear, explaining why the redirection occured, and after signing in, the user will then be re-directed to whatever page they were enjoying previously. 
 
 **Explore Modal**
 
@@ -163,7 +163,7 @@ class Api::BackingsController < ApplicationController
 end
 ```
 
-**User Model**
+**User Model + Authentication**
 
 Kicker's user authentication utilizes the `BCrypt` gem to safely hash and salt password, avoiding the storage of password in a plain-text format. There are `Rails` backend model and migration level validations, such as password length and email uniqueness, to require users to sign up with valid credentials, and the failure to do so results in the rendering of an associated error.
 
