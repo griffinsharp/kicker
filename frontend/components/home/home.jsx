@@ -5,14 +5,15 @@ import ReccomendedProjectIndexContainer from "../projects/reccomended_project_in
 import FeaturedProjectContainer from "../projects/featured_project_container";
 import FeaturedPic from "../../../app/assets/images/featured.jpg";
 import CtaPic from "../../../app/assets/images/retro.png";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      email: ""
+      email: "",
+      currentUser: this.props.currentUser
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -23,10 +24,21 @@ class Home extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.setState({email: ""});
+    this.setState({ email: "" });
   }
 
   render() {
+    debugger
+    let notLogged;
+    let reDirect;
+    if (this.props.currentUser == null) {
+      notLogged = "/login";
+      reDirect = "true";
+    } else {
+      notLogged = "/projects/new";
+      reDirect = "false";
+    }
+
     return (
       <div className="home-container">
         <div className="category-bar-container">
@@ -90,9 +102,18 @@ class Home extends React.Component {
             <img className="cta-pic" src={CtaPic} alt="" />
             <div className="cta-text">
               <div className="cta-text-top">
-                <div className="cta-header">
+                <Link
+                  to={{
+                    pathname: notLogged,
+                    state: {
+                      rerouted: "navbar",
+                      errors: "You must be signed in to create a project."
+                    }
+                  }}
+                  className="cta-header"
+                >
                   Make what matters to you, on your own terms.
-                </div>
+                </Link>
                 <div className="cta-body">
                   Launch a project to test a new idea and connect with a
                   community that wants to see it succeed. See how it works
@@ -109,4 +130,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default withRouter(Home);

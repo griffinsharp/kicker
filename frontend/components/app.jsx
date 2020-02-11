@@ -3,7 +3,7 @@ import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
 import LogInFormContainer from "./session_form/login_form_container";
 import SignUpFormContainer from "./session_form/signup_form_container";
 import { Provider } from "react-redux";
-import Home from "./home/home";
+import HomeContainer from "./home/home_container.jsx";
 import CategoryHomeContainer from "./categories/category/category_home_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import Navbar from "./navbar/navbar";
@@ -38,7 +38,7 @@ const App = () => (
         path="/category/:categoryId"
         component={CategoryHomeContainer}
       />
-      <Route path="/" component={Home} />
+      <Route path="/" component={HomeContainer} />
     </Switch>
     <Footer />
   </div>

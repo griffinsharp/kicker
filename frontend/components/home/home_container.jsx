@@ -1,10 +1,11 @@
 import { connect } from "react-redux";
-import React from "react";
-import { Link } from "react-router-dom";
 import Home from "./home";
 
-const mapStateToProps = state => ({});
+const mapStateToProps = (state, ownProps) => ({
+  currentUser: state.session.id
+});
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({    
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
