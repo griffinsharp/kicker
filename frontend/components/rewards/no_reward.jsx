@@ -1,4 +1,5 @@
 import React from "react";
+import { Route, Redirect, withRouter } from "react-router-dom";
 
 class NoReward extends React.Component {
   constructor(props) {
@@ -11,6 +12,15 @@ class NoReward extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleErrors = this.handleErrors.bind(this);
+    this.scrollToTop = this.scrollToTop.bind(this);
+  }
+
+  scrollToTop() {
+    window.scrollTo({
+      top: 100,
+      left: 100,
+      behavior: "smooth"
+    });
   }
 
   update(field) {
@@ -19,8 +29,19 @@ class NoReward extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const backing = Object.assign({}, this.state);
-    this.props.createBacking(backing).then(() => this.handleErrors());
+    if (this.props.currentUser === null) {
+      this.props.history.push({
+        pathname: "/login",
+        state: {
+          rerouted: "project",
+          path: `${this.props.location.pathname}`,
+          errors: "You must be signed in to back a project."
+        }
+      });
+    } else {
+      const backing = Object.assign({}, this.state);
+      this.props.createBacking(backing).then(() => this.handleErrors());
+    }
   }
 
   handleErrors() {
@@ -30,6 +51,7 @@ class NoReward extends React.Component {
       this.props.project.total_pledged =
         this.props.project.total_pledged + this.state.pledge_amount;
     }
+    this.scrollToTop();
   }
 
   renderErrors() {
@@ -43,8 +65,6 @@ class NoReward extends React.Component {
   }
 
   render() {
-    const { rewards, createBacking, user, project, errors } = this.props;
-
     return (
       <form className="pledge-form" onSubmit={this.handleSubmit}>
         <div className="no-reward-pledge">
@@ -71,4 +91,4 @@ class NoReward extends React.Component {
   }
 }
 
-export default NoReward;
+export default withRouter(NoReward);

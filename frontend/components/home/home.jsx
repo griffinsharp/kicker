@@ -22,9 +22,15 @@ class Home extends React.Component {
     return e => this.setState({ [field]: e.currentTarget.value });
   }
 
+  // Fake email form
   handleSubmit(e) {
     e.preventDefault();
-    this.setState({ email: "" });
+      this.setState({ email: "No email server quite yet." });
+      setTimeout( () => this.setState({ email: "No email server quite yet.." }), 500);
+      setTimeout( () => this.setState({ email: "No email server quite yet..." }), 1000);
+      setTimeout( () => this.setState({ email: "No email server quite yet...." }), 1500);
+      setTimeout( () => this.setState({ email: "No email server quite yet....." }), 2000);
+      setTimeout( () => this.setState({ email: "" }), 3000);
   }
 
   render() {
@@ -76,7 +82,7 @@ class Home extends React.Component {
               Discover the best and brightest projects on Kicker.
             </p>
             <p className="mid-paragraph">
-              This won't actually email you, it's just a cool form.
+              This won't actually email you, it's just a cool form. Give it a shot.
             </p>
             <form onSubmit={this.handleSubmit}>
               <div className="newsletter-inputs">
@@ -84,7 +90,7 @@ class Home extends React.Component {
                   onChange={this.update("email")}
                   className="session-type-input"
                   type="text"
-                  placeholder="No e-mail service, atleast for the time being..."
+                  placeholder="No e-mail service, for now."
                   value={this.state.email}
                 />
                 <input
