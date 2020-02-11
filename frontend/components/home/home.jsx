@@ -8,17 +8,22 @@ import CtaPic from "../../../app/assets/images/retro.png";
 import { Link } from "react-router-dom";
 
 class Home extends React.Component {
-
-  constructor (props) {
+  constructor(props) {
     super(props);
 
     this.state = {
       email: ""
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
-    return e => this.setState({[field]: e.currentTarget.value});
+    return e => this.setState({ [field]: e.currentTarget.value });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.setState({email: ""});
   }
 
   render() {
@@ -62,20 +67,22 @@ class Home extends React.Component {
             <p className="mid-paragraph">
               This won't actually email you, it's just a cool form.
             </p>
-            <div className="newsletter-inputs">
-              <input
-                onChange={this.update("email")}
-                className="session-type-input"
-                type="text"
-                placeholder="Enter email address"
-                value={this.state.email}
-              />
-              <input
-                className="session-type-button"
-                type="submit"
-                value="Subscribe"
-              />
-            </div>
+            <form onSubmit={this.handleSubmit}>
+              <div className="newsletter-inputs">
+                <input
+                  onChange={this.update("email")}
+                  className="session-type-input"
+                  type="text"
+                  placeholder="No e-mail service, atleast for the time being..."
+                  value={this.state.email}
+                />
+                <input
+                  className="session-type-button"
+                  type="submit"
+                  value="Subscribe"
+                />
+              </div>
+            </form>
           </div>
         </div>
         <div className="call-to-action-container">
