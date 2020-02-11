@@ -23,7 +23,9 @@
 .category-banner .mid-header {
   font-family: "Sorts Mill Goudy", "Georgia", "Times New Roman", "Times",
     "serif";
+  margin-bottom: 16px;
 }
 
 .category-banner > .mid-paragraph {
+  color: #656969;
 }

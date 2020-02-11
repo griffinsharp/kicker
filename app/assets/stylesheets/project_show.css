@@ -84,6 +84,7 @@
 .progress-bar {
   background-color: #009e74;
   height: 100%;
+  -webkit-transition: all 5s ease-in-out;
 }
 
 .odometer {

@@ -25,7 +25,7 @@ class Home extends React.Component {
   // Fake email form
   handleSubmit(e) {
     e.preventDefault();
-      this.setState({ email: "No email server quite yet." });
+      this.setState({ email: "No e-mail server quite yet." });
       setTimeout( () => this.setState({ email: "No email server quite yet.." }), 500);
       setTimeout( () => this.setState({ email: "No email server quite yet..." }), 1000);
       setTimeout( () => this.setState({ email: "No email server quite yet...." }), 1500);
