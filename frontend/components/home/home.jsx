@@ -28,7 +28,6 @@ class Home extends React.Component {
   }
 
   render() {
-    debugger
     let notLogged;
     let reDirect;
     if (this.props.currentUser == null) {
@@ -116,7 +115,7 @@ class Home extends React.Component {
                 </Link>
                 <div className="cta-body">
                   Launch a project to test a new idea and connect with a
-                  community that wants to see it succeed. See how it works
+                  community that wants to see it succeed. See how it works.
                 </div>
               </div>
             </div>
