@@ -133,15 +133,14 @@
 }
 
 .project-remind-btn {
+  width: 197px;
   border: 1px #dcdedd solid;
   padding: 11px 20px;
   background-color: #ffffff;
   color: #282828;
-  font-size: 14px;
   font-family: inherit;
   cursor: pointer;
   -webkit-transition: all 0.3s ease-in-out;
-  width: 100%;
   font-size: 16px;
 }
 
@@ -195,6 +194,7 @@
 .all-or-nothing p {
   display: inline;
   line-height: 18px;
+  cursor: default;
 }
 
 .project-nav-bar-container {
@@ -407,3 +407,48 @@ a.campaign-tab {
 .below-proj-icon {
   margin-right: 10px;
 }
+
+.fadeout-show {
+  -webkit-animation: fadeout 0.5s;
+  transition: all 0.3s ease-in-out;
+}
+
+.heart-notif-rel-cont-show {
+  position: relative;
+  -webkit-animation: heart-show 0.5s;
+  transition: all 0.3s ease-in-out;
+  top: -12px;
+  left: 45px;
+}
+
+.heart-notification-cont {
+  position: absolute;
+}
+
+
+
+@keyframes heart-show {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+
+  from {
+    top: 15px;
+  }
+  to {
+    top: -12px;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+

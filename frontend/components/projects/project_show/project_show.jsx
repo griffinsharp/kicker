@@ -13,7 +13,13 @@ import { faKickstarterK } from "@fortawesome/free-brands-svg-icons";
 class ProjectShow extends React.Component {
   constructor(props) {
     super(props);
+
+
+    this.state = {
+      heartClass: "hidden-rel"
+    };
     this.scrollReward = this.scrollReward.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -22,6 +28,31 @@ class ProjectShow extends React.Component {
 
   scrollReward() {
     this.refs.header.scrollIntoView({ behavior: "smooth" });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    // Trigger is just so you can't spam the like button animation and make it glitchy.
+    // Aka just one animation until the first animation has run its course.
+
+    // first - set class from hidden to heart-notification-container
+    // second - setTimeout for 2 seconds, which will then add a fadeout and second setTimeout
+    // setTimeout number 2 will fire after 0.4 seconds, which will change class back to hidden.
+    // Will also set our trigger back to true, so it can be fired again.
+    // fade in and fade out are 0.5s animations
+    let trigger = true;
+
+    if (trigger) {
+      trigger = false;
+      this.setState({ heartClass: "heart-notification-cont" });
+      setTimeout(() => {
+        this.setState({ heartClass: "heart-notification-cont fadeout-show" });
+        setTimeout(() => {
+          this.setState({ heartClass: "hidden-rel" });
+          trigger = true;
+        }, 400);
+      }, 2000);
+    }
   }
 
   render() {
@@ -132,14 +163,27 @@ class ProjectShow extends React.Component {
                     className="backing-btn"
                     onClick={this.scrollReward}
                   />
+
                   <div className="remind-and-favs">
-                    <div className="project-remind-btn-container">
-                      <input
-                        type="submit"
-                        value="Remind me"
-                        className="project-remind-btn"
-                      />
-                    </div>
+
+                    <form onSubmit={this.handleSubmit}>
+                      <div className="project-remind-btn-container">
+                        <div className={this.state.heartClass}>
+                          <div className="heart-notif-rel-cont-show">
+                            <div className="heart-notification-inner">
+                              feature in progress :)
+                            </div>
+                            <div className="heart-notification-tri"></div>
+                          </div>
+                        </div>
+                        <input
+                          type="submit"
+                          value="Remind me"
+                          className="project-remind-btn"
+                        />
+                      </div>
+                    </form>
+
                     <div className="social-icons-container">
                       <div className="social-icons">
                         <a

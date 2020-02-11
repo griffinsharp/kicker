@@ -100,6 +100,11 @@
   display: none;
 }
 
+.hidden-rel {
+  display: none;
+  position: relative;
+}
+
 .or-line-container {
   display: flex;
   align-items: center;
