@@ -6,6 +6,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import { faCompass } from "@fortawesome/free-regular-svg-icons";
+import { faKickstarterK } from "@fortawesome/free-brands-svg-icons";
 
 class ProjectShow extends React.Component {
   constructor(props) {
@@ -74,9 +77,30 @@ class ProjectShow extends React.Component {
                 <div className="project-pic-container">
                   <img className="project-pic" src={project.photoURL} alt="" />
                   <div className="bottom-project-bar">
-                    <div className={loved}>Project We Love</div>
-                    <div className="project-bar-item">{project.category}</div>
-                    <div className="project-bar-item">{project.location}</div>
+                    <div className={loved}>
+                      <FontAwesomeIcon
+                        className="below-proj-icon"
+                        icon={faKickstarterK}
+                        alt="kickstarter-icon"
+                      />
+                      Project We Love
+                    </div>
+                    <div className="project-bar-item">
+                      <FontAwesomeIcon
+                        className="below-proj-icon"
+                        icon={faCompass}
+                        alt="compass-icon"
+                      />
+                      {project.category}
+                    </div>
+                    <div className="project-bar-item">
+                      <FontAwesomeIcon
+                        className="below-proj-icon"
+                        icon={faMapMarkerAlt}
+                        alt="map-marker-icon"
+                      />
+                      {project.location}
+                    </div>
                   </div>
                 </div>
                 <div className="project-details-container">
