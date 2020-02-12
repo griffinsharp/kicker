@@ -1,6 +1,8 @@
-<p align="center" > 
+<a href="https://kicker-app.herokuapp.com/#/" target="_blank" >
+<p align="center"> 
 <img src="https://github.com/griffinsharp/Kicker/blob/master/app/assets/images/logo.png">
 </p>
+</a>
 
 ## Introduction 👟
 
