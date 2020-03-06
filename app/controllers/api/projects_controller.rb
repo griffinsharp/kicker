@@ -34,18 +34,18 @@ class Api::ProjectsController < ApplicationController
         @project = Project.find(params[:id])
     end
 
-    def update
-        # find via the has_many projects association on the :user model
-        render json: current_user.projects.find_by(id: params[:id])
-        # @project = current_user.projects.find_by(id: params[:id])
+    # def update
+    #     # find via the has_many projects association on the :user model
+    #     render json: current_user.projects.find_by(id: params[:id])
+    #     # @project = current_user.projects.find_by(id: params[:id])
 
-        # if @project.update(project_params)
-        #     render "api/projects/show"
-        # else
-        #     render json: @project.errors.full_messages, status: 422
-        # end
+    #     # if @project.update(project_params)
+    #     #     render "api/projects/show"
+    #     # else
+    #     #     render json: @project.errors.full_messages, status: 422
+    #     # end
 
-    end
+    # end
 
     # def destroy
         
