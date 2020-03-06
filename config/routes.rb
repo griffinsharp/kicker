@@ -12,4 +12,4 @@ Rails.application.routes.draw do
   end
   # Root route
     root "static_pages#root"
-end
+end 

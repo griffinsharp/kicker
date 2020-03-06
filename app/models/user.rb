@@ -42,15 +42,16 @@ end
 
 # If we have a session token already, use that value.
 # If we do not, create a new session token, thus ensuring one exists.
-def ensure_session_token
-    self.session_token ||= SecureRandom.urlsafe_base64
-end
-
 
 def reset_session_token!
     self.session_token = SecureRandom.urlsafe_base64
     self.save!
     self.session_token
+end
+
+private
+def ensure_session_token
+    self.session_token ||= SecureRandom.urlsafe_base64
 end
 
 end
